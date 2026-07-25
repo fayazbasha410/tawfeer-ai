@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Tawfeer توفير · DAST 2026</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f7fa; font-family: 'Inter', sans-serif; }
+
+    /* LOGIN */
+    .login-wrap {
+      min-height: 100vh; display: flex;
+      align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #f0faf5, #e6f7f9);
+    }
+    .login-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 16px; padding: 40px 36px;
+      width: 100%; max-width: 400px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      text-align: center;
+    }
+    .login-card .lc-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .login-card h1 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .login-card h1 span { color: var(--teal); }
+    .login-card p { font-size: 0.8rem; color: var(--muted); margin-bottom: 28px; }
+    .login-card input {
+      width: 100%; border: 1.5px solid var(--border);
+      border-radius: 8px; padding: 11px 14px;
+      font-size: 0.9rem; outline: none; margin-bottom: 14px;
+      font-family: 'Inter', sans-serif; color: var(--text);
+      letter-spacing: 0.08em;
+    }
+    .login-card input:focus { border-color: var(--teal); }
+    .login-error {
+      color: #c53030; font-size: 0.78rem;
+      margin-bottom: 10px; display: none;
+    }
+    .dast-badge {
+      display: inline-block; background: var(--green-light);
+      color: var(--green); border: 1px solid #b2dac9;
+      border-radius: 999px; padding: 4px 12px;
+      font-size: 0.7rem; font-weight: 600; margin-top: 16px;
+    }
+
+    /* DASHBOARD */
+    #dashboard { display: none; }
+
+    .admin-header {
+      background: white; border-bottom: 1px solid var(--border);
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .admin-brand { display: flex; align-items: center; gap: 10px; }
+    .admin-brand .icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, #007a4d, #0099a8);
+      border-radius: 8px; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .admin-brand h1 { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+    .admin-brand h1 span { color: var(--teal); }
+    .admin-brand p { font-size: 0.65rem; color: var(--muted); }
+    .admin-header-right { display: flex; align-items: center; gap: 10px; }
+    .last-updated { font-size: 0.7rem; color: var(--muted); }
+
+    .admin-wrap { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+
+    /* STATS GRID */
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 14px; margin-bottom: 24px;
+    }
+    .stat-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 16px;
+      text-align: center; box-shadow: var(--shadow);
+    }
+    .stat-card .icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .stat-card .num {
+      font-size: 2rem; font-weight: 700;
+      color: var(--green); line-height: 1;
+    }
+    .stat-card .lbl {
+      font-size: 0.7rem; color: var(--muted);
+      margin-top: 6px; text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .stat-card .sub {
+      font-size: 0.68rem; color: var(--teal);
+      margin-top: 3px; font-weight: 500;
+    }
+
+    /* SECTIONS */
+    .section {
+      background: white; border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+      margin-bottom: 20px; box-shadow: var(--shadow);
+    }
+    .section-header {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header h2 {
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--text); text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .section-header .count {
+      font-size: 0.72rem; color: var(--muted);
+      background: var(--bg); border-radius: 999px;
+      padding: 3px 10px;
+    }
+
+    /* TABLES */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    th {
+      background: #f8fafc; color: var(--muted);
+      font-weight: 600; padding: 9px 12px;
+      text-align: left; border-bottom: 1px solid var(--border);
+      font-size: 0.69rem; text-transform: uppercase;
+      letter-spacing: 0.05em; white-space: nowrap;
+    }
+    td {
+      padding: 9px 12px; border-bottom: 1px solid #f1f5f9;
+      color: var(--text); vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    .empty-row td {
+      text-align: center; color: var(--muted);
+      padding: 24px; font-size: 0.8rem;
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block; padding: 2px 9px;
+      border-radius: 999px; font-size: 0.68rem; font-weight: 600;
+    }
+    .badge-green  { background: var(--green-light); color: var(--green); }
+    .badge-teal   { background: var(--teal-light);  color: var(--teal);  }
+    .badge-gold   { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+
+    /* EMIRATE CHART */
+    .emirate-row {
+      display: flex; align-items: center;
+      gap: 10px; margin-bottom: 10px;
+    }
+    .emirate-row:last-child { margin-bottom: 0; }
+    .emirate-row .name {
+      font-size: 0.78rem; color: var(--text);
+      width: 160px; flex-shrink: 0; font-weight: 500;
+    }
+    .emirate-row .bar-bg {
+      flex: 1; background: #f1f5f9;
+      border-radius: 999px; height: 12px; overflow: hidden;
+    }
+    .emirate-row .bar-fill {
+      background: linear-gradient(90deg, var(--green), var(--teal));
+      border-radius: 999px; height: 12px;
+      transition: width 0.8s ease;
+    }
+    .emirate-row .stats {
+      font-size: 0.72rem; color: var(--muted);
+      width: 120px; text-align: right; flex-shrink: 0;
+    }
+
+    /* TWO COL GRID */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+
+    /* METHODOLOGY */
+    .methodology {
+      background: var(--green-light);
+      border: 1px solid #b2dac9;
+      border-radius: 10px; padding: 16px 18px;
+      font-size: 0.76rem; color: #1a4731;
+      line-height: 1.7; margin-bottom: 20px;
+    }
+    .methodology strong { color: var(--green); }
+    .methodology .zero-synthetic {
+      display: inline-block;
+      background: var(--green); color: white;
+      border-radius: 5px; padding: 2px 8px;
+      font-size: 0.68rem; font-weight: 700;
+      margin-left: 6px;
+    }
+
+    /* CSV BUTTON */
+    .btn-export {
+      background: white; border: 1px solid var(--border);
+      color: var(--text); border-radius: 7px;
+      padding: 6px 14px; font-size: 0.76rem;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      font-weight: 500; transition: all 0.2s;
+    }
+    .btn-export:hover { border-color: var(--green); color: var(--green); }
+
+    /* QUESTION PREVIEW */
+    .q-preview {
+      font-size: 0.73rem; color: var(--muted);
+      max-width: 220px; overflow: hidden;
+      text-overflow: ellipsis; white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen" class="login-wrap" style="display:flex">
+  <div class="login-card">
+    <div class="lc-icon">🔐</div>
+    <h1>Tawfeer <span>توفير</span></h1>
+    <p>Enter admin key to access the DAST 2026 judge dashboard</p>
+    <div id="login-error" class="login-error">❌ Invalid admin key. Please try again.</div>
+    <input type="password" id="admin-key-input"
+      placeholder="Admin key"
+      onkeydown="if(event.key==='Enter') doLogin()"
+      data-test-id="admin-key-input" />
+    <button class="btn-primary" onclick="doLogin()" data-test-id="admin-login-btn">
+      Access Dashboard →
+    </button>
+    <div class="dast-badge">🏆 DAST 2026 — 14th Edition</div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+
+  <div class="admin-header">
+    <div class="admin-brand">
+      <div class="icon">🍃</div>
+      <div>
+        <h1>Tawfeer <span>توفير</span> — Admin</h1>
+        <p>DAST 2026 Judge Dashboard · Real data only · Zero synthetic</p>
+      </div>
+    </div>
+    <div class="admin-header-right">
+      <span class="last-updated" id="last-updated">—</span>
+      <button class="btn-export" onclick="exportCSV()">⬇ Export CSV</button>
+      <button class="btn-ghost" onclick="doLogout()">Sign out</button>
+    </div>
+  </div>
+
+  <div class="admin-wrap">
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="icon">👤</div>
+        <div class="num" id="stat-users">—</div>
+        <div class="lbl">Registered Users</div>
+        <div class="sub" id="stat-users-sub">real people</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🚗</div>
+        <div class="num" id="stat-trips">—</div>
+        <div class="lbl">Trips Prevented</div>
+        <div class="sub">confirmed by users</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🛣️</div>
+        <div class="num" id="stat-km">—</div>
+        <div class="lbl">km Saved</div>
+        <div class="sub">total driving avoided</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🌱</div>
+        <div class="num" id="stat-co2">—</div>
+        <div class="lbl">kg CO₂ Prevented</div>
+        <div class="sub">UAE MoCCAE 192g/km</div>
+      </div>
+    </div>
+
+    <!-- EMIRATE CHART + EXTRA STATS -->
+    <div class="two-col">
+
+      <div class="section">
+        <div class="section-header">
+          <h2>📊 Trips by Emirate</h2>
+        </div>
+        <div id="emirate-chart">
+          <p style="color:var(--muted);font-size:0.8rem">No trips logged yet</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <h2>💰 Financial & Environmental Impact</h2>
+        </div>
+        <table>
+          <tr><td style="color:var(--muted);font-size:0.78rem">Total fuel conserved</td><td style="font-weight:600;text-align:right" id="stat-fuel">— L</td></tr>
+          <tr><td style="color:var(--muted);font-size:0.78rem">Total AED saved</td><td style="font-weight:600;text-align:right;color:var(--green)" id="stat-aed">AED —</td></tr>
+          <tr><td style="color:var(--muted);font-size:0.78rem">Avg distance per trip</td><td style="font-weight:600;text-align:right" id="stat-avg-km">— km</td></tr>
+          <tr><td style="color:var(--muted);font-size:0.78rem">Avg CO₂ per trip</td><td style="font-weight:600;text-align:right" id="stat-avg-co2">— kg</td></tr>
+          <tr><td style="color:var(--muted);font-size:0.78rem">Avg AED saved per trip</td><td style="font-weight:600;text-align:right" id="stat-avg-aed">AED —</td></tr>
+          <tr><td style="color:var(--muted);font-size:0.78rem">Trips per user (avg)</td><td style="font-weight:600;text-align:right" id="stat-trips-per-user">—</td></tr>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- USERS TABLE -->
+    <div class="section">
+      <div class="section-header">
+        <h2>👤 Registered Users</h2>
+        <span class="count" id="users-count">0 users</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Emirate</th>
+              <th>Trips Logged</th>
+              <th>km Saved</th>
+              <th>Registered</th>
+            </tr>
+          </thead>
+          <tbody id="users-tbody">
+            <tr class="empty-row"><td colspan="7">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TRIPS TABLE -->
+    <div class="section">
+      <div class="section-header">
+        <h2>🌱 Trips Prevented</h2>
+        <span class="count" id="trips-count">0 trips</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>User</th>
+              <th>Emirate</th>
+              <th>Question Asked</th>
+              <th>Govt Centre Avoided</th>
+              <th>Distance</th>
+              <th>CO₂ kg</th>
+              <th>Fuel L</th>
+              <th>AED Saved</th>
+              <th>Date & Time</th>
+            </tr>
+          </thead>
+          <tbody id="trips-tbody">
+            <tr class="empty-row"><td colspan="10">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- METHODOLOGY -->
+    <div class="methodology">
+      <strong>Methodology & Data Integrity</strong>
+      <span class="zero-synthetic">ZERO SYNTHETIC DATA</span>
+      <br><br>
+      All figures above represent real users who registered on the Tawfeer platform and confirmed
+      they were going to visit a government service centre before using this digital platform.
+      <br><br>
+      <strong>Distance calculation:</strong> Haversine formula between user's confirmed area coordinates
+      and nearest government service centre, with road multiplier (city trips &lt;30km: ×1.4 · highway trips &gt;30km: ×1.15).
+      Round-trip distance used for all calculations.
+      <br><br>
+      <strong>CO₂ formula:</strong> Distance (km) × 192g/km ÷ 1000 = kg CO₂
+      (UAE Ministry of Climate Change and Environment passenger vehicle baseline, 2024)
+      <br><br>
+      <strong>Fuel formula:</strong> Distance (km) × 0.08 L/km
+      (Dubai Municipality light vehicle average consumption)
+      <br><br>
+      <strong>Financial saving:</strong> Fuel (L) × AED 2.89/L
+      (UAE Special 95 official pump price, July 2026)
+      <br><br>
+      <strong>Submitted to:</strong> Dubai Award for Sustainable Transport (DAST) 2026 — 14th Edition ·
+      Innovation / Individual-Researcher Track · Built by Fayaz Basha Shaik
+    </div>
+
+  </div>
+</div>
+
+<script>
+var adminKey  = null;
+var allData   = null;
+
+function doLogin() {
+  var key = document.getElementById('admin-key-input').value.trim();
+  if (!key) return;
+
+  document.getElementById('login-error').style.display = 'none';
+
+  fetch('/api/impact/admin', {
+    headers: { 'x-admin-key': key }
+  })
+    .then(function(r) {
+      if (r.status === 401) throw new Error('unauthorized');
+      return r.json();
+    })
+    .then(function(data) {
+      adminKey = key;
+      allData  = data;
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('dashboard').style.display    = 'block';
+      renderDashboard(data);
+    })
+    .catch(function() {
+      document.getElementById('login-error').style.display = 'block';
+    });
+}
+
+function doLogout() {
+  adminKey = null;
+  allData  = null;
+  document.getElementById('login-screen').style.display = 'block';
+  document.getElementById('dashboard').style.display    = 'none';
+  document.getElementById('admin-key-input').value      = '';
+}
+
+function renderDashboard(data) {
+  var impact = data.impact || {};
+  var users  = data.users  || [];
+  var trips  = data.trips  || [];
+
+  // Last updated
+  var now = new Date();
+  document.getElementById('last-updated').textContent =
+    'Last updated: ' + now.toLocaleTimeString('en-GB');
+
+  // Stats
+  document.getElementById('stat-users').textContent = Number(users.length).toLocaleString();
+  document.getElementById('stat-trips').textContent = Number(trips.length).toLocaleString();
+  document.getElementById('stat-km').textContent    = Number(impact.total_km   || 0).toFixed(1);
+  document.getElementById('stat-co2').textContent   = Number(impact.total_co2  || 0).toFixed(2);
+
+  // Extra stats
+  var totalFuel = trips.reduce(function(s,t){ return s + (parseFloat(t.fuel_liters)||0); }, 0);
+  var totalAed  = trips.reduce(function(s,t){ return s + (parseFloat(t.money_aed)||0); }, 0);
+  var totalKm   = trips.reduce(function(s,t){ return s + (parseFloat(t.distance_km)||0); }, 0);
+  var totalCo2  = trips.reduce(function(s,t){ return s + (parseFloat(t.co2_kg)||0); }, 0);
+  var n = trips.length || 1;
+
+  document.getElementById('stat-fuel').textContent         = totalFuel.toFixed(2) + ' L';
+  document.getElementById('stat-aed').textContent          = 'AED ' + totalAed.toFixed(2);
+  document.getElementById('stat-avg-km').textContent       = (totalKm/n).toFixed(1) + ' km';
+  document.getElementById('stat-avg-co2').textContent      = (totalCo2/n).toFixed(2) + ' kg';
+  document.getElementById('stat-avg-aed').textContent      = 'AED ' + (totalAed/n).toFixed(2);
+  document.getElementById('stat-trips-per-user').textContent = users.length
+    ? (trips.length / users.length).toFixed(1) : '0';
+
+  // Emirate chart
+  var emirateTotals = {};
+  trips.forEach(function(t) {
+    var e = t.emirate || 'Unknown';
+    if (!emirateTotals[e]) emirateTotals[e] = { trips: 0, km: 0, co2: 0 };
+    emirateTotals[e].trips++;
+    emirateTotals[e].km  += parseFloat(t.distance_km) || 0;
+    emirateTotals[e].co2 += parseFloat(t.co2_kg) || 0;
+  });
+
+  var maxTrips = Math.max.apply(null, Object.values(emirateTotals).map(function(v){ return v.trips; }).concat([1]));
+  var chartHtml = Object.entries(emirateTotals)
+    .sort(function(a,b){ return b[1].trips - a[1].trips; })
+    .map(function(entry) {
+      var pct = Math.round((entry[1].trips / maxTrips) * 100);
+      return '<div class="emirate-row">' +
+        '<span class="name">' + entry[0] + '</span>' +
+        '<div class="bar-bg"><div class="bar-fill" style="width:' + pct + '%"></div></div>' +
+        '<span class="stats">' + entry[1].trips + ' trip' + (entry[1].trips!==1?'s':'') +
+        ' · ' + entry[1].km.toFixed(0) + ' km</span>' +
+        '</div>';
+    }).join('');
+  document.getElementById('emirate-chart').innerHTML =
+    chartHtml || '<p style="color:var(--muted);font-size:0.8rem">No trips logged yet</p>';
+
+  // Users table — add trip count per user
+  var tripsByUser = {};
+  var kmByUser = {};
+  trips.forEach(function(t) {
+    var uid = t.user_id;
+    tripsByUser[uid] = (tripsByUser[uid] || 0) + 1;
+    kmByUser[uid]    = (kmByUser[uid]    || 0) + (parseFloat(t.distance_km) || 0);
+  });
+
+  document.getElementById('users-count').textContent = users.length + ' users';
+  var usersHtml = users.map(function(u, i) {
+    var date = new Date(u.created_at).toLocaleString('en-GB', {
+      day: '2-digit', month: 'short', year: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    });
+    var userTrips = tripsByUser[u.id] || 0;
+    var userKm    = (kmByUser[u.id]   || 0).toFixed(1);
+    return '<tr>' +
+      '<td style="color:var(--muted)">' + (i+1) + '</td>' +
+      '<td><strong>' + escHtml(u.name) + '</strong></td>' +
+      '<td style="color:var(--muted)">' + escHtml(u.email) + '</td>' +
+      '<td><span class="badge badge-teal">' + escHtml(u.emirate) + '</span></td>' +
+      '<td style="text-align:center"><span class="badge ' + (userTrips>0?'badge-green':'') + '">' + userTrips + '</span></td>' +
+      '<td style="text-align:right;font-weight:600">' + userKm + ' km</td>' +
+      '<td style="color:var(--muted);font-size:0.74rem">' + date + '</td>' +
+      '</tr>';
+  }).join('');
+  document.getElementById('users-tbody').innerHTML =
+    usersHtml || '<tr class="empty-row"><td colspan="7">No users registered yet</td></tr>';
+
+  // Trips table
+  document.getElementById('trips-count').textContent = trips.length + ' trips';
+  var tripsHtml = trips.map(function(t, i) {
+    var date = new Date(t.created_at).toLocaleString('en-GB', {
+      day: '2-digit', month: 'short', year: 'numeric',
+      hour: '2-digit', minute: '2-digit'
+    });
+    var userName = (t.users && t.users.name) ? t.users.name : 'Unknown';
+    var question = t.question_asked || '—';
+    return '<tr>' +
+      '<td style="color:var(--muted)">' + (i+1) + '</td>' +
+      '<td><strong>' + escHtml(userName) + '</strong></td>' +
+      '<td><span class="badge badge-green">' + escHtml(t.emirate||'—') + '</span></td>' +
+      '<td><div class="q-preview" title="' + escHtml(question) + '">' + escHtml(question) + '</div></td>' +
+      '<td style="font-size:0.74rem;color:var(--muted)">' + escHtml(t.center_name||'—') + '</td>' +
+      '<td style="font-weight:600;text-align:right">' + (t.distance_km||0) + ' km</td>' +
+      '<td style="text-align:right">' + (t.co2_kg||0) + '</td>' +
+      '<td style="text-align:right">' + (t.fuel_liters||0) + '</td>' +
+      '<td style="text-align:right;color:var(--green);font-weight:600">AED ' + (t.money_aed||0) + '</td>' +
+      '<td style="color:var(--muted);font-size:0.72rem;white-space:nowrap">' + date + '</td>' +
+      '</tr>';
+  }).join('');
+  document.getElementById('trips-tbody').innerHTML =
+    tripsHtml || '<tr class="empty-row"><td colspan="10">No trips logged yet</td></tr>';
+}
+
+function exportCSV() {
+  if (!allData) return;
+  var trips = allData.trips || [];
+  var rows  = [
+    ['#','User','Email','Emirate','Question Asked','Centre Avoided','Distance km','CO2 kg','Fuel L','AED Saved','Date']
+  ];
+  trips.forEach(function(t, i) {
+    var userName  = (t.users && t.users.name)  ? t.users.name  : '';
+    var userEmail = (t.users && t.users.email) ? t.users.email : '';
+    rows.push([
+      i+1, userName, userEmail,
+      t.emirate||'', (t.question_asked||'').replace(/,/g,' '),
+      (t.center_name||'').replace(/,/g,' '),
+      t.distance_km||0, t.co2_kg||0, t.fuel_liters||0, t.money_aed||0,
+      new Date(t.created_at).toISOString()
+    ]);
+  });
+  var csv = rows.map(function(r){ return r.join(','); }).join('\n');
+  var blob = new Blob([csv], { type: 'text/csv' });
+  var url  = URL.createObjectURL(blob);
+  var a    = document.createElement('a');
+  a.href   = url;
+  a.download = 'tawfeer-dast2026-data-' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// Focus on load
+window.onload = function() {
+  document.getElementById('admin-key-input').focus();
+};
+</script>
+
+</body>
+</html>

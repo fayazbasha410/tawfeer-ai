@@ -80,7 +80,7 @@ async function getCumulativeImpact() {
 async function getAllUsers() {
   const { data, error } = await supabase
     .from('users')
-    .select('id, name, emirate, created_at')
+    .select('id, name, email, emirate, created_at')
     .order('created_at', { ascending: false });
 
   if (error) throw error;
