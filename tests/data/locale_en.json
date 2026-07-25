@@ -1,115 +1,1136 @@
 {
-    "app_name": "GovMurshid",
-    "app_subtitle": "UAE",
-    "welcome_text": "GovMurshid",
-    "welcome_emirates": "7 emirates",
-  
-    "driving_license": "driving license",
-    "driving_renewal": "renew",
-    "driving_expiry": "expiry",
-    "driving_fee": "AED",
-    "driving_eye_test": "eye test",
-    "driving_moi": "moi.gov.ae",
-    "driving_rta": "rta.ae",
-    "driving_tamm": "tamm.abudhabi",
-  
-    "health_insurance": "health insurance",
-    "health_mandatory": "mandatory",
-    "health_dha": "DHA",
-    "health_doh": "Department of Health",
-    "health_whi": "AED 320",
-    "health_2025": "1 January 2025",
-  
-    "school_enrollment": "school",
-    "school_khda": "KHDA",
-    "school_adek": "ADEK",
-    "school_spea": "SPEA",
-    "school_moe": "Ministry of Education",
-    "school_documents": "Emirates ID",
-  
-    "ejari": "Ejari",
-    "tawtheeq": "Tawtheeq",
-    "tenancy": "tenancy",
-  
-    "trade_license": "trade license",
-    "trade_sedd": "SEDD",
-    "trade_det": "DET",
-    "trade_rakez": "RAKEZ",
-  
-    "golden_visa": "Golden Visa",
-    "golden_visa_amount": "2,000,000",
-    "emirates_id": "Emirates ID",
-    "residency_visa": "residency visa",
-  
-    "fine_unpaid": "unpaid fines",
-    "fine_aed": "AED 400",
-    "fine_plate": "AD-1234",
-    "fine_no_record": "No records found",
-  
-    "appointment_confirmed": "Appointment confirmed",
-    "appointment_prefix": "TAMM-",
-    "appointment_missing": "Missing",
-  
-    "guardrail_injection": "I can only assist with UAE government services",
-    "guardrail_off_topic": "GovMurshid",
-    "guardrail_reason_injection": "prompt_injection",
-    "guardrail_reason_off_topic": "off_topic",
-  
-    "no_result": "couldn't find relevant information",
-    "error_missing_message": "Missing or invalid message",
-    "error_missing_param": "error",
-  
-    "response_time_threshold_ms": 15000,
-    "response_time_tool_threshold_ms": 3000,
-  
-    "memory_session_id": "sessionId",
-    "memory_topic_changed": "topicChanged",
-  
-    "emirates": {
-      "abu_dhabi": "Abu Dhabi",
-      "dubai": "Dubai",
-      "sharjah": "Sharjah",
-      "ajman": "Ajman",
-      "umm_al_quwain": "Umm Al Quwain",
-      "ras_al_khaimah": "Ras Al Khaimah",
-      "fujairah": "Fujairah"
+  "app": {
+    "name": "Tawfeer",
+    "nameAr": "توفير",
+    "tagline": "UAE Trip Reduction & Emissions Platform",
+    "taglineAr": "منصة الإمارات لتقليل الرحلات وخفض الانبعاثات",
+    "dast": "DAST 2026 — 14th Edition",
+    "poweredBy": "Powered by AI · UAE MoCCAE Methodology",
+    "langToggle": "عربي",
+    "newChat": "+ New chat",
+    "send": "Send →",
+    "listening": "Listening… speak in English or Arabic",
+    "noSpeech": "No speech detected — try again",
+    "micDenied": "Microphone access denied",
+    "serverError": "Could not reach the server. Is it running?",
+    "thinking": "Calculating your trip savings…",
+    "sectionLabel": "Transport & Government Services — All 7 Emirates",
+    "impactPill": "km saved citywide",
+    "tripConfirmTitle": "Did you avoid a government office visit?",
+    "tripConfirmBody": "Was this question going to take you to an RTA centre or government office? If so, your digital answer just saved a real trip.",
+    "tripYes": "Yes, I avoided a trip ✅",
+    "tripNo": "No / Skip",
+    "tripLogged": "Trip logged! Your contribution has been added to the citywide impact counter.",
+    "sustainTitle": "Tawfeer Impact — Trip Avoided",
+    "sustainTravel": "Physical travel avoided",
+    "sustainCo2": "CO₂ emissions prevented",
+    "sustainFuel": "Fuel conserved",
+    "sustainMoney": "Direct financial saving",
+    "sustainNote": "Methodology: UAE MoCCAE baseline 192g CO₂/km · UAE Special 95 AED 2.89/L · July 2026",
+    "metroFallback": "This step requires a physical visit. To keep your journey green:",
+    "metroNearest": "Nearest Metro",
+    "busFallback": "Bus Route",
+    "centerLabel": "Service Centre",
+    "registerTitle": "Join Tawfeer توفير",
+    "registerSubtitle": "3 fields. 10 seconds. Start saving trips.",
+    "registerName": "Full name",
+    "registerEmail": "Email address",
+    "registerEmirate": "Your emirate",
+    "registerBtn": "Start saving trips →",
+    "registerDisclaimer": "No password. No spam. Your email is proof of real impact for DAST 2026.",
+    "welcomeBack": "Welcome back",
+    "footerBuilt": "Built by",
+    "footerSubmitted": "Submitted to DAST 2026 — 14th Edition",
+    "footerProud": "نفخر بالإمارات",
+    "footerCopyright": "© 2026 Tawfeer توفير — UAE Trip Reduction Platform",
+    "footerMethodology": "Methodology: UAE MoCCAE 192g CO₂/km · Special 95 AED 2.89/L · July 2026"
+  },
+  "emirates": {
+    "dubai": "Dubai",
+    "abuDhabi": "Abu Dhabi",
+    "sharjah": "Sharjah",
+    "ajman": "Ajman",
+    "rak": "Ras Al Khaimah",
+    "fujairah": "Fujairah",
+    "uaq": "Umm Al Quwain"
+  },
+  "suggestions": {
+    "drivingLicense": "🪪 Driving license renewal",
+    "checkFines": "🚗 Check traffic fines",
+    "bookAppointment": "📅 Book appointment",
+    "vehicleReg": "🚙 Vehicle registration",
+    "publicTransport": "🚇 Public transport",
+    "roadPermit": "🛣️ Road permit",
+    "nolCard": "💳 NOL card",
+    "salik": "🛣️ Salik account",
+    "renewLicenseAr": "🪪 تجديد الرخصة"
+  },
+  "qa": {
+    "drivingLicense": {
+      "category": "Driving License",
+      "questions": [
+        {
+          "id": "DL-001",
+          "q": "How do I renew my driving license in Dubai?",
+          "a": "You can renew fully online in 5–15 minutes via rta.ae or the Dubai Drive app. Steps: (1) Log in with UAE Pass or Emirates ID. (2) Upload your Emirates ID and RTA-approved eye test certificate. (3) Pay AED 300 (age 21+) or AED 100 (under 21) plus AED 20 Knowledge & Innovation fee. (4) Your temporary licence is issued instantly; the permanent card arrives by courier (AED 25) within 5–15 working days, or collect free from an RTA kiosk. No office visit required for standard renewals.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai — Driving Licence Renewal Service",
+          "policyId": "DL-RENEW-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-002",
+          "q": "What documents are needed to renew a Dubai driving license?",
+          "a": "Required: (1) Valid Emirates ID. (2) RTA-approved eye test certificate — costs AED 140–180, valid for 2 years, results auto-uploaded from approved clinics. (3) Existing driving licence (expired or current). (4) No outstanding traffic fines (fines block renewal). Optional: passport-sized photo on white background for certain cases. No need to visit a centre — upload digitally via Dubai Drive app.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "DL-RENEW-002",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-003",
+          "q": "What is the fee for driving license renewal in Dubai?",
+          "a": "Age 21 and above: AED 300 renewal fee + AED 20 Knowledge & Innovation fee = AED 320 total. Under 21: AED 100 + AED 20 = AED 120. Late renewal: AED 10 per month delayed, capped at AED 500 maximum penalty. Optional courier delivery: AED 25. Eye test (if not done): AED 140–180 at RTA-approved clinics.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Fee Schedule",
+          "policyId": "DL-FEE-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-004",
+          "q": "How long is a driving licence valid in Dubai?",
+          "a": "UAE/GCC nationals: 10 years. Expatriate residents: 5 years. You may renew up to 1 year before expiry (age 21+) or 1 month before (under 21). After expiry, a 30-day grace period applies with no fines. After the grace period, a fine of AED 10 per month applies, maximum AED 500.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "DL-VALID-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-005",
+          "q": "Can I renew my driving license if I have black points?",
+          "a": "Yes, black points alone do not block renewal. However, if your licence is suspended due to reaching 24 black points, you cannot renew until the suspension is lifted. All outstanding traffic fines must be paid before renewal. Check your black point status on the Dubai Police app or rta.ae.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "DL-BP-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-006",
+          "q": "How do I get a new driving license in Dubai from scratch?",
+          "a": "Process: (1) Open a traffic file at RTA — online via rta.ae or in person. (2) Complete eye test at an RTA-approved clinic. (3) Attend theory lectures (8 hours). (4) Pass the theory test (computer-based at a driving school). (5) Complete yard (parking/control) tests. (6) Pass the road test. (7) Collect your licence. Total cost: AED 4,500–7,500 depending on attempts and school. Minimum age: 18 years (17 with parental consent in some cases — confirm with RTA).",
+          "canResolveDigitally": false,
+          "physicalNote": "Eye test, theory test, and road test require physical attendance.",
+          "source": "RTA Dubai Driving Schools",
+          "policyId": "DL-NEW-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-007",
+          "q": "Can I exchange a foreign driving license for a UAE license?",
+          "a": "Yes, residents from approved countries can exchange without full training. Requirements: valid Emirates ID, original foreign licence, RTA-approved eye test (AED 140–180), translation if not in Arabic/English, and applicable fees. Some nationalities may also need an embassy letter. Check the approved country list at rta.ae — it changes periodically. Not all countries are on the list; if yours isn't, full training is required.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai — Licence Exchange Service",
+          "policyId": "DL-EXCH-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-008",
+          "q": "Where can I do the eye test for driving license renewal in Dubai?",
+          "a": "At any RTA-approved optometry clinic across Dubai. Cost: AED 140–180. Results are valid for 2 years and auto-uploaded directly to RTA's system — you no longer receive a paper printout. You can then complete the renewal entirely online. A list of approved clinics is on rta.ae under 'Driving Licence Services'.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "DL-EYE-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-009",
+          "q": "How do I add a new vehicle category to my existing driving license?",
+          "a": "You can apply online at rta.ae or via the Dubai Drive app to add categories (e.g., motorcycle, heavy vehicle, bus). You will need to complete training and pass tests for the new category at an approved driving school. The application can be started digitally, but physical training and testing are mandatory for the new category.",
+          "canResolveDigitally": false,
+          "physicalNote": "Training and testing for new licence categories require physical attendance.",
+          "source": "RTA Dubai",
+          "policyId": "DL-CAT-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "DL-010",
+          "q": "How do I replace a lost or damaged driving license in Dubai?",
+          "a": "Apply online at rta.ae or on the Dubai Drive app: (1) Log in with UAE Pass or Emirates ID. (2) Select 'Replace Driving Licence'. (3) Confirm your details and pay the replacement fee (AED 100). (4) Your new licence is delivered by courier or available at an RTA kiosk. No need to visit a centre for a standard replacement.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "DL-REPL-001",
+          "emirate": "Dubai"
+        }
+      ]
     },
-  
-    "policy_ids": {
-      "driving_all_uae": "POL-001",
-      "vehicle_reg": "POL-002",
-      "traffic_fine": "POL-003",
-      "emirates_id": "POL-005",
-      "residency_visa": "POL-006",
-      "health_card_abudhabi": "POL-010",
-      "school_dubai": "POL-011",
-      "school_abudhabi": "POL-012",
-      "health_insurance_dubai": "POL-014",
-      "health_insurance_abudhabi": "POL-015",
-      "ejari_dubai": "POL-018",
-      "tawtheeq_abudhabi": "POL-019",
-      "trade_dubai": "POL-021",
-      "trade_abudhabi": "POL-022",
-      "golden_visa": "POL-035",
-      "driving_sharjah": "POL-036",
-      "health_sharjah": "POL-037",
-      "school_sharjah": "POL-038",
-      "tenancy_sharjah": "POL-039",
-      "trade_sharjah": "POL-040",
-      "driving_ajman": "POL-041",
-      "health_ajman": "POL-042",
-      "school_ajman": "POL-043",
-      "trade_ajman": "POL-044",
-      "driving_uaq": "POL-045",
-      "health_uaq": "POL-046",
-      "school_uaq": "POL-047",
-      "driving_rak": "POL-048",
-      "health_rak": "POL-049",
-      "school_rak": "POL-050",
-      "trade_rak": "POL-051",
-      "driving_fujairah": "POL-052",
-      "health_fujairah": "POL-053",
-      "school_fujairah": "POL-054",
-      "trade_fujairah": "POL-055"
+    "trafficFines": {
+      "category": "Traffic Fines & Black Points",
+      "questions": [
+        {
+          "id": "TF-001",
+          "q": "How do I check my traffic fines in Dubai?",
+          "a": "Multiple ways — all digital, no office visit needed: (1) Dubai Drive app — log in, tap 'Fines Inquiry', see full details including violation photo, date, GPS location. (2) rta.ae — enter your plate or licence number. (3) Dubai Police app — best for black point checks. (4) SMS — send your plate number to RTA's official SMS service. (5) RTA Smart Kiosks — 32 kiosks at 21 locations, open 24/7. All methods are free to check.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Fine Check",
+          "policyId": "TF-CHECK-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "TF-002",
+          "q": "How do I pay traffic fines in Dubai online?",
+          "a": "Pay via: (1) Dubai Drive app — pay directly after viewing fines, using saved cards, Apple Pay, or Samsung Pay. Status updates within hours. (2) rta.ae — enter fine details and pay by card. (3) DubaiNow app — manage multiple government fines in one place. (4) MOI UAE app — for fines across all emirates. (5) RTA Smart Kiosks — accept cash, credit card, and NFC/mobile pay. Always download your receipt after payment.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "TF-PAY-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "TF-003",
+          "q": "What are the fines for common traffic violations in Dubai?",
+          "a": "Key fines (Federal Decree-Law No. 14 of 2024, effective March 2025): Speeding 20–30 km/h over limit: AED 600. Speeding 60+ km/h over: AED 3,000 + 12 black points + 30-day impound. Speeding 80+ km/h over: AED 3,000 + 23 black points + 60-day impound. Running a red light: AED 1,000 + 12 black points + 30-day impound. No seatbelt: AED 400 + 4 black points. Mobile phone while driving: AED 800 + 4 black points. Reckless driving: AED 2,000 + 23 black points + 60-day impound. No number plate: AED 3,000 + 23 black points + 90-day impound. Public transport fare evasion: AED 200.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai & UAE Traffic Law 2025",
+          "policyId": "TF-RATES-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "TF-004",
+          "q": "How many black points lead to licence suspension in Dubai?",
+          "a": "24 black points: 1-year licence suspension. Black points expire automatically 12 months after the violation date if no further offences occur. You can reduce points by attending a black point reduction course at an approved institute: up to 8 points removed per course, cost AED 810. Check your black points on the Dubai Police app or rta.ae — no office visit needed.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai & Dubai Police",
+          "policyId": "TF-BP-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "TF-005",
+          "q": "How do I dispute a traffic fine in Dubai?",
+          "a": "Submit a dispute digitally: (1) Go to rta.ae and find 'Dispute Fines'. (2) Fill the dispute form with your Emirates ID, fine reference number, and supporting evidence (dashcam footage, photos). (3) Alternatively, visit any RTA Customer Happiness Centre. Processing takes a few business days. Tip: fines over AED 5,000 (individuals) or AED 20,000 (companies) can be paid in 3, 6, 9, or 12-month instalment plans.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "TF-DISP-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "TF-006",
+          "q": "Can I pay traffic fines in instalments in Dubai?",
+          "a": "Yes. Fines above AED 5,000 for individuals (AED 20,000 for companies) can be paid in instalment plans of 3, 6, 9, or 12 months. Pay the first instalment by credit card online, then contact your bank to convert to an instalment arrangement. For standard fines under these thresholds, full payment is required before vehicle registration renewal.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "TF-INST-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "TF-007",
+          "q": "What is the penalty for expired vehicle registration in Dubai?",
+          "a": "AED 500 fine + black points on your licence + possible vehicle impoundment for up to 7 days. You have a 30-day grace period after expiry with no additional fees. After the grace period, fines accumulate. Driving with expired registration also invalidates your car insurance. Renew online via rta.ae or the Dubai Drive app up to 150 days before expiry.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "TF-EXPR-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "TF-008",
+          "q": "How do I check if my vehicle has any fines before selling it?",
+          "a": "Check fines on: (1) rta.ae — enter plate or file number. (2) Dubai Drive app — under 'Fines Inquiry'. (3) Dubai Police app. All outstanding fines must be cleared before ownership transfer. Unpaid fines will block the transfer at the RTA. You can check and pay digitally without visiting any office.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "TF-SELL-001",
+          "emirate": "Dubai"
+        }
+      ]
+    },
+    "vehicleRegistration": {
+      "category": "Vehicle Registration (Mulkiya)",
+      "questions": [
+        {
+          "id": "VR-001",
+          "q": "How do I renew my vehicle registration (Mulkiya) in Dubai?",
+          "a": "Online renewal takes 10–15 minutes. Requirements: valid Emirates ID, valid car insurance, cleared traffic fines, and inspection certificate (if car is over 3 years old). Methods: (1) rta.ae website. (2) Dubai Drive app. (3) S'hail app. (4) RTA Smart Kiosks (28 services, 24/7 at 23 metro stations). (5) WhatsApp RTA service. Fees: AED 350–380 for light vehicles + optional home delivery AED 25. You can renew up to 150 days before expiry.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "VR-RENEW-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "VR-002",
+          "q": "Does my car need inspection before registration renewal in Dubai?",
+          "a": "Yes — if your vehicle is more than 3 years old, a technical/roadworthiness inspection is mandatory. Cars under 3 years: no inspection needed. Book inspection at RTA-approved testing centres. Results are linked to your vehicle's digital file. After passing, proceed to renew online. If your car fails inspection, you must fix the issues and re-test before renewal is allowed.",
+          "canResolveDigitally": false,
+          "physicalNote": "Vehicle inspection must be done in person at an RTA-approved testing centre.",
+          "source": "RTA Dubai",
+          "policyId": "VR-INSP-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "VR-003",
+          "q": "How do I transfer vehicle ownership in Dubai?",
+          "a": "Can be done online at rta.ae or via the Dubai Drive app with UAE Pass login. Both buyer and seller must be present digitally. Steps: (1) Clear all fines and Salik tolls. (2) Buyer secures insurance in their name. (3) Get vehicle inspected if 3+ years old. (4) Upload: Mulkiya, Emirates IDs for both parties, insurance certificate, inspection report, bank NOC if financed. (5) Pay AED 400 transfer fee + AED 20 Knowledge fee. Processing: same day if done online with no issues. Physical visit possible at any RTA Customer Happiness Centre.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Service ID 601",
+          "policyId": "VR-TRANS-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "VR-004",
+          "q": "What documents are needed for vehicle registration renewal in Dubai?",
+          "a": "Required: (1) Valid Emirates ID. (2) Valid comprehensive or third-party car insurance certificate. (3) Cleared traffic fines (unpaid fines block renewal). (4) Cleared Salik balance. (5) Technical inspection certificate (cars 3+ years old). Optional: (6) Bank NOC letter if vehicle is under finance. All documents can be uploaded digitally — no physical trip needed for standard renewals.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "VR-DOCS-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "VR-005",
+          "q": "How do I register a new vehicle in Dubai for the first time?",
+          "a": "For brand-new vehicles, the dealer usually handles initial registration. For private imports or non-dealer purchases: (1) Get UAE car insurance. (2) Vehicle inspection at RTA-approved centre. (3) Apply at rta.ae or RTA Customer Happiness Centre. (4) Pay registration fees. (5) Receive Mulkiya (registration card) and number plates. First-time registration typically requires an in-person visit to assign plates.",
+          "canResolveDigitally": false,
+          "physicalNote": "First-time registration and plate assignment requires a visit to an RTA centre.",
+          "source": "RTA Dubai",
+          "policyId": "VR-NEW-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "VR-006",
+          "q": "Can I check my vehicle registration status online in Dubai?",
+          "a": "Yes. Check via: (1) Dubai Drive app — dashboard shows Mulkiya expiry date and renewal reminders. (2) rta.ae — enter your plate or file number. (3) S'hail app. (4) RTA Smart Kiosks. No office visit needed. You'll also receive automated SMS reminders before expiry if your mobile is registered with RTA.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "VR-CHECK-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "VR-007",
+          "q": "What is the fee for vehicle registration renewal in Dubai?",
+          "a": "Light vehicles: AED 350–380 total (includes registration fee + knowledge/innovation levy). Heavy vehicles and commercial: higher rates. Optional home delivery of Mulkiya card: AED 25. Late renewal within grace period: no additional fee. After grace period: late fees accumulate. Inspection fee (if required): varies by test centre, typically AED 100–150.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Fee Schedule",
+          "policyId": "VR-FEE-001",
+          "emirate": "Dubai"
+        }
+      ]
+    },
+    "salik": {
+      "category": "Salik Toll System",
+      "questions": [
+        {
+          "id": "SK-001",
+          "q": "How do I open a Salik account in Dubai?",
+          "a": "Register online at salik.gov.ae or the Dubai Drive app: (1) Enter your vehicle plate and Emirates ID. (2) Purchase a Salik tag (AED 100, includes AED 50 credit). (3) The tag is mailed to you or available for pickup — no office visit required. Alternatively, buy a tag at any RTA Customer Happiness Centre, petrol station (ENOC/EPPCO), or authorised retailers. Your tag is activated within 24 hours.",
+          "canResolveDigitally": true,
+          "source": "Salik Dubai — salik.gov.ae",
+          "policyId": "SK-OPEN-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "SK-002",
+          "q": "How do I recharge my Salik account?",
+          "a": "Recharge via: (1) salik.gov.ae — card payment, any time. (2) Dubai Drive app — integrated Salik top-up, Apple Pay / Samsung Pay accepted. (3) DubaiNow app. (4) ENOC/EPPCO petrol stations — cash or card. (5) RTA Smart Kiosks (24/7). (6) Carrefour and authorised retailers. Minimum top-up: AED 50. Enable auto-recharge on salik.gov.ae to never run out.",
+          "canResolveDigitally": true,
+          "source": "Salik Dubai",
+          "policyId": "SK-TOPUP-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "SK-003",
+          "q": "What is the Salik toll charge per gate in Dubai?",
+          "a": "AED 4 per gate crossing. There are 8 Salik gates in Dubai (including Al Safa, Al Garhoud, Al Maktoum Bridge, Atrium Centre, Business Bay Tunnel, Al Mamzar South, Al Mamzar North, and Shindagha Tunnel). Maximum daily charge: AED 24 (6 crossings). You are charged only if your balance is sufficient and the tag is active and correctly fitted.",
+          "canResolveDigitally": true,
+          "source": "Salik Dubai",
+          "policyId": "SK-RATES-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "SK-004",
+          "q": "What happens if I pass a Salik gate without enough balance?",
+          "a": "You get a 5-working-day grace period to recharge after a crossing with insufficient balance. If not recharged: AED 50 fine per day added until payment clears. Ongoing violations accumulate quickly. Register your mobile number on salik.gov.ae to receive SMS alerts when balance is low. Enable auto-recharge to prevent this entirely.",
+          "canResolveDigitally": true,
+          "source": "Salik Dubai",
+          "policyId": "SK-FINE-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "SK-005",
+          "q": "How do I check my Salik balance and transaction history?",
+          "a": "Check via: (1) salik.gov.ae — log in to see balance, all crossings, and receipts. (2) Dubai Drive app — Salik section in the dashboard. (3) SMS — send a message to the official Salik number. (4) RTA Smart Kiosks. All methods are free and digital. No office visit needed.",
+          "canResolveDigitally": true,
+          "source": "Salik Dubai",
+          "policyId": "SK-BAL-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "SK-006",
+          "q": "How do I transfer my Salik tag to a new vehicle?",
+          "a": "Update your vehicle details on salik.gov.ae or the Dubai Drive app under 'Manage Tag'. If you've sold your car, remove or cancel the tag immediately — otherwise you'll continue being charged for the new owner's crossings. Transfer the tag to your new vehicle digitally by updating the plate number in your Salik account profile.",
+          "canResolveDigitally": true,
+          "source": "Salik Dubai",
+          "policyId": "SK-TRANS-001",
+          "emirate": "Dubai"
+        }
+      ]
+    },
+    "nolCard": {
+      "category": "NOL Card & Public Transport Fares",
+      "questions": [
+        {
+          "id": "NOL-001",
+          "q": "What is a NOL card and do I need one in Dubai?",
+          "a": "The NOL card (نول — Arabic for fare) is Dubai's mandatory contactless smart card for all RTA public transport. Cash is NOT accepted on the Metro, buses, trams, or ferries. You must tap in and tap out at every journey. Over 3 million people use NOL cards daily. The card also works at paid parking, public parks, and 2,000+ retail outlets including Carrefour and ENOC. Buy your card at any Metro station ticket machine, RTA Customer Happiness Centre, or authorised retailers.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai — NOL Card",
+          "policyId": "NOL-INFO-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-002",
+          "q": "What are the types of NOL cards available in Dubai?",
+          "a": "4 types: (1) Red Ticket — AED 2, paper-based, up to 10 single journeys or 5 daily passes, expires 90 days from first use, Metro and tram only. (2) Silver Card — AED 25 (includes AED 19 credit), rechargeable, all transport modes, 5-year validity, most popular. (3) Gold Card — AED 25, same as Silver but accesses Gold Class (premium) cabins on Metro. (4) Blue Card — AED 70 (includes AED 20 credit), for students, senior citizens, and People of Determination — 50% fare discount; People of Determination travel free.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai — NOL Card Types",
+          "policyId": "NOL-TYPES-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-003",
+          "q": "What are the Dubai Metro fares using a NOL card?",
+          "a": "Zone-based fares using Silver NOL card: 1 zone — AED 3. 2 zones — AED 5. 3+ zones — AED 7.50. Daily fare cap: AED 14 for Silver and Blue cards — after hitting the cap, all travel is free until midnight. Gold card fares are higher. Red ticket fares are higher than Silver. Blue card fares are 50% of Silver rates.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Metro Fare Schedule",
+          "policyId": "NOL-FARES-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-004",
+          "q": "How do I recharge my NOL card in Dubai?",
+          "a": "Top up via: (1) rta.ae website — card payment. (2) S'hail app — integrated digital top-up. (3) Dubai Drive app. (4) Smart ticket machines at all Metro/bus stations. (5) RTA Customer Happiness Centres. (6) Authorised retailers and ENOC stations. (7) Carrefour. Minimum top-up: AED 10. Maximum balance: AED 500 on Silver/Gold cards. Digital channels showed a 20% rise in 2025 — queues at physical stations have dropped significantly.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "NOL-TOPUP-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-005",
+          "q": "How do I check my NOL card balance in Dubai?",
+          "a": "Check balance via: (1) S'hail app — tap your card or enter card number. (2) rta.ae. (3) Ticket office at any Metro or bus station. (4) Tap-in gates at metro stations — your balance is shown after tapping. (5) RTA Smart Kiosks. All methods are free. For Silver and Blue cards registered online, you get low-balance SMS alerts.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "NOL-BAL-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-006",
+          "q": "What is the fine for travelling without a valid NOL card in Dubai?",
+          "a": "AED 200 fine for travelling on Dubai Metro, Tram, bus, or ferry without a valid, sufficiently-charged NOL card. Inspectors routinely check cards on all transport modes. Ensure your card is tapped in before boarding. Red ticket holders: ensure sufficient trips are loaded. If your card has insufficient balance, top up before your next journey.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "NOL-FINE-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-007",
+          "q": "Can I use my NOL card for parking in Dubai?",
+          "a": "Yes. Silver, Gold, and Blue NOL cards can be used to pay for RTA-managed public paid parking across Dubai. Tap your card at parking meters. Your parking fee is deducted from your NOL card balance. This works at RTA-designated paid parking zones. Red tickets cannot be used for parking.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "NOL-PARK-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-008",
+          "q": "How do I get a Blue NOL card for a student or senior citizen in Dubai?",
+          "a": "Apply online at rta.ae or visit an RTA Customer Happiness Centre: Students: provide valid student ID and Emirates ID. Senior citizens (60+): provide Emirates ID. People of Determination: provide disability card and Emirates ID. Card cost: AED 70 (includes AED 20 credit). Benefit: 50% fare discount on all RTA transport. People of Determination: free travel. Processing: 3–5 working days. Card can be delivered by mail.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai — Blue NOL Card",
+          "policyId": "NOL-BLUE-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-009",
+          "q": "What is the NOL card travel pass and how does it work?",
+          "a": "Silver, Gold, and Blue card holders can buy travel passes: 7-day pass, 30-day pass, 90-day pass, or 365-day annual pass. Passes are loaded onto your existing NOL card. You save approximately 40% compared to paying per journey, according to RTA data. A 30-day pass is automatically renewed every 30 days. Buy passes at rta.ae, the S'hail app, or Metro station ticket machines.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "NOL-PASS-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "NOL-010",
+          "q": "What happens if I lose my NOL card in Dubai?",
+          "a": "Blue cards: report immediately via rta.ae or RTA Customer Happiness Centre. Your remaining balance can be transferred to a replacement card. Cost: AED 30–50 for replacement. Silver/Gold: if registered online, you may be able to retrieve remaining balance — contact RTA at 800 90 90. Red tickets: cannot be replaced or recovered. Register all personal NOL cards online at rta.ae to protect your balance.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "NOL-LOST-001",
+          "emirate": "Dubai"
+        }
+      ]
+    },
+    "publicTransport": {
+      "category": "Dubai Metro, Bus, Tram & Marine Transport",
+      "questions": [
+        {
+          "id": "PT-001",
+          "q": "What are the Dubai Metro operating hours?",
+          "a": "Weekdays (Monday–Thursday): 05:00–00:00 (midnight). Friday: 05:00–01:00. Saturday: 05:00–00:00. Sunday: 08:00–00:00. During Ramadan, hours are extended. The Metro runs on the Red Line (Rashidiya to UAE Exchange) and Green Line (Creek to Etisalat). Trains run every 3–7 minutes at peak times. All times on the RTA Dubai app and rta.ae.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Metro",
+          "policyId": "PT-METRO-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "PT-002",
+          "q": "How do I plan a bus or metro trip in Dubai?",
+          "a": "Use the S'hail app (Dubai's official journey planner): enter your start and end location, and it shows all public transport options — Metro, bus, tram, water bus, and ferry — with timings, fares, and walking directions. Available on iOS and Android. Also at wojhati.rta.ae online. No office visit needed — fully digital journey planning.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai — S'hail App",
+          "policyId": "PT-PLAN-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "PT-003",
+          "q": "How do I book a Dubai taxi or RTA cab?",
+          "a": "Book via: (1) S'hail app — book RTA taxis, carpooling, and ride services. (2) Careem/Uber — also RTA-regulated in Dubai. (3) Call 04 208 0808 for an RTA taxi. (4) Walk-up taxi ranks at major locations, malls, and hotels. The S'hail app also offers shared rides and allows pre-booking. All digital — no office visit required.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Taxi Services",
+          "policyId": "PT-TAXI-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "PT-004",
+          "q": "How does the Dubai Tram work and what areas does it cover?",
+          "a": "The Dubai Tram runs 14.5 km from Jumeirah Beach Residence (JBR) to Al Sufouh, serving Dubai Marina, JBR, Media City, Internet City, and Knowledge Village. It connects to the Metro Red Line at DAMAC Properties and Sobha Realty stations via footbridges. Tram hours: 06:00–01:00 daily (02:00 on weekends). NOL card mandatory — same zones and fares as Metro. Trams run every 7–10 minutes.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Tram",
+          "policyId": "PT-TRAM-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "PT-005",
+          "q": "How do I use the Dubai water bus or ferry?",
+          "a": "RTA water buses and ferries run across Dubai Creek and along the coast. Use your NOL card to board. The Dubai Ferry runs from Dubai Marina to Al Ghubaiba (near Gold Souk) — a scenic 1-hour journey costing AED 50 per person. Water buses on the Creek: AED 1 per crossing (NOL card). Abra (traditional wooden boats): AED 1 cash. Ferry and water bus routes are on the S'hail app and rta.ae.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Marine Transport",
+          "policyId": "PT-WATER-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "PT-006",
+          "q": "How do I get from Dubai to Sharjah or Abu Dhabi by public transport?",
+          "a": "Dubai to Sharjah: RTA Bus E303/E307 from Union Metro Station or Al Ghubaiba Bus Terminal. Fare: AED 6–10 with NOL card. No advance booking needed — frequent service. Dubai to Abu Dhabi: No direct metro. Options: (1) GDRFA Inter-City Bus from Union/Ibn Battuta Metro — AED 25 one-way. (2) Hala or Yango taxi. (3) Careem/Uber. Inter-city buses accept NOL card or buy ticket at station. Journey: ~2 hours by bus.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Inter-City Services",
+          "policyId": "PT-INTER-001",
+          "emirate": "Dubai"
+        }
+      ]
+    },
+    "parking": {
+      "category": "Parking in Dubai",
+      "questions": [
+        {
+          "id": "PK-001",
+          "q": "How do I pay for parking in Dubai?",
+          "a": "Multiple cashless methods: (1) MPARK app — enter your plate and parking zone. (2) RTA Dubai app — pay for parking digitally. (3) NOL Silver/Gold/Blue card — tap at parking meter. (4) SMS — send zone code to 7275. (5) Parking meters — card and NFC payment. (6) Pay-by-phone via registered plate. Cash is being phased out at most meters. The MPARK app is the most convenient — start and stop sessions remotely.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Parking Services",
+          "policyId": "PK-PAY-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "PK-002",
+          "q": "What are Dubai paid parking zones and hours?",
+          "a": "Paid parking is colour-coded: Gold zone — AED 4/hour. Silver zone — AED 2/hour. Bronze zone — AED 1/hour. Standard hours: Saturday–Thursday, 08:00–22:00. Fridays: some areas are free until 13:00 then paid. Some areas operate 24/7. During Ramadan, free parking in evenings. Parking is free on public holidays. Check zone and hours on the RTA Dubai app or rta.ae before parking.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Parking",
+          "policyId": "PK-ZONES-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "PK-003",
+          "q": "How do I get a seasonal parking permit in Dubai?",
+          "a": "Apply for a seasonal permit (monthly, quarterly, annual) at rta.ae or the RTA Dubai app: (1) Log in with UAE Pass or Emirates ID. (2) Select your parking zone and permit duration. (3) Pay online. (4) Permit is linked to your vehicle plate — no physical sticker needed. Permits allow unlimited parking in your designated zone during permit hours. Residents can apply for residential parking permits at rta.ae.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Parking Permits",
+          "policyId": "PK-PERM-001",
+          "emirate": "Dubai"
+        }
+      ]
+    },
+    "roadPermits": {
+      "category": "Road Permits & Special Vehicles",
+      "questions": [
+        {
+          "id": "RP-001",
+          "q": "How do I apply for a road permit for heavy vehicles in Dubai?",
+          "a": "Apply online at rta.ae under 'Road and Transport Permits': (1) Log in with UAE Pass or Emirates ID. (2) Select the permit type (overweight, oversize, abnormal load). (3) Upload vehicle details, load specifications, and travel route. (4) Pay the applicable fee. (5) Permit is issued digitally — no office visit for standard permits. Emergency or complex permits may require RTA approval and can take 2–5 working days.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai Road Permits",
+          "policyId": "RP-HEAVY-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "RP-002",
+          "q": "How do I apply for a no-objection certificate (NOC) from RTA in Dubai?",
+          "a": "Apply at rta.ae or the RTA Dubai app: (1) Log in with Emirates ID or UAE Pass. (2) Select 'No Objection Certificate'. (3) Specify the purpose (construction, access road, utility works near roads). (4) Attach supporting documents. (5) Pay the applicable fee. (6) Receive the NOC digitally within 3–7 working days. Complex infrastructure NOCs near major roads may require a site visit by RTA engineers.",
+          "canResolveDigitally": true,
+          "source": "RTA Dubai",
+          "policyId": "RP-NOC-001",
+          "emirate": "Dubai"
+        }
+      ]
+    },
+    "emiratesId": {
+      "category": "Emirates ID & UAE PASS (Transport-Adjacent)",
+      "questions": [
+        {
+          "id": "EID-001",
+          "q": "Do I need a UAE PASS to access RTA services?",
+          "a": "UAE PASS is recommended but not mandatory. With UAE PASS, you can log into rta.ae, Dubai Drive app, and most RTA digital services with a single secure sign-in — no separate RTA account needed. Without UAE PASS, use your Emirates ID number and registered mobile. Download UAE PASS from the App Store or Google Play. Registration requires Emirates ID and face scan — fully digital.",
+          "canResolveDigitally": true,
+          "source": "UAE PASS / RTA Dubai",
+          "policyId": "EID-PASS-001",
+          "emirate": "Dubai"
+        },
+        {
+          "id": "EID-002",
+          "q": "Can I renew my Emirates ID online and does it affect my RTA services?",
+          "a": "Emirates ID renewal: apply at ICA (Federal Authority for Identity, Citizenship, Customs and Ports Security) at icp.gov.ae or the UAEICP app. It does not require an RTA visit. However, an expired Emirates ID blocks RTA licence and vehicle renewals. Renew your Emirates ID before it expires to avoid disruption to driving licence, vehicle registration, and other RTA digital services.",
+          "canResolveDigitally": true,
+          "source": "ICA UAE / RTA Dubai",
+          "policyId": "EID-RENEW-001",
+          "emirate": "Dubai"
+        }
+      ]
+    },
+    "otherEmirates": {
+      "category": "Vehicle & Licence Services — Other Emirates",
+      "questions": [
+        {
+          "id": "OE-001",
+          "q": "How do I renew my vehicle registration in Abu Dhabi?",
+          "a": "Use the TAMM portal (tamm.abudhabi) or the TAMM app. Steps: (1) Log in with UAE PASS. (2) Ensure insurance is valid and fines are cleared. (3) Book vehicle inspection if car is 3+ years old. (4) Pay fees online. (5) Mulkiya is updated digitally. Abu Dhabi vehicle inspection is mandatory at ADNOC or authorised centres for cars over 3 years. Service is fully digital for standard renewals.",
+          "canResolveDigitally": true,
+          "source": "TAMM Abu Dhabi",
+          "policyId": "OE-AUH-REG-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "OE-002",
+          "q": "How do I renew my driving licence in Sharjah?",
+          "a": "Sharjah driving licences are issued by the Sharjah Police General HQ — Traffic and Licensing Department. Apply online at shjpolice.gov.ae or in person at Sharjah Traffic Department. You'll need: Emirates ID, eye test (at approved Sharjah clinics), and existing licence. Fees and procedures are similar to Dubai. Online renewal is available for straightforward cases.",
+          "canResolveDigitally": true,
+          "source": "Sharjah Police — Traffic Department",
+          "policyId": "OE-SHJ-DL-001",
+          "emirate": "Sharjah"
+        },
+        {
+          "id": "OE-003",
+          "q": "How do I check and pay traffic fines in Abu Dhabi?",
+          "a": "Check and pay Abu Dhabi fines via: (1) TAMM portal — tamm.abudhabi. (2) Abu Dhabi Police app. (3) MOI UAE app — covers all emirates. (4) Darb (Abu Dhabi's toll system) portal for toll violations. All methods are fully digital. Fines must be cleared before vehicle registration renewal in Abu Dhabi.",
+          "canResolveDigitally": true,
+          "source": "Abu Dhabi Police / TAMM",
+          "policyId": "OE-AUH-FINES-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "OE-004",
+          "q": "How do I renew my vehicle registration in Sharjah?",
+          "a": "Sharjah vehicle registration (Mulkiya) renewal is handled by the Sharjah Police Traffic Department. Apply online at shjpolice.gov.ae or visit a Sharjah Vehicle Testing Centre. Required: valid insurance, cleared fines, vehicle inspection if 3+ years old. Online renewal is available for eligible vehicles. Fees are similar to Dubai.",
+          "canResolveDigitally": true,
+          "source": "Sharjah Police Traffic Department",
+          "policyId": "OE-SHJ-REG-001",
+          "emirate": "Sharjah"
+        },
+        {
+          "id": "OE-005",
+          "q": "How do I check traffic fines in RAK or Fujairah?",
+          "a": "Use the MOI UAE app or moi.gov.ae to check fines from all emirates including RAK (Ras Al Khaimah) and Fujairah. Enter your Emirates ID or vehicle plate number. Pay online via card. RAK-specific: RAK Police app (available on iOS/Android). Fujairah-specific: Fujairah Police portal. All fines across UAE are viewable in one place on the MOI UAE app.",
+          "canResolveDigitally": true,
+          "source": "MOI UAE / RAK Police / Fujairah Police",
+          "policyId": "OE-RAK-FINES-001",
+          "emirate": "RAK"
+        }
+      ],
+      "note": "See dedicated sections: abuDhabi, sharjah, ajman, rak, fujairah, uaq for full per-emirate coverage"
+    },
+    "abuDhabi": {
+      "category": "Abu Dhabi — TAMM & ITC Services",
+      "authority": "Integrated Transport Centre (ITC) — Department of Municipalities and Transport",
+      "portal": "tamm.abudhabi",
+      "app": "TAMM App / MOI UAE App / Abu Dhabi Police App",
+      "questions": [
+        {
+          "id": "AUH-DL-001",
+          "q": "How do I renew my driving license in Abu Dhabi?",
+          "a": "Abu Dhabi driving licenses are managed by the Integrated Transport Centre (ITC) — not RTA. Renew in 6–10 minutes via: (1) TAMM portal (tamm.abudhabi) — log in with UAE Pass, go to 'Vehicles and Transportation' → 'Driving Service' → 'Driving License Renewal'. (2) TAMM app. (3) MOI UAE app. Upload Emirates ID and eye test certificate. Pay online by card, Apple Pay, or Samsung Pay. Your renewed licence arrives by courier within 2–3 business days, or collect at a TAMM Customer Happiness Centre. No office visit required for standard renewals.",
+          "canResolveDigitally": true,
+          "source": "TAMM Abu Dhabi — tamm.abudhabi",
+          "policyId": "AUH-DL-RENEW-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "AUH-DL-002",
+          "q": "What are the driving license renewal fees in Abu Dhabi?",
+          "a": "Abu Dhabi driving licence renewal fees: Standard renewal AED 200–400 depending on licence type and validity period chosen (1 or 2 years). Late renewal: AED 10 per month fine after expiry. UAE/GCC nationals: valid for 10 years. Expatriates: valid for 5 years. You can renew up to 6 months before expiry. Eye test at an approved Abu Dhabi clinic: AED 100. All fines must be cleared before renewal.",
+          "canResolveDigitally": true,
+          "source": "TAMM Abu Dhabi",
+          "policyId": "AUH-DL-FEE-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "AUH-DL-003",
+          "q": "How do I get a new driving license in Abu Dhabi from scratch?",
+          "a": "Process via Abu Dhabi ITC: (1) Open a traffic file — via TAMM app (navigate to Traffic Services → Open Traffic File) or visit an ITC-approved driving school. (2) Eye test at approved Abu Dhabi clinic (AED 100). (3) Enrol in theory classes at an approved driving school. (4) Pass theory test. (5) Complete yard and road tests. (6) Pay licence issuance fees (AED 600 via TAMM). Total cost: AED 3,000–6,000. Approved Abu Dhabi schools include Emirates Driving Company (EDC) and Belhasa.",
+          "canResolveDigitally": false,
+          "physicalNote": "Eye test, theory test, and road test require physical attendance at Abu Dhabi ITC-approved facilities.",
+          "source": "TAMM Abu Dhabi / ITC",
+          "policyId": "AUH-DL-NEW-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "AUH-VR-001",
+          "q": "How do I renew my vehicle registration (Mulkiya) in Abu Dhabi?",
+          "a": "Renew online via: (1) TAMM portal (tamm.abudhabi) — log in with UAE Pass, go to 'Vehicles and Transportation' → 'Renew Vehicle Registration'. (2) TAMM app. (3) Abu Dhabi Police e-services. (4) MOI UAE app. Requirements: valid insurance, cleared fines, cleared Darb toll balance, inspection certificate (cars 3+ years old). Fees: AED 120–1,000 depending on vehicle type. Receive updated Mulkiya digitally or in person. Expired registration fine: AED 500 + black points + possible impoundment.",
+          "canResolveDigitally": true,
+          "source": "TAMM Abu Dhabi",
+          "policyId": "AUH-VR-RENEW-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "AUH-VR-002",
+          "q": "Does my car need inspection before registration renewal in Abu Dhabi?",
+          "a": "Yes — cars 3 years or older require a technical inspection at ADNOC Distribution centres or other ITC-approved testing centres in Abu Dhabi. Cars under 3 years: no inspection needed. After passing, your inspection certificate is linked digitally — proceed to renew on TAMM. Failed inspection: fix issues and re-test before renewal.",
+          "canResolveDigitally": false,
+          "physicalNote": "Vehicle inspection must be done in person at ADNOC Distribution or ITC-approved centre.",
+          "source": "TAMM Abu Dhabi / ITC",
+          "policyId": "AUH-VR-INSP-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "AUH-TF-001",
+          "q": "How do I check and pay traffic fines in Abu Dhabi?",
+          "a": "Check and pay via: (1) TAMM portal — tamm.abudhabi. (2) TAMM app — log in with UAE Pass. (3) Abu Dhabi Police app — best for detailed fine info and black points. (4) MOI UAE app — covers all emirates. (5) Sahl kiosks — self-service machines across Abu Dhabi malls and government buildings. Enter your Emirates ID or plate number. Pay by card online. All fines must be cleared before vehicle renewal. Early payment discount up to 25% available on some fines.",
+          "canResolveDigitally": true,
+          "source": "Abu Dhabi Police / TAMM",
+          "policyId": "AUH-TF-CHECK-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "AUH-DARB-001",
+          "q": "What is the Darb toll system in Abu Dhabi and how do I register?",
+          "a": "Darb is Abu Dhabi's free-flow road toll system, managed by ITC (Integrated Transport Centre). Toll: AED 4 per gate crossing. No daily or monthly cap (cap removed September 1, 2025). Gates operate during peak hours. Registration: (1) Visit darb.abudhabi or TAMM portal. (2) Enter your traffic code (on back of licence). (3) Pay AED 100 registration fee (AED 50 credited back as wallet balance). Vehicles from all emirates must register if driving through Abu Dhabi gates. Unregistered vehicle fine: AED 100 first day, AED 200 second day, AED 400 third day onwards. Recharge wallet on TAMM, Darb app, or at service centres.",
+          "canResolveDigitally": true,
+          "source": "ITC Abu Dhabi — Darb System",
+          "policyId": "AUH-DARB-001",
+          "emirate": "Abu Dhabi"
+        },
+        {
+          "id": "AUH-PT-001",
+          "q": "What public transport options are available in Abu Dhabi?",
+          "a": "Abu Dhabi public transport is managed by ITC (not RTA): (1) City buses — intercity and intracity routes operated by ICAD and Transdev Abu Dhabi. (2) Al Reem Bus — serves Al Reem Island. (3) Hala Abu Dhabi taxis — book via TAMM app or Careem. (4) Abu Dhabi-Dubai intercity bus from Musaffah Bus Station — AED 25 one-way. (5) Water taxis — Al Bateen Marina and Corniche area. Payment: Hafilat card (Abu Dhabi's equivalent of NOL card). Buy Hafilat card at bus stations and authorised retailers for AED 10. No cash accepted on buses.",
+          "canResolveDigitally": true,
+          "source": "ITC Abu Dhabi",
+          "policyId": "AUH-PT-001",
+          "emirate": "Abu Dhabi"
+        }
+      ]
+    },
+    "sharjah": {
+      "category": "Sharjah — SRTA & Sharjah Police Services",
+      "authority": "Sharjah Roads and Transport Authority (SRTA) & Sharjah Police",
+      "portal": "srta.gov.ae / shjpolice.gov.ae",
+      "app": "Sharjah Police App / MOI UAE App / SRTA App",
+      "questions": [
+        {
+          "id": "SHJ-DL-001",
+          "q": "How do I renew my driving license in Sharjah?",
+          "a": "Sharjah driving licences are issued by Sharjah Police — Traffic and Licensing Department (not RTA). Renew online at: (1) shjpolice.gov.ae — go to E-Services → Traffic Services → Driving License Renewal. (2) MOI UAE app — log in with UAE Pass, select Sharjah. (3) In person at Sharjah Police Traffic Department or Customer Happiness Centres. Requirements: valid Emirates ID, RTA/Sharjah-approved eye test, existing licence, cleared fines. Fees similar to Dubai: AED 300 standard renewal + AED 20 Knowledge fee. Late renewal: AED 10 per month.",
+          "canResolveDigitally": true,
+          "source": "Sharjah Police — shjpolice.gov.ae",
+          "policyId": "SHJ-DL-RENEW-001",
+          "emirate": "Sharjah"
+        },
+        {
+          "id": "SHJ-VR-001",
+          "q": "How do I renew my vehicle registration in Sharjah?",
+          "a": "Sharjah vehicle registration renewal: (1) shjpolice.gov.ae — E-Services → Traffic Services → Vehicle Registration Renewal. (2) MOI UAE app. (3) Sahl kiosks across Sharjah. (4) SRTA-approved vehicle testing centres (for inspection). Requirements: valid insurance, cleared fines, inspection certificate (cars 3+ years). Fees similar to Dubai: AED 350–400 for light vehicles. Expired registration fine: AED 500 + black points. Renew early to avoid disruption.",
+          "canResolveDigitally": true,
+          "source": "Sharjah Police / SRTA",
+          "policyId": "SHJ-VR-RENEW-001",
+          "emirate": "Sharjah"
+        },
+        {
+          "id": "SHJ-TF-001",
+          "q": "How do I check and pay traffic fines in Sharjah?",
+          "a": "Check Sharjah fines via: (1) shjpolice.gov.ae — Traffic Services → Traffic Fines Payment. Enter plate number + plate code + emirate OR traffic file number. (2) MOI UAE app — covers all emirates including Sharjah. (3) EVG (Emirates Vehicle Gate) website — evg.ae. (4) Sahl self-service kiosks in malls and government buildings. (5) Sharjah Police app. Call 800 60000 for phone inquiry. Discounts: Sharjah occasionally offers up to 25–35% early payment discounts. Dispute fines within 15 days via shjpolice.gov.ae or at any Sharjah Police Customer Happiness Centre.",
+          "canResolveDigitally": true,
+          "source": "Sharjah Police / SRTA",
+          "policyId": "SHJ-TF-CHECK-001",
+          "emirate": "Sharjah"
+        },
+        {
+          "id": "SHJ-TF-002",
+          "q": "What are Sharjah traffic fine amounts for common violations?",
+          "a": "Sharjah follows UAE federal traffic law. Key fines: Speeding under 60 km/h over: AED 1,500 + 6 black points. Speeding 60–80 km/h over: AED 2,000 + 12 black points. Speeding 80+ km/h over: AED 3,000 + 23 black points + 60-day impound. Red light violation: AED 1,000 + 12 black points + 30-day impound. No seatbelt: AED 400 + 4 black points. Mobile phone while driving: AED 800 + 4 black points. Note: Sharjah applies a 20 km/h speed buffer on its roads — cameras activate after you exceed the limit by more than 20 km/h on most roads.",
+          "canResolveDigitally": true,
+          "source": "Sharjah Police / SRTA",
+          "policyId": "SHJ-TF-RATES-001",
+          "emirate": "Sharjah"
+        },
+        {
+          "id": "SHJ-PT-001",
+          "q": "What public transport options are available in Sharjah?",
+          "a": "Sharjah public transport is managed by SRTA (Sharjah Roads and Transport Authority): (1) Sharjah city buses — intercity routes within Sharjah and to Dubai/Ajman. (2) RTA E-Buses from Dubai to Sharjah (E303/E307) — pay with NOL card. (3) Mowasalat (Sharjah taxi) — hail on street or book via app. (4) InDriver and Careem — also operate in Sharjah. Sharjah does not have a metro system. The Hafilat card (Abu Dhabi) and NOL card (Dubai) are not interchangeable with Sharjah buses. Pay cash or with Sharjah-specific smart card on SRTA buses.",
+          "canResolveDigitally": true,
+          "source": "SRTA — srta.gov.ae",
+          "policyId": "SHJ-PT-001",
+          "emirate": "Sharjah"
+        }
+      ]
+    },
+    "ajman": {
+      "category": "Ajman — Ajman Police & Digital Ajman Services",
+      "authority": "Ajman Police — Traffic & Licensing Department",
+      "portal": "ajman.ae / ajmanpolice.ae",
+      "app": "AjmanOne App / Ajman Police App / MOI UAE App",
+      "questions": [
+        {
+          "id": "AJM-DL-001",
+          "q": "How do I renew my driving license in Ajman?",
+          "a": "Ajman driving licences are managed by Ajman Police Traffic Department (not RTA). Renew online in ~7 minutes: (1) Ajman Police e-Services portal (ajmanpolice.ae) — log in with UAE Pass, select 'UAE Driving License Renewal' → 'Ajman'. (2) MOI UAE app. (3) AjmanOne app — Ajman's smart city app. Upload Emirates ID, eye test certificate (from Ajman-approved clinic, AED 100 at Ajman Medical Center), and existing licence. Pay AED 300 renewal fee + AED 20 Knowledge fee. Licence delivered by courier or collect at Ajman Police centre. Clear all fines before applying.",
+          "canResolveDigitally": true,
+          "source": "Ajman Police — ajmanpolice.ae",
+          "policyId": "AJM-DL-RENEW-001",
+          "emirate": "Ajman"
+        },
+        {
+          "id": "AJM-DL-002",
+          "q": "How do I get a new driving license in Ajman from scratch?",
+          "a": "New licence in Ajman: (1) Open traffic file at Ajman Traffic Department or via AjmanOne app. Opening fee: AED 150–300. (2) Eye test at approved Ajman clinic (AED 100 — Ajman Medical Center offers 30-minute slots). (3) Enrol in theory classes at an Ajman-approved driving school. (4) Pass theory test and road tests. (5) Pay licence issuance fee. Total cost: AED 3,000–6,000. Ajman-approved driving schools: Ajman Driving Centre (ADC). Minimum age: 18 years.",
+          "canResolveDigitally": false,
+          "physicalNote": "Training, theory test, and road test require physical attendance.",
+          "source": "Ajman Police — Traffic Department",
+          "policyId": "AJM-DL-NEW-001",
+          "emirate": "Ajman"
+        },
+        {
+          "id": "AJM-VR-001",
+          "q": "How do I renew my vehicle registration in Ajman?",
+          "a": "Renew Ajman vehicle registration via: (1) ajman.ae — My Vehicle section → 'Issuance of a New Registration Card'. (2) AjmanOne app. (3) MOI UAE app. (4) Ajman Police app. Requirements: valid insurance, cleared fines, inspection (cars 3+ years at Ajman-approved test centres). Expired registration fine: AED 500 + 4 black points + 7-day impound. Ajman Police has historically offered grace periods (up to 3 months) for expired registrations — check ajman.ae for active campaigns.",
+          "canResolveDigitally": true,
+          "source": "Ajman Police / Department of Digital Ajman",
+          "policyId": "AJM-VR-RENEW-001",
+          "emirate": "Ajman"
+        },
+        {
+          "id": "AJM-TF-001",
+          "q": "How do I check and pay traffic fines in Ajman?",
+          "a": "Check Ajman fines via: (1) Ajman Police website (ajmanpolice.ae) — E-Services → Traffic Services → Fine Payment. Log in with UAE Pass. (2) AjmanOne app — select 'Ajman Police' → 'Fine Payment'. (3) MOI UAE app — works for all emirates. (4) EVG (evg.ae) — Emirates Vehicle Gate. Enter plate number, licence, or Emirates ID. Pay online by card. Contact Ajman Police call centre: 80070. Instalment plans: fines AED 1,000+ can be paid in 3–12 month plans via partner banks at 0% interest.",
+          "canResolveDigitally": true,
+          "source": "Ajman Police — ajmanpolice.ae",
+          "policyId": "AJM-TF-CHECK-001",
+          "emirate": "Ajman"
+        },
+        {
+          "id": "AJM-TF-002",
+          "q": "What are Ajman traffic fine rates for common violations?",
+          "a": "Ajman follows UAE federal traffic law: Red light violation: AED 1,000–3,000 + black points + vehicle impoundment. No seatbelt: AED 400 + 4 black points. Reckless driving: AED 2,000 + 12 black points + 30-day impound. DUI/drugs: court decision + 24 black points + 60-day impound. Parking violations: AED 200–500. Ajman Police occasionally announces 50% discount campaigns on fines — typically during UAE National Day (December). Check ajmanpolice.ae for active discount periods.",
+          "canResolveDigitally": true,
+          "source": "Ajman Police",
+          "policyId": "AJM-TF-RATES-001",
+          "emirate": "Ajman"
+        },
+        {
+          "id": "AJM-PT-001",
+          "q": "What public transport is available in Ajman?",
+          "a": "Ajman has limited public transport. Options: (1) Ajman city buses — basic network within Ajman city. (2) RTA inter-emirate buses from Dubai to Ajman (Route E401 from Union Metro Station) — pay with NOL card. (3) Taxis — Ajman Taxi (07 748 3700), Careem, InDriver. (4) Private car services. Ajman does not have a metro or tram. Most residents commute via car or inter-emirate bus. The SRTA (Sharjah) buses also serve Ajman–Sharjah corridor.",
+          "canResolveDigitally": true,
+          "source": "Ajman Government",
+          "policyId": "AJM-PT-001",
+          "emirate": "Ajman"
+        }
+      ]
+    },
+    "rak": {
+      "category": "Ras Al Khaimah — RAK Police & EGA Services",
+      "authority": "RAK Police — Traffic & Licensing Department / RAK Government (rak.ae)",
+      "portal": "rak.ae / rakpolice.gov.ae",
+      "app": "RAK Police App / MOI UAE App / Sahl Kiosks",
+      "questions": [
+        {
+          "id": "RAK-DL-001",
+          "q": "How do I renew my driving license in Ras Al Khaimah?",
+          "a": "RAK driving licences are managed by RAK Police Traffic Department (not RTA). Renew online via: (1) MOI UAE app — log in with UAE Pass, select RAK. (2) rakpolice.gov.ae — Traffic Services → Driving License Renewal. (3) rak.ae e-services portal. Requirements: valid Emirates ID, eye test from RAK-approved clinic, existing licence, cleared fines. Fees: AED 300 standard + AED 20 Knowledge fee. Late renewal: AED 10 per month. Deliver by courier or collect at RAK Police HQ or service centres.",
+          "canResolveDigitally": true,
+          "source": "RAK Police — rakpolice.gov.ae",
+          "policyId": "RAK-DL-RENEW-001",
+          "emirate": "Ras Al Khaimah"
+        },
+        {
+          "id": "RAK-VR-001",
+          "q": "How do I renew my vehicle registration in Ras Al Khaimah?",
+          "a": "Renew RAK vehicle registration via: (1) rak.ae — e-services → Traffic → Vehicle Registration Renewal. (2) MOI UAE app. (3) RAK Police app. (4) Sahl kiosks across RAK. Requirements: valid insurance, cleared fines, inspection (cars 3+ years at RAK-approved test centres). Fees: similar to other emirates — AED 300–400 for light vehicles. Note: RAK has NO Salik or Darb toll system — no toll clearance needed. Expired registration fine: AED 500 + black points.",
+          "canResolveDigitally": true,
+          "source": "RAK Police / RAK Government",
+          "policyId": "RAK-VR-RENEW-001",
+          "emirate": "Ras Al Khaimah"
+        },
+        {
+          "id": "RAK-TF-001",
+          "q": "How do I check and pay traffic fines in Ras Al Khaimah?",
+          "a": "Check RAK fines via: (1) rak.ae — e-services → RAK Police → Pay Traffic Fines. Enter TC Number, vehicle details, or driving licence number. (2) RAK Police app (iOS/Android). (3) MOI UAE app — covers all emirates. (4) EVG (evg.ae) website. (5) Sahl kiosks across RAK. Pay by card online. Dispute fines within 30 days via MOI app (Traffic Services → Fine Complaint) — upload evidence. RAK has no Salik/Darb toll system. If you drive into Dubai, Dubai's Salik applies separately.",
+          "canResolveDigitally": true,
+          "source": "RAK Police / RAK Government",
+          "policyId": "RAK-TF-CHECK-001",
+          "emirate": "Ras Al Khaimah"
+        },
+        {
+          "id": "RAK-TF-002",
+          "q": "What are Ras Al Khaimah traffic fine rates?",
+          "a": "RAK follows UAE federal traffic law with some local fine scales: Speeding 20 km/h over: AED 500. Speeding 30 km/h over: AED 600. Speeding 40 km/h over: AED 700. Speeding 50 km/h over: AED 800. Speeding 60 km/h over: AED 900 + 6 black points. Speeding 60+ km/h over: AED 1,000 + 12 black points + 30-day impound. No seatbelt: AED 400 + 4 black points. Reckless driving: AED 2,000 + 12 black points + 30-day impound. Children under 10 in front seat: AED 400 + 4 black points. RAK has offered 50% discount campaigns on older fines — check rakpolice.gov.ae for active offers.",
+          "canResolveDigitally": true,
+          "source": "RAK Police Traffic Department",
+          "policyId": "RAK-TF-RATES-001",
+          "emirate": "Ras Al Khaimah"
+        },
+        {
+          "id": "RAK-PT-001",
+          "q": "What public transport is available in Ras Al Khaimah?",
+          "a": "RAK public transport options: (1) RAK Transport Authority buses — limited city routes within RAK. (2) RAK to Dubai intercity bus — from RAK Bus Terminal to Union Metro Station Dubai (approx. 1.5 hours, AED 20–25). (3) RAK Taxi — RAK Taxi Company, also Careem and InDriver. (4) RAK Airport transfers — taxis and pre-booked services. RAK has no metro or tram. Most transport is by car or taxi. For inter-emirate travel, the RAK–Dubai bus is the most economical option. Book RAK taxis via Careem app.",
+          "canResolveDigitally": true,
+          "source": "RAK Transport Authority",
+          "policyId": "RAK-PT-001",
+          "emirate": "Ras Al Khaimah"
+        }
+      ]
+    },
+    "fujairah": {
+      "category": "Fujairah — Fujairah Police & Traffic Services",
+      "authority": "Fujairah Police — Traffic and Licensing Department",
+      "portal": "eservice.fujairahpolice.gov.ae",
+      "app": "Fujairah Police App / MOI UAE App / EVG Website",
+      "questions": [
+        {
+          "id": "FUJ-DL-001",
+          "q": "How do I renew my driving license in Fujairah?",
+          "a": "Fujairah driving licences are managed by Fujairah Police Traffic Department (not RTA). Renew via: (1) Fujairah Police e-Services portal (eservice.fujairahpolice.gov.ae) — go to E-Services → Driving License Services → Renewal. (2) MOI UAE app. Requirements: valid Emirates ID, eye test from Fujairah-approved clinic, existing licence, cleared fines. Fees: AED 300 standard + AED 20 Knowledge fee. Late renewal: AED 10/month. Fujairah Police Traffic and Licensing Centre handles 76 services — for complex cases visit in person.",
+          "canResolveDigitally": true,
+          "source": "Fujairah Police — eservice.fujairahpolice.gov.ae",
+          "policyId": "FUJ-DL-RENEW-001",
+          "emirate": "Fujairah"
+        },
+        {
+          "id": "FUJ-VR-001",
+          "q": "How do I renew my vehicle registration in Fujairah?",
+          "a": "Renew Fujairah vehicle registration via: (1) Fujairah Police e-services portal (eservice.fujairahpolice.gov.ae). (2) MOI UAE app. (3) EVG website (evg.ae). Requirements: valid insurance, cleared fines, inspection (cars 3+ years at Fujairah Police-approved test centres). Fujairah has NO Salik or Darb toll system. Expired registration fine: AED 500 + black points. For urgent cases, visit Fujairah Police HQ — emergency line available 24/7.",
+          "canResolveDigitally": true,
+          "source": "Fujairah Police",
+          "policyId": "FUJ-VR-RENEW-001",
+          "emirate": "Fujairah"
+        },
+        {
+          "id": "FUJ-TF-001",
+          "q": "How do I check and pay traffic fines in Fujairah?",
+          "a": "Check Fujairah fines via: (1) Fujairah Police e-services (eservice.fujairahpolice.gov.ae) — E-Services → Traffic Violations Inquiry. Enter plate number and licence details. (2) Fujairah Police app (iOS/Android) — Traffic Violations tab. (3) MOI UAE app — UAE-wide fines. (4) EVG website (evg.ae) — single dashboard for all emirates. Pay by credit/debit card online. To dispute: visit nearest Fujairah Police Station, submit written objection with evidence (photos, dashcam). Disputes reviewed within a few working days. No toll fines (no Salik/Darb) in Fujairah.",
+          "canResolveDigitally": true,
+          "source": "Fujairah Police",
+          "policyId": "FUJ-TF-CHECK-001",
+          "emirate": "Fujairah"
+        },
+        {
+          "id": "FUJ-TF-002",
+          "q": "What are Fujairah traffic fine rates for common violations?",
+          "a": "Fujairah follows UAE federal traffic law: Speeding: AED 300–3,000 depending on how much over the limit. Red light violation: AED 1,000 + black points + impound. No seatbelt: AED 400 + 4 black points. Reckless driving: AED 2,000 + black points + impound. Speeding fines range from AED 300 (minor) up to AED 3,000 (80+ km/h over limit) with black points and vehicle confiscation for serious violations. All 24 black points = licence suspension applies federally across all emirates.",
+          "canResolveDigitally": true,
+          "source": "Fujairah Police Traffic Department",
+          "policyId": "FUJ-TF-RATES-001",
+          "emirate": "Fujairah"
+        },
+        {
+          "id": "FUJ-PT-001",
+          "q": "What public transport is available in Fujairah?",
+          "a": "Fujairah public transport options: (1) Fujairah city buses — limited routes within Fujairah city and Dibba. (2) Fujairah–Dubai intercity bus — from Fujairah Bus Station to Union Metro Station Dubai (approx. 2 hours). (3) Fujairah Taxi — Fujairah Taxi Company (+971 9 222 4411), also Careem and InDriver in some areas. (4) Shared transport to Sharjah/Dubai available from Fujairah Bus Station. Fujairah has no metro or tram. Most residents rely on private cars. For inter-emirate travel, budget taxis and intercity buses are the main options.",
+          "canResolveDigitally": true,
+          "source": "Fujairah Government",
+          "policyId": "FUJ-PT-001",
+          "emirate": "Fujairah"
+        }
+      ]
+    },
+    "uaq": {
+      "category": "Umm Al Quwain — UAQ Police & Traffic Services",
+      "authority": "UAQ Police — Traffic & Licensing Department",
+      "portal": "uaqpolice.gov.ae",
+      "app": "UAQ Police App / MOI UAE App / Sahl Kiosks",
+      "questions": [
+        {
+          "id": "UAQ-DL-001",
+          "q": "How do I renew my driving license in Umm Al Quwain?",
+          "a": "UAQ driving licences are managed by UAQ Police Traffic Department (not RTA). Renew via: (1) uaqpolice.gov.ae — Services section → Traffic Services → Driving License Renewal. (2) UAQ Police app (iOS/Android) — log in with UAE Pass. (3) MOI UAE app. Requirements: valid Emirates ID, eye test from UAQ-approved clinic, existing licence, cleared fines. Fees: AED 300 standard + AED 20 Knowledge fee. Late renewal: AED 10/month. Contact UAQ Police Traffic Department: 06 706 2700 (Mon–Thu 07:30–15:30, Fri 07:30–12:00).",
+          "canResolveDigitally": true,
+          "source": "UAQ Police — uaqpolice.gov.ae",
+          "policyId": "UAQ-DL-RENEW-001",
+          "emirate": "Umm Al Quwain"
+        },
+        {
+          "id": "UAQ-VR-001",
+          "q": "How do I renew my vehicle registration in Umm Al Quwain?",
+          "a": "Renew UAQ vehicle registration via: (1) uaqpolice.gov.ae — Traffic Services → Vehicle Registration. (2) UAQ Police app. (3) MOI UAE app. (4) Sahl kiosks in UAQ government buildings. Requirements: valid insurance, cleared fines, inspection (cars 3+ years at UAQ-approved test centres). UAQ has NO Salik or Darb toll system. Expired registration fine: AED 500 + 4 black points + 7-day impound. UAQ Police has offered grace periods (up to 3 months) for expired registrations — check uaqpolice.gov.ae for active campaigns.",
+          "canResolveDigitally": true,
+          "source": "UAQ Police",
+          "policyId": "UAQ-VR-RENEW-001",
+          "emirate": "Umm Al Quwain"
+        },
+        {
+          "id": "UAQ-TF-001",
+          "q": "How do I check and pay traffic fines in Umm Al Quwain?",
+          "a": "Check UAQ fines via: (1) uaqpolice.gov.ae — Services → Traffic Fines Inquiry. Enter plate number, Emirates ID, or traffic file number. (2) UAQ Police app — log in with UAE Pass, select Traffic Services → Fine Payment. (3) MOI UAE app. (4) SMS service — send 'UAQ [vehicle registration number]' to 5566. (5) Sahl kiosks in UAQ. Pay by card online. UAQ Police contact: 06 706 2700. Instalment plans: FAB credit cardholders can convert fines AED 500+ to 0% interest instalments (3–12 months) by texting EPP to 2121. UAQ regularly offers 40–50% discount on fines during UAE National Day (December).",
+          "canResolveDigitally": true,
+          "source": "UAQ Police — uaqpolice.gov.ae",
+          "policyId": "UAQ-TF-CHECK-001",
+          "emirate": "Umm Al Quwain"
+        },
+        {
+          "id": "UAQ-TF-002",
+          "q": "What are Umm Al Quwain traffic fine rates and black point rules?",
+          "a": "UAQ follows UAE federal traffic law: No seatbelt: AED 400 + 4 black points. Mobile phone while driving: AED 800 + 4 black points. Reckless driving: AED 2,000 + black points + impound. DUI/drugs: court decision + 24 black points + impound. Illegal parking: AED 200–500. Black points in UAQ: 24 points within 12 months = licence suspension 3 months (1st offence), 6 months (2nd), 12 months (3rd). UAQ actively runs fine discount campaigns — 50% off is common during National Day period for non-serious violations.",
+          "canResolveDigitally": true,
+          "source": "UAQ Police Traffic Department",
+          "policyId": "UAQ-TF-RATES-001",
+          "emirate": "Umm Al Quwain"
+        },
+        {
+          "id": "UAQ-PT-001",
+          "q": "What public transport is available in Umm Al Quwain?",
+          "a": "UAQ is the smallest emirate with minimal public transport. Options: (1) UAQ Taxi — local taxi service, also Careem in some areas. (2) Shared transport to Sharjah/Dubai — available from UAQ town centre. (3) Inter-emirate buses from Sharjah to UAQ. (4) Private car is the main mode of transport for most UAQ residents. UAQ has no metro, tram, or extensive bus network. For inter-emirate travel to Dubai, most residents drive or take shared taxis (about 1 hour to Dubai).",
+          "canResolveDigitally": true,
+          "source": "UAQ Government",
+          "policyId": "UAQ-PT-001",
+          "emirate": "Umm Al Quwain"
+        }
+      ]
     }
-  }  
+  },
+  "pom": {
+    "ids": {
+      "appContainer": "app-container",
+      "langToggleBtn": "lang-toggle-btn",
+      "newChatBtn": "new-chat-btn",
+      "impactPill": "impact-pill",
+      "totalKmSpan": "total-km",
+      "sectionLabel": "section-label",
+      "suggestionsContainer": "suggestions-container",
+      "messagesContainer": "messages",
+      "voiceStatus": "voice-status",
+      "inputArea": "input-area",
+      "userInput": "user-input",
+      "voiceBtn": "voice-btn",
+      "sendBtn": "send-btn",
+      "registerForm": "register-form",
+      "registerName": "register-name",
+      "registerEmail": "register-email",
+      "registerEmirate": "register-emirate",
+      "registerBtn": "register-btn",
+      "tripConfirmBanner": "trip-confirm-banner",
+      "tripYesBtn": "trip-yes-btn",
+      "tripNoBtn": "trip-no-btn",
+      "sustainCard": "sustain-card",
+      "sustainTravel": "sustain-travel",
+      "sustainCo2": "sustain-co2",
+      "sustainFuel": "sustain-fuel",
+      "sustainMoney": "sustain-money",
+      "adminTable": "admin-table",
+      "adminUserCount": "admin-user-count",
+      "adminTripCount": "admin-trip-count",
+      "adminTotalKm": "admin-total-km",
+      "adminTotalCo2": "admin-total-co2",
+      "headerLogo": "header-logo",
+      "brandName": "brand-name",
+      "brandTagline": "brand-tagline",
+      "footerBuilt": "footer-built",
+      "footerCopyright": "footer-copyright"
+    },
+    "classes": {
+      "messageUser": "message user",
+      "messageAssistant": "message assistant",
+      "messageError": "message error",
+      "typingIndicator": "typing",
+      "tagRag": "tag rag",
+      "tagTool": "tag tool",
+      "tagBlocked": "tag blocked",
+      "tagMemory": "tag memory",
+      "tagConfidenceHigh": "tag confidence-high",
+      "tagConfidenceMedium": "tag confidence-medium",
+      "tagConfidenceLow": "tag confidence-low",
+      "suggestionBtn": "suggestion-btn",
+      "sustainCard": "sustain-card",
+      "metroFallback": "metro-fallback",
+      "rtlText": "rtl",
+      "ltrText": "ltr"
+    }
+  },
+  "emirateAuthorities": {
+    "dubai": {
+      "name": "Roads and Transport Authority (RTA)",
+      "portal": "rta.ae",
+      "app": "Dubai Drive / S'hail",
+      "toll": "Salik (salik.gov.ae)",
+      "transitCard": "NOL Card",
+      "finesPortal": "rta.ae / Dubai Police App",
+      "phone": "800 90 90"
+    },
+    "abuDhabi": {
+      "name": "Integrated Transport Centre (ITC) — Dept of Municipalities & Transport",
+      "portal": "tamm.abudhabi",
+      "app": "TAMM App / Abu Dhabi Police App",
+      "toll": "Darb (darb.abudhabi) — AED 4/gate, no daily cap",
+      "transitCard": "Hafilat Card",
+      "finesPortal": "tamm.abudhabi / Abu Dhabi Police App",
+      "phone": "800 555"
+    },
+    "sharjah": {
+      "name": "Sharjah Roads & Transport Authority (SRTA) & Sharjah Police",
+      "portal": "srta.gov.ae / shjpolice.gov.ae",
+      "app": "Sharjah Police App / MOI UAE App",
+      "toll": "None",
+      "transitCard": "Cash / Sharjah Smart Card",
+      "finesPortal": "shjpolice.gov.ae / MOI UAE App",
+      "phone": "800 60000"
+    },
+    "ajman": {
+      "name": "Ajman Police — Traffic & Licensing Department",
+      "portal": "ajman.ae / ajmanpolice.ae",
+      "app": "AjmanOne App / Ajman Police App / MOI UAE App",
+      "toll": "None",
+      "transitCard": "Cash",
+      "finesPortal": "ajmanpolice.ae / AjmanOne / MOI UAE App",
+      "phone": "80070"
+    },
+    "rak": {
+      "name": "RAK Police — Traffic & Licensing Department",
+      "portal": "rak.ae / rakpolice.gov.ae",
+      "app": "RAK Police App / MOI UAE App",
+      "toll": "None",
+      "transitCard": "Cash",
+      "finesPortal": "rak.ae / RAK Police App / MOI UAE App",
+      "phone": "07 203 1111"
+    },
+    "fujairah": {
+      "name": "Fujairah Police — Traffic & Licensing Department",
+      "portal": "eservice.fujairahpolice.gov.ae",
+      "app": "Fujairah Police App / MOI UAE App",
+      "toll": "None",
+      "transitCard": "Cash",
+      "finesPortal": "eservice.fujairahpolice.gov.ae / MOI UAE App",
+      "phone": "09 222 1111"
+    },
+    "uaq": {
+      "name": "UAQ Police — Traffic & Licensing Department",
+      "portal": "uaqpolice.gov.ae",
+      "app": "UAQ Police App / MOI UAE App",
+      "toll": "None",
+      "transitCard": "Cash",
+      "finesPortal": "uaqpolice.gov.ae / MOI UAE App",
+      "phone": "06 706 2700"
+    }
+  }
+}

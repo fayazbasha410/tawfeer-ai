@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tawfeer توفير — UAE Trip Reduction Platform</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/i18n.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/api.js"></script>
+  <style>
+    #chat-screen { display: flex; flex-direction: column; flex: 1; }
+    #chat-container {
+      width: 100%; max-width: 780px; margin: 0 auto;
+      flex: 1; display: flex; flex-direction: column;
+      padding: 20px 16px 16px; gap: 12px;
+    }
+    #messages { flex: 1; display: flex; flex-direction: column; gap: 12px; min-height: 340px; }
+
+    /* Both banners hidden by default */
+    #area-prompt-banner  { display: none; }
+    #trip-confirm-banner { display: none; }
+
+    .area-prompt-banner {
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border: 1px solid #fde68a; border-radius: 10px; padding: 14px 16px;
+    }
+    .area-prompt-banner p { font-size: 0.84rem; color: var(--text); font-weight: 500; margin-bottom: 4px; }
+    .area-prompt-banner small { color: var(--muted); font-size: 0.74rem; display: block; margin-bottom: 10px; }
+    .area-input-row { display: flex; gap: 8px; }
+    .area-input-row input {
+      flex: 1; border: 1.5px solid var(--border); border-radius: 8px;
+      padding: 8px 12px; font-size: 0.85rem; font-family: 'Inter', sans-serif;
+      outline: none; color: var(--text); background: white;
+    }
+    .area-input-row input:focus { border-color: #d97706; }
+    .area-input-row button {
+      background: #d97706; color: white; border: none; border-radius: 8px;
+      padding: 8px 16px; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; font-family: 'Inter', sans-serif; white-space: nowrap;
+    }
+    .area-input-row button:hover { background: #b45309; }
+  </style>
+</head>
+<body>
+
+  <div class="uae-stripe">
+    <div class="s-red"></div><div class="s-green"></div>
+    <div class="s-white"></div><div class="s-black"></div>
+  </div>
+
+  <header>
+    <a class="brand" href="/">
+      <div class="brand-icon">🍃</div>
+      <div class="brand-text">
+        <h1>Tawfeer <span>توفير</span></h1>
+        <p>UAE Trip Reduction &amp; Emissions Platform</p>
+      </div>
+    </a>
+    <div class="header-right">
+      <div class="impact-pill" data-test-id="impact-pill">
+        🌱 <span id="total-km" data-test-id="total-km">0</span> km saved
+      </div>
+      <div class="user-badge" data-test-id="user-badge">
+        <div class="avatar" id="user-avatar" data-test-id="user-avatar">?</div>
+        <span id="user-name-display" data-test-id="user-name-display">—</span>
+        &nbsp;·&nbsp;
+        <span id="user-emirate-display" data-test-id="user-emirate-display">—</span>
+      </div>
+      <button class="btn-ghost" onclick="toggleLang()" data-test-id="lang-toggle-btn">عربي</button>
+      <button class="btn-ghost" onclick="newConversation()" data-test-id="new-chat-btn">+ New chat</button>
+      <button class="btn-ghost" onclick="logout()" data-test-id="logout-btn">Sign out</button>
+    </div>
+  </header>
+
+  <div id="chat-screen">
+    <div id="chat-container">
+
+      <div class="section-label" data-test-id="section-label">
+        Transport &amp; Government Services — All 7 Emirates
+      </div>
+
+      <div class="suggestions" data-test-id="suggestions-container">
+        <button class="suggestion-btn" data-test-id="sugg-dl" onclick="sendSuggestion('How do I renew my driving license?')">🪪 Driving license</button>
+        <button class="suggestion-btn" data-test-id="sugg-fines" onclick="sendSuggestion('Check fines for plate AD-1234')">🚗 Check fines</button>
+        <button class="suggestion-btn" data-test-id="sugg-appt" onclick="sendSuggestion('Book an appointment for vehicle registration')">📅 Book appointment</button>
+        <button class="suggestion-btn" data-test-id="sugg-vr" onclick="sendSuggestion('How do I renew my vehicle registration?')">🚙 Vehicle registration</button>
+        <button class="suggestion-btn" data-test-id="sugg-pt" onclick="sendSuggestion('What public transport from Sharjah to Dubai?')">🚇 Public transport</button>
+        <button class="suggestion-btn" data-test-id="sugg-nol" onclick="sendSuggestion('How do I recharge my NOL card?')">💳 NOL card</button>
+        <button class="suggestion-btn" data-test-id="sugg-salik" onclick="sendSuggestion('How do I open a Salik account in Dubai?')">🛣️ Salik</button>
+        <button class="suggestion-btn" data-test-id="sugg-ar" onclick="sendSuggestion('كيف أجدد رخصة القيادة في دبي؟')">🪪 تجديد الرخصة</button>
+      </div>
+
+      <div id="messages" data-test-id="messages-container"></div>
+
+      <!-- AREA PROMPT — shown once per session before first trip confirm -->
+      <div class="area-prompt-banner" id="area-prompt-banner" data-test-id="area-prompt-banner">
+        <p>📍 Which area are you in?</p>
+        <small>Helps us calculate exactly how far your trip was saved.<br>
+          e.g. Muweilah, Rolla, Al Nahda, Dubai Marina, Khalifa City…</small>
+        <div class="area-input-row">
+          <input type="text" id="area-input" data-test-id="area-input"
+            placeholder="Type your area…"
+            onkeydown="if(event.key==='Enter'){event.preventDefault();submitArea();}" />
+          <button onclick="submitArea()" data-test-id="area-submit-btn">Confirm →</button>
+        </div>
+      </div>
+
+      <!-- TRIP CONFIRM — shown after area is known -->
+      <div class="trip-confirm-banner" id="trip-confirm-banner" data-test-id="trip-confirm-banner">
+        <p id="trip-confirm-text" data-test-id="trip-confirm-text">
+          Were you going to visit a government office for this?
+        </p>
+        <div class="trip-btns">
+          <button class="btn-yes" id="trip-yes-btn" data-test-id="trip-yes-btn"
+            onclick="confirmTrip(true)">Yes, I avoided a trip ✅</button>
+          <button class="btn-skip" id="trip-no-btn" data-test-id="trip-no-btn"
+            onclick="confirmTrip(false)">No / Skip</button>
+        </div>
+      </div>
+
+      <div class="voice-status" id="voice-status" data-test-id="voice-status"></div>
+
+      <div class="input-area" id="input-area" data-test-id="input-area">
+        <textarea id="user-input" data-test-id="user-input" rows="1"
+          placeholder="Ask about transport services, fines, licenses…"
+          onkeydown="handleKey(event)"></textarea>
+        <button class="btn-voice" id="voice-btn" data-test-id="voice-btn" onclick="toggleVoice()">🎙</button>
+        <button class="btn-send" id="send-btn" data-test-id="send-btn" onclick="sendMessage()">Send →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div>Built by <strong>Fayaz Basha Shaik</strong> &nbsp;·&nbsp; <strong>DAST 2026</strong> — 14th Edition &nbsp;·&nbsp; 🇦🇪 نفخر بالإمارات</div>
+    <div>© 2026 Tawfeer توفير — UAE Trip Reduction Platform · UAE MoCCAE 192g CO₂/km · Special 95 AED 2.89/L</div>
+  </footer>
+
+<script>
+// ── AUTH ──────────────────────────────────────────────────────────
+if (!requireAuth()) { throw new Error('not logged in'); }
+
+var currentUser   = getStoredUser();
+var sessionId     = 'sess_' + Math.random().toString(36).slice(2) + Date.now();
+var messagesEl    = document.getElementById('messages');
+
+// KEY STATE — initialized fresh every page load
+// Never read from localStorage — always starts null
+var userArea      = null;   // set once via area prompt per session
+var pendingImpact  = null;
+  var pendingEmirate = null;   // waiting for user to confirm/skip
+var lastQuestion  = '';
+var canShowTrip   = false;  // gate: only true after area is confirmed
+
+// ── LANG ──────────────────────────────────────────────────────────
+initLang();
+function applyLang() {
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir  = currentLang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelector('[data-test-id="lang-toggle-btn"]').textContent = t('langBtn');
+}
+applyLang();
+
+// ── HEADER ────────────────────────────────────────────────────────
+if (currentUser) {
+  document.getElementById('user-name-display').textContent    = currentUser.name;
+  document.getElementById('user-emirate-display').textContent = currentUser.emirate;
+  document.getElementById('user-avatar').textContent          = currentUser.name.charAt(0).toUpperCase();
+}
+
+// ── IMPACT COUNTER ────────────────────────────────────────────────
+function loadTotalKm() {
+  TawfeerAPI.getImpact()
+    .then(function(d) {
+      document.getElementById('total-km').textContent = Number(d.totalKm || 0).toLocaleString();
+    }).catch(function() {});
+}
+loadTotalKm();
+
+// ── WELCOME ───────────────────────────────────────────────────────
+appendMessage('assistant', t('welcome').replace('{name}', currentUser ? currentUser.name : ''));
+
+// ── VOICE ─────────────────────────────────────────────────────────
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+var recognition = null;
+var isListening = false;
+
+if (!SpeechRecognition) {
+  document.getElementById('voice-btn').style.display = 'none';
+} else {
+  recognition = new SpeechRecognition();
+  recognition.continuous = false;
+  recognition.interimResults = true;
+  recognition.lang = 'ar-AE';
+
+  recognition.onstart = function() {
+    isListening = true;
+    document.getElementById('voice-btn').classList.add('listening');
+    document.getElementById('voice-btn').textContent = '⏹';
+    document.getElementById('voice-status').textContent = t('listeningMsg');
+    document.getElementById('user-input').value = '';
+  };
+  recognition.onresult = function(event) {
+    var interim = '', final = '';
+    for (var i = event.resultIndex; i < event.results.length; i++) {
+      var tx = event.results[i][0].transcript;
+      if (event.results[i].isFinal) final += tx; else interim += tx;
+    }
+    document.getElementById('user-input').value = final || interim;
+  };
+  recognition.onend = function() {
+    isListening = false;
+    document.getElementById('voice-btn').classList.remove('listening');
+    document.getElementById('voice-btn').textContent = '🎙';
+    document.getElementById('voice-status').textContent = '';
+    if (document.getElementById('user-input').value.trim()) setTimeout(sendMessage, 400);
+  };
+  recognition.onerror = function(event) {
+    isListening = false;
+    document.getElementById('voice-btn').classList.remove('listening');
+    document.getElementById('voice-btn').textContent = '🎙';
+    var msg = event.error === 'no-speech' ? t('noSpeech') :
+              event.error === 'not-allowed' ? t('micDenied') : 'Error: ' + event.error;
+    document.getElementById('voice-status').textContent = msg;
+    setTimeout(function() { document.getElementById('voice-status').textContent = ''; }, 3000);
+  };
+}
+
+function toggleVoice() {
+  if (!recognition) return;
+  if (isListening) recognition.stop();
+  else { recognition.lang = 'ar-AE'; try { recognition.start(); } catch(e) {} }
+}
+
+// ── HELPERS ───────────────────────────────────────────────────────
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+}
+function sendSuggestion(text) {
+  document.getElementById('user-input').value = text;
+  sendMessage();
+}
+function appendMessage(role, html) {
+  var div = document.createElement('div');
+  div.className = 'message ' + role;
+  div.innerHTML = html;
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+  return div;
+}
+function escapeHtml(str) {
+  return str
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function buildConfidenceTag(confidence) {
+  if (!confidence) return '';
+  var labels = { high: '✅ High', medium: '⚠️ Medium', low: '❓ Low' };
+  var cls    = 'confidence-' + confidence.level;
+  var policy = confidence.policyId ? ' · ' + confidence.policyId : '';
+  var tip    = confidence.reason || '';
+  return '<span class="confidence-wrap">' +
+    '<span class="tag ' + cls + '">' + (labels[confidence.level]||'') + policy + '</span>' +
+    (tip ? '<span class="tooltip">' + tip + '</span>' : '') + '</span>';
+}
+function buildSustainCard(impact) {
+  if (!impact) return '';
+  return '<div class="sustain-card">' +
+    '<div class="sc-title">' + t('sustainTitle') + '</div>' +
+    '<table>' +
+    '<tr><td>' + t('sustainTravel') + '</td><td>' + impact.distanceSavedKm + ' km · ' + impact.centerName + '</td></tr>' +
+    '<tr><td>' + t('sustainCo2')    + '</td><td>' + impact.co2SavedKg + ' kg CO₂</td></tr>' +
+    '<tr><td>' + t('sustainFuel')   + '</td><td>' + impact.fuelSavedLiters + ' L (Special 95)</td></tr>' +
+    '<tr><td>' + t('sustainMoney')  + '</td><td>AED ' + impact.moneySavedAed + '</td></tr>' +
+    '</table>' +
+    '<div class="sc-note">' + t('sustainNote') + '</div>' +
+    '</div>';
+}
+
+// ── AREA PROMPT ───────────────────────────────────────────────────
+function showAreaPrompt() {
+  document.getElementById('area-prompt-banner').style.display = 'block';
+  document.getElementById('trip-confirm-banner').style.display = 'none';
+  setTimeout(function() { document.getElementById('area-input').focus(); }, 100);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+function hideAreaPrompt() {
+  document.getElementById('area-prompt-banner').style.display = 'none';
+  document.getElementById('area-input').value = '';
+}
+
+function submitArea() {
+  var areaVal = document.getElementById('area-input').value.trim();
+  if (!areaVal) {
+    document.getElementById('area-input').focus();
+    return;
+  }
+
+  // BUG FIX: Show area as a chat message in the conversation
+  appendMessage('user', '📍 My area: ' + escapeHtml(areaVal));
+
+  userArea     = areaVal;
+  canShowTrip  = true;
+  hideAreaPrompt();
+
+  // Tell server about this area
+  fetch('/api/session/' + sessionId + '/area', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify({ userArea: areaVal })
+  }).catch(function() {});
+
+  // Fetch real impact with area and show trip confirm
+  fetch('/api/impact/calculate', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body:    JSON.stringify({ emirate: pendingEmirate || currentUser.emirate, area: areaVal })
+  })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.impact) pendingImpact = data.impact;
+      showTripConfirm();
+    })
+    .catch(function() { showTripConfirm(); });
+}
+
+// ── TRIP CONFIRM ─────────────────────────────────────────────────
+function showTripConfirm() {
+  if (!canShowTrip) return; // gate: never show before area is confirmed
+  document.getElementById('trip-confirm-banner').style.display = 'block';
+  document.getElementById('area-prompt-banner').style.display = 'none';
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+}
+function hideTripConfirm() {
+  document.getElementById('trip-confirm-banner').style.display = 'none';
+}
+
+// BUG FIX: ONLY log trip when user explicitly clicks Yes
+function confirmTrip(confirmed) {
+  var impact = pendingImpact;
+  hideTripConfirm();
+  pendingImpact = null;
+
+  if (!confirmed || !currentUser || !impact) return;
+
+  TawfeerAPI.logTrip({
+    userId:        currentUser.id,
+    questionAsked: lastQuestion,
+    centerName:    impact.centerName,
+    distanceKm:    impact.distanceSavedKm,
+    co2Kg:         impact.co2SavedKg,
+    fuelLiters:    impact.fuelSavedLiters,
+    moneyAed:      impact.moneySavedAed,
+    emirate:       currentUser.emirate
+  })
+    .then(function(data) {
+      appendMessage('assistant', t('tripLogged') + buildSustainCard(impact));
+      if (data.newTotals) {
+        document.getElementById('total-km').textContent =
+          Number(data.newTotals.totalKm).toLocaleString();
+      }
+    })
+    .catch(function() {
+      appendMessage('assistant', t('tripLogged') + buildSustainCard(impact));
+    });
+}
+
+// ── SEND MESSAGE ──────────────────────────────────────────────────
+async function sendMessage() {
+  var text = document.getElementById('user-input').value.trim();
+  if (!text) return;
+
+  if (isListening && recognition) recognition.stop();
+  lastQuestion = text;
+
+  // Hide any open banners when user sends a new message
+  hideAreaPrompt();
+  hideTripConfirm();
+  pendingImpact = null;
+
+  document.getElementById('user-input').value   = '';
+  document.getElementById('send-btn').disabled  = true;
+  document.getElementById('voice-btn').disabled = true;
+
+  appendMessage('user', escapeHtml(text));
+  var typing = appendMessage('typing', t('thinking'));
+
+  try {
+    var res = await fetch('/api/chat', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({
+        message:     text,
+        sessionId:   sessionId,
+        userEmirate: currentUser ? currentUser.emirate : '',
+        userArea:    userArea || ''   // empty string if not set yet
+      })
+    });
+    var data = await res.json();
+    typing.remove();
+
+    // Build answer HTML
+    var html = escapeHtml(data.reply).replace(/\n/g, '<br/>');
+    var meta = '';
+
+    if (data.guardrail && data.guardrail.triggered) {
+      meta += '<span class="tag blocked">🛡 ' + (data.guardrail.reason||'blocked') + '</span>';
+    } else if (data.toolUsed) {
+      meta += '<span class="tag tool">🔧 ' + data.toolUsed.name + '</span>';
+      meta += buildConfidenceTag(data.confidence);
+    } else if (data.retrievedDocs && data.retrievedDocs.length > 0) {
+      var docList = data.retrievedDocs.map(function(d) { return d.id; }).join(', ');
+      meta += '<span class="tag rag">📄 ' + docList + '</span>';
+      meta += buildConfidenceTag(data.confidence);
+    }
+
+    // Only show memory tag if NOT a guardrail and turns >= 2
+    if (data.memory && data.memory.turns >= 2 && data.memory.topic && !(data.guardrail && data.guardrail.triggered)) {
+      meta += '<span class="tag memory">🧠 ' + data.memory.turns + ' turns</span>';
+    }
+
+    if (meta) html += '<div class="meta">' + meta + '</div>';
+    appendMessage('assistant', html);
+
+    // ── TRIP CONFIRM FLOW ─────────────────────────────────────────
+    // Only for office-visit topics, not public transport / info queries
+    if (data.canResolveDigitally && !(data.guardrail && data.guardrail.triggered)) {
+
+      if (!userArea) {
+        // BUG FIX: Area not known yet — show area prompt
+        // Store server impact (may be null since no area on server side)
+        pendingImpact = data.impact || null;
+        pendingEmirate = (data.toolUsed && data.toolUsed.result && data.toolUsed.result.emirate) ? data.toolUsed.result.emirate : null;
+          showAreaPrompt();
+
+      } else {
+        // Area known — show trip confirm with impact
+        if (data.impact) {
+          pendingImpact = data.impact;
+          showTripConfirm();
+        }
+      }
+    }
+
+  } catch (err) {
+    typing.remove();
+    appendMessage('error', '⚠️ Could not reach the server. Please try again.');
+  }
+
+  document.getElementById('send-btn').disabled  = false;
+  document.getElementById('voice-btn').disabled = false;
+  document.getElementById('user-input').focus();
+}
+
+// ── NEW CONVERSATION ──────────────────────────────────────────────
+function newConversation() {
+  TawfeerAPI.clearSession(sessionId).catch(function() {});
+  sessionId     = 'sess_' + Math.random().toString(36).slice(2) + Date.now();
+  userArea      = null;    // reset area
+  canShowTrip   = false;   // reset gate
+  pendingImpact = null;
+  messagesEl.innerHTML = '';
+  hideAreaPrompt();
+  hideTripConfirm();
+  appendMessage('assistant', t('welcome').replace('{name}', currentUser ? currentUser.name : ''));
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — Tawfeer توفير</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/i18n.js"></script>
+  <script src="/js/auth.js"></script>
+</head>
+<body>
+
+  <div class="uae-stripe">
+    <div class="s-red"></div><div class="s-green"></div>
+    <div class="s-white"></div><div class="s-black"></div>
+  </div>
+
+  <header>
+    <a class="brand" href="/">
+      <div class="brand-icon">🍃</div>
+      <div class="brand-text">
+        <h1>Tawfeer <span>توفير</span></h1>
+        <p data-i18n="brandTagline">UAE Trip Reduction &amp; Emissions Platform</p>
+      </div>
+    </a>
+    <div class="header-right">
+      <button class="btn-ghost" onclick="toggleLang()" data-test-id="lang-toggle-btn">عربي</button>
+    </div>
+  </header>
+
+  <!-- HERO COUNTER — live from Supabase -->
+  <div style="background:var(--green);color:white;padding:12px 16px;text-align:center;font-size:0.82rem;font-weight:500;">
+    <span id="hero-users">—</span> registered users &nbsp;·&nbsp;
+    <span id="hero-trips">—</span> trips prevented &nbsp;·&nbsp;
+    <span id="hero-km">—</span> km saved citywide
+  </div>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="card-icon">🍃</div>
+      <h2 data-i18n="registerTitle">Create your account</h2>
+      <p class="card-sub" data-i18n="registerSub">Join Tawfeer and start saving trips across the UAE.</p>
+
+      <div class="alert error" id="register-error" data-test-id="register-error"></div>
+      <div class="alert success" id="register-success" data-test-id="register-success"></div>
+
+      <div class="form-group">
+        <label for="register-name" data-i18n="labelName">Full name</label>
+        <input
+          type="text"
+          id="register-name"
+          data-test-id="register-name"
+          placeholder="Your full name"
+          autocomplete="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="register-email" data-i18n="labelEmail">Email address</label>
+        <input
+          type="email"
+          id="register-email"
+          data-test-id="register-email"
+          placeholder="your@email.com"
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="register-password" data-i18n="labelPassword">Password</label>
+        <input
+          type="password"
+          id="register-password"
+          data-test-id="register-password"
+          placeholder="Minimum 6 characters"
+          autocomplete="new-password"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="register-emirate" data-i18n="labelEmirate">Your emirate</label>
+        <select id="register-emirate" data-test-id="register-emirate">
+          <option value="" data-i18n="selectEmirate">— Select emirate —</option>
+          <option value="Dubai">Dubai</option>
+          <option value="Abu Dhabi">Abu Dhabi</option>
+          <option value="Sharjah">Sharjah</option>
+          <option value="Ajman">Ajman</option>
+          <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+          <option value="Fujairah">Fujairah</option>
+          <option value="Umm Al Quwain">Umm Al Quwain</option>
+        </select>
+      </div>
+
+      <button
+        class="btn-primary"
+        id="register-btn"
+        data-test-id="register-btn"
+        onclick="handleRegister()"
+        data-i18n="registerBtn"
+      >Create account →</button>
+
+      <p class="disclaimer" data-i18n="registerDisclaimer">
+        Your email is proof of real impact for DAST 2026.
+      </p>
+
+      <div class="auth-footer">
+        <span data-i18n="haveAccount">Already have an account?</span>
+        <a href="/pages/login.html" data-test-id="login-link" data-i18n="signIn"> Sign in</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>Built by <strong>Fayaz Basha Shaik</strong> &nbsp;·&nbsp; <strong>DAST 2026</strong> — 14th Edition &nbsp;·&nbsp; 🇦🇪 نفخر بالإمارات</div>
+  </footer>
+
+  <script>
+    // Redirect if already logged in
+    requireGuest();
+    initLang();
+
+    function applyLang() {
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir  = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.querySelector('[data-test-id="lang-toggle-btn"]').textContent = t('langBtn');
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (el.tagName === 'INPUT' || el.tagName === 'BUTTON') {
+          if (el.tagName === 'BUTTON') el.textContent = t(key);
+        } else {
+          el.textContent = t(key);
+        }
+      });
+    }
+
+    applyLang();
+
+    function handleRegister() {
+      var name     = document.getElementById('register-name').value.trim();
+      var email    = document.getElementById('register-email').value.trim();
+      var password = document.getElementById('register-password').value;
+      var emirate  = document.getElementById('register-emirate').value;
+      var errEl    = document.getElementById('register-error');
+      var btn      = document.getElementById('register-btn');
+
+      errEl.classList.remove('show');
+
+      if (!name || !email || !password || !emirate) {
+        errEl.textContent = t('errFillAll');
+        errEl.classList.add('show');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errEl.textContent = t('errEmail');
+        errEl.classList.add('show');
+        return;
+      }
+      if (password.length < 6) {
+        errEl.textContent = t('errPassword');
+        errEl.classList.add('show');
+        return;
+      }
+
+      btn.disabled    = true;
+      btn.textContent = '…';
+
+      fetch('/api/auth/register', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ name: name, email: email, password: password, emirate: emirate })
+      })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (!data.success) {
+            if (data.code === 'EMAIL_EXISTS') {
+              errEl.innerHTML = 'You already have an account. <a href="/pages/login.html">Sign in instead</a>.';
+            } else {
+              errEl.textContent = data.error || t('errServer');
+            }
+            errEl.classList.add('show');
+            btn.disabled    = false;
+            btn.textContent = t('registerBtn');
+            return;
+          }
+          storeAuth(data.token, data.user);
+          window.location.href = '/pages/chat.html';
+        })
+        .catch(function() {
+          errEl.textContent = t('errServer');
+          errEl.classList.add('show');
+          btn.disabled    = false;
+          btn.textContent = t('registerBtn');
+        });
+    }
+
+    // Allow Enter key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleRegister();
+    });
+  </script>
+
+<script>
+fetch('/api/impact')
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    document.getElementById('hero-users').textContent = Number(d.totalUsers||0).toLocaleString();
+    document.getElementById('hero-trips').textContent = Number(d.totalTrips||0).toLocaleString();
+    document.getElementById('hero-km').textContent    = Number(d.totalKm||0).toLocaleString();
+  }).catch(function(){});
+</script>
+</body>
+</html>

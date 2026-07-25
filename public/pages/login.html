@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Tawfeer توفير</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="/js/i18n.js"></script>
+  <script src="/js/auth.js"></script>
+</head>
+<body>
+
+  <div class="uae-stripe">
+    <div class="s-red"></div><div class="s-green"></div>
+    <div class="s-white"></div><div class="s-black"></div>
+  </div>
+
+  <header>
+    <a class="brand" href="/">
+      <div class="brand-icon">🍃</div>
+      <div class="brand-text">
+        <h1>Tawfeer <span>توفير</span></h1>
+        <p data-i18n="brandTagline">UAE Trip Reduction &amp; Emissions Platform</p>
+      </div>
+    </a>
+    <div class="header-right">
+      <button class="btn-ghost" onclick="toggleLang()" data-test-id="lang-toggle-btn">عربي</button>
+    </div>
+  </header>
+
+  <div style="background:var(--green);color:white;padding:12px 16px;text-align:center;font-size:0.82rem;font-weight:500;">
+    <span id="hero-users">—</span> registered users &nbsp;·&nbsp;
+    <span id="hero-trips">—</span> trips prevented &nbsp;·&nbsp;
+    <span id="hero-km">—</span> km saved citywide
+  </div>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="card-icon">👋</div>
+      <h2 data-i18n="loginTitle">Welcome back</h2>
+      <p class="card-sub" data-i18n="loginSub">Sign in to continue saving trips.</p>
+
+      <div class="alert error" id="login-error" data-test-id="login-error"></div>
+
+      <div class="form-group">
+        <label for="login-email" data-i18n="labelEmail">Email address</label>
+        <input
+          type="email"
+          id="login-email"
+          data-test-id="login-email"
+          placeholder="your@email.com"
+          autocomplete="email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="login-password" data-i18n="labelPassword">Password</label>
+        <input
+          type="password"
+          id="login-password"
+          data-test-id="login-password"
+          placeholder="Your password"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <button
+        class="btn-primary"
+        id="login-btn"
+        data-test-id="login-btn"
+        onclick="handleLogin()"
+        data-i18n="loginBtn"
+      >Sign in →</button>
+
+      <div class="auth-footer">
+        <span data-i18n="noAccount">Don't have an account?</span>
+        <a href="/pages/register.html" data-test-id="register-link" data-i18n="signUp"> Sign up</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>Built by <strong>Fayaz Basha Shaik</strong> &nbsp;·&nbsp; <strong>DAST 2026</strong> — 14th Edition &nbsp;·&nbsp; 🇦🇪 نفخر بالإمارات</div>
+  </footer>
+
+  <script>
+    requireGuest();
+    initLang();
+
+    function applyLang() {
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir  = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.querySelector('[data-test-id="lang-toggle-btn"]').textContent = t('langBtn');
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        el.textContent = t(key);
+      });
+    }
+
+    applyLang();
+
+    function handleLogin() {
+      var email    = document.getElementById('login-email').value.trim();
+      var password = document.getElementById('login-password').value;
+      var errEl    = document.getElementById('login-error');
+      var btn      = document.getElementById('login-btn');
+
+      errEl.classList.remove('show');
+
+      if (!email || !password) {
+        errEl.textContent = t('errFillAll');
+        errEl.classList.add('show');
+        return;
+      }
+
+      btn.disabled    = true;
+      btn.textContent = '…';
+
+      fetch('/api/auth/login', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ email: email, password: password })
+      })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (!data.success) {
+            errEl.textContent = data.code === 'USER_NOT_FOUND'
+              ? t('errNoUser') : t('errInvalidCreds');
+            errEl.classList.add('show');
+            btn.disabled    = false;
+            btn.textContent = t('loginBtn');
+            return;
+          }
+          storeAuth(data.token, data.user);
+          window.location.href = '/pages/chat.html';
+        })
+        .catch(function() {
+          errEl.textContent = t('errServer');
+          errEl.classList.add('show');
+          btn.disabled    = false;
+          btn.textContent = t('loginBtn');
+        });
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleLogin();
+    });
+  </script>
+
+<script>
+fetch('/api/impact')
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    document.getElementById('hero-users').textContent = Number(d.totalUsers||0).toLocaleString();
+    document.getElementById('hero-trips').textContent = Number(d.totalTrips||0).toLocaleString();
+    document.getElementById('hero-km').textContent    = Number(d.totalKm||0).toLocaleString();
+  }).catch(function(){});
+</script>
+</body>
+</html>

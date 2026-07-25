@@ -1,2210 +1,1170 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// GovMurshid — UAE Government Policy Documents
-// All 7 Emirates | English + Arabic
-// Sources: UAE Official Government Portals, MOI, u.ae, Gulf News, Khaleej Times
-// Last updated: July 2025
-// ─────────────────────────────────────────────────────────────────────────────
+// Tawfeer — UAE Transport Policy Documents
+// Auto-generated from locale.en.json
+// All 7 Emirates | 93 QA pairs
+// DAST 2026
 
 const policies = [
-
-  // ─── ALL UAE ─────────────────────────────────────────────────────────────
-
   {
-    id: 'POL-001',
-    emirate: 'All UAE',
-    category: 'driving',
-    title: 'Driving License Renewal',
-    content: `Driving licenses in the UAE can be renewed starting 6 months before expiry. A 30-day grace period applies after expiry with no fine. After that, a fine of AED 10 per month applies (maximum AED 500).
-
-Validity after renewal:
-- UAE and GCC nationals (above 21): 10 years
-- Expatriate residents (above 21): 5 years
-- Below 21 years: 1 year
-
-Required documents:
-- Emirates ID
-- Current driving license
-- Eye test certificate from an approved optician (mandatory)
-- Passport-size photograph
-
-Penalty for driving with expired license:
-- AED 500 fine
-- 4 black points
-- Vehicle impoundment for 7 days
-
-Abu Dhabi: Renew via TAMM platform (tamm.abudhabi) or Department of Transport service centers.
-Dubai: Renew via RTA website (rta.ae) or Dubai Drive smart app.
-Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah: Renew via Ministry of Interior (MOI) website (moi.gov.ae) or MOI UAE smart app.
-
----
-
-تجديد رخصة القيادة في الإمارات
-
-يمكن تجديد رخصة القيادة قبل 6 أشهر من انتهاء صلاحيتها. تُمنح فترة سماح مدتها 30 يوماً بعد انتهاء الصلاحية دون غرامة، وبعد ذلك تُفرض غرامة قدرها 10 درهم شهرياً (بحد أقصى 500 درهم).
-
-مدة الصلاحية بعد التجديد:
-- المواطنون الإماراتيون ومواطنو دول الخليج (فوق 21 سنة): 10 سنوات
-- المقيمون الأجانب (فوق 21 سنة): 5 سنوات
-- دون 21 سنة: سنة واحدة
-
-المستندات المطلوبة:
-- الهوية الإماراتية
-- رخصة القيادة الحالية
-- شهادة فحص النظر من طبيب بصريات معتمد
-- صورة شخصية
-
-عقوبة القيادة برخصة منتهية الصلاحية:
-- غرامة 500 درهم
-- 4 نقاط سوداء
-- مصادرة السيارة لمدة 7 أيام
-
-أبوظبي: التجديد عبر منصة تام (tamm.abudhabi) أو مراكز خدمة دائرة النقل.
-دبي: التجديد عبر موقع هيئة الطرق والمواصلات (rta.ae) أو تطبيق دبي درايف.
-الشارقة، عجمان، أم القيوين، رأس الخيمة، الفجيرة: التجديد عبر موقع وزارة الداخلية (moi.gov.ae) أو تطبيق MOI UAE.`
+    id: "TWF-001",
+    sourceId: "DL-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I renew my driving license in Dubai?",
+    content: `You can renew fully online in 5–15 minutes via rta.ae or the Dubai Drive app. Steps: (1) Log in with UAE Pass or Emirates ID. (2) Upload your Emirates ID and RTA-approved eye test certificate. (3) Pay AED 300 (age 21+) or AED 100 (under 21) plus AED 20 Knowledge & Innovation fee. (4) Your temporary licence is issued instantly; the permanent card arrives by courier (AED 25) within 5–15 working days, or collect free from an RTA kiosk. No office visit required for standard renewals.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai \u2014 Driving Licence Renewal Service",
+    policyRef: "DL-RENEW-001",
   },
-
   {
-    id: 'POL-002',
-    emirate: 'All UAE',
-    category: 'driving',
-    title: 'Vehicle Registration Renewal',
-    content: `Vehicle registration (Mulkiya) must be renewed annually in the UAE. Driving with an expired registration carries a fine of AED 500 and vehicle impoundment.
-
-Required before renewal:
-- Valid UAE motor insurance (third party minimum)
-- Passing vehicle technical inspection (Tasjeel/Emirates Vehicle Gate/Muroor depending on emirate)
-
-Abu Dhabi: Renew via TAMM platform or Department of Transport centers.
-Dubai: Renew via RTA website, RTA app, or authorized centers.
-Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah: Renew via MOI UAE app or emirate police portal.
-
-Fees vary by vehicle age, type, and emirate. Contact the relevant authority for exact fees.
-
----
-
-تجديد تسجيل المركبة في الإمارات
-
-يجب تجديد تسجيل المركبة (الملكية) سنوياً. يُعاقب على القيادة بتسجيل منتهٍ بغرامة 500 درهم ومصادرة السيارة.
-
-المتطلبات قبل التجديد:
-- تأمين سيارة إماراتي ساري المفعول (طرف ثالث كحد أدنى)
-- اجتياز الفحص الفني للمركبة (تسجيل / بوابة مركبات الإمارات / مرور حسب الإمارة)
-
-أبوظبي: عبر منصة تام أو مراكز دائرة النقل.
-دبي: عبر موقع هيئة الطرق والمواصلات أو التطبيق أو المراكز المعتمدة.
-الشارقة، عجمان، أم القيوين، رأس الخيمة، الفجيرة: عبر تطبيق MOI UAE أو بوابة شرطة الإمارة.`
+    id: "TWF-002",
+    sourceId: "DL-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What documents are needed to renew a Dubai driving license?",
+    content: `Required: (1) Valid Emirates ID. (2) RTA-approved eye test certificate — costs AED 140–180, valid for 2 years, results auto-uploaded from approved clinics. (3) Existing driving licence (expired or current). (4) No outstanding traffic fines (fines block renewal). Optional: passport-sized photo on white background for certain cases. No need to visit a centre — upload digitally via Dubai Drive app.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "DL-RENEW-002",
   },
-
   {
-    id: 'POL-003',
-    emirate: 'All UAE',
-    category: 'driving',
-    title: 'Traffic Fine Payment',
-    content: `Traffic fines in the UAE can be checked and paid online through official government portals.
-
-Abu Dhabi: Pay via TAMM platform (tamm.abudhabi) or Abu Dhabi Police website (adpolice.gov.ae).
-Dubai: Pay via RTA website (rta.ae) or Dubai Police website (dubaipolice.gov.ae).
-Sharjah: Pay via Sharjah Police website (sharjahpolice.gov.ae) or MOI UAE app.
-Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah: Pay via MOI UAE app (moi.gov.ae) or respective emirate police portal.
-
-A 50% discount on traffic fines is periodically offered by UAE traffic authorities. Check the relevant portal for current promotions.
-
-Required: Emirates ID or vehicle plate number to check fines.
-
----
-
-دفع المخالفات المرورية في الإمارات
-
-يمكن الاستعلام عن المخالفات المرورية ودفعها عبر البوابات الرسمية.
-
-أبوظبي: عبر منصة تام أو موقع شرطة أبوظبي.
-دبي: عبر موقع هيئة الطرق والمواصلات أو موقع شرطة دبي.
-الشارقة: عبر موقع شرطة الشارقة أو تطبيق MOI UAE.
-عجمان، أم القيوين، رأس الخيمة، الفجيرة: عبر تطبيق MOI UAE أو بوابة شرطة الإمارة المعنية.
-
-يُقدَّم خصم 50% على المخالفات المرورية بشكل دوري. تحقق من البوابة الرسمية للاطلاع على العروض الحالية.
-المطلوب: الهوية الإماراتية أو رقم لوحة المركبة للاستعلام.`
+    id: "TWF-003",
+    sourceId: "DL-003",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What is the fee for driving license renewal in Dubai?",
+    content: `Age 21 and above: AED 300 renewal fee + AED 20 Knowledge & Innovation fee = AED 320 total. Under 21: AED 100 + AED 20 = AED 120. Late renewal: AED 10 per month delayed, capped at AED 500 maximum penalty. Optional courier delivery: AED 25. Eye test (if not done): AED 140–180 at RTA-approved clinics.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Fee Schedule",
+    policyRef: "DL-FEE-001",
   },
-
   {
-    id: 'POL-004',
-    emirate: 'All UAE',
-    category: 'driving',
-    title: 'Appointment Booking at Government Service Centers',
-    content: `Government service appointments can be booked online across all UAE emirates.
-
-Abu Dhabi: Book via TAMM platform (tamm.abudhabi) or call 800-TAMM (8266).
-Dubai: Book via Dubai Now app, RTA app, or ICA Smart Services.
-Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah: Book via MOI UAE app or the respective emirate government portal.
-
-Services available for appointment booking include:
-- Driving license renewal and tests
-- Vehicle registration
-- Emirates ID
-- Residency visa stamping
-- Trade license services
-
----
-
-حجز المواعيد في مراكز الخدمة الحكومية بالإمارات
-
-يمكن حجز مواعيد الخدمات الحكومية عبر الإنترنت في جميع إمارات الدولة.
-
-أبوظبي: عبر منصة تام أو الاتصال على 800-8266.
-دبي: عبر تطبيق دبي ناو أو تطبيق هيئة الطرق أو ICA Smart Services.
-الشارقة، عجمان، أم القيوين، رأس الخيمة، الفجيرة: عبر تطبيق MOI UAE أو بوابة حكومة الإمارة.
-
-الخدمات المتاحة للحجز تشمل: تجديد رخصة القيادة، تسجيل المركبة، الهوية الإماراتية، ختم تأشيرة الإقامة، خدمات الترخيص التجاري.`
+    id: "TWF-004",
+    sourceId: "DL-004",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How long is a driving licence valid in Dubai?",
+    content: `UAE/GCC nationals: 10 years. Expatriate residents: 5 years. You may renew up to 1 year before expiry (age 21+) or 1 month before (under 21). After expiry, a 30-day grace period applies with no fines. After the grace period, a fine of AED 10 per month applies, maximum AED 500.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "DL-VALID-001",
   },
-
   {
-    id: 'POL-005',
-    emirate: 'All UAE',
-    category: 'identity',
-    title: 'Emirates ID Renewal',
-    content: `The Emirates ID must be renewed before expiry. Expatriates should renew it linked to their residence visa renewal. UAE nationals must renew every 5-10 years depending on age.
-
-Apply via:
-- ICA Smart Services website (icp.gov.ae)
-- TAMM platform (Abu Dhabi)
-- Federal Authority for Identity, Citizenship, Customs and Port Security (ICP) app
-
-Required documents:
-- Passport with valid UAE residence visa (for expatriates)
-- Recent passport-size photograph
-
-Fee: Approximately AED 100–370 depending on card validity period and applicant type.
-Processing time: 3–5 working days.
-
-Penalty for not carrying Emirates ID: AED 100 fine.
-
----
-
-تجديد الهوية الإماراتية
-
-يجب تجديد الهوية الإماراتية قبل انتهاء صلاحيتها. يجب على المقيمين الأجانب ربط تجديدها بتجديد تأشيرة الإقامة.
-
-التقديم عبر:
-- موقع ICP الذكي (icp.gov.ae)
-- منصة تام (أبوظبي)
-- تطبيق الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ
-
-المستندات المطلوبة:
-- جواز سفر بتأشيرة إقامة سارية (للمقيمين الأجانب)
-- صورة شخصية حديثة
-
-الرسوم: من 100 إلى 370 درهماً حسب مدة صلاحية البطاقة ونوع المتقدم.
-وقت المعالجة: 3-5 أيام عمل.
-غرامة عدم حمل الهوية: 100 درهم.`
+    id: "TWF-005",
+    sourceId: "DL-005",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Can I renew my driving license if I have black points?",
+    content: `Yes, black points alone do not block renewal. However, if your licence is suspended due to reaching 24 black points, you cannot renew until the suspension is lifted. All outstanding traffic fines must be paid before renewal. Check your black point status on the Dubai Police app or rta.ae.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "DL-BP-001",
   },
-
   {
-    id: 'POL-006',
-    emirate: 'All UAE',
-    category: 'identity',
-    title: 'Residency Visa Renewal',
-    content: `Expatriate residents must renew their UAE residence visa before expiry. Overstaying without renewal incurs a fine of AED 25 per day.
+    id: "TWF-006",
+    sourceId: "DL-006",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I get a new driving license in Dubai from scratch?",
+    content: `Process: (1) Open a traffic file at RTA — online via rta.ae or in person. (2) Complete eye test at an RTA-approved clinic. (3) Attend theory lectures (8 hours). (4) Pass the theory test (computer-based at a driving school). (5) Complete yard (parking/control) tests. (6) Pass the road test. (7) Collect your licence. Total cost: AED 4,500–7,500 depending on attempts and school. Minimum age: 18 years (17 with parental consent in some cases — confirm with RTA).
 
-Apply via:
-- ICA Smart Services (icp.gov.ae) — for sponsored workers
-- TAMM (Abu Dhabi) — for Abu Dhabi residents
-- GDRFA Dubai — for Dubai residents
-- MOI UAE app — for other emirates
-
-Required documents:
-- Valid passport (minimum 6 months validity)
-- Emirates ID
-- Sponsor's documents (for employment visa)
-- Valid health insurance (mandatory as of 1 January 2025 for all emirates)
-- Medical fitness certificate
-- Passport-size photographs
-
-Processing time: 5–10 working days.
-
----
-
-تجديد تأشيرة الإقامة
-
-يجب على المقيمين الأجانب تجديد تأشيرة إقامتهم قبل انتهاء صلاحيتها. تُفرض غرامة تجاوز قدرها 25 درهماً يومياً عند التأخر.
-
-التقديم عبر:
-- ICA Smart Services (icp.gov.ae) للعمال المكفولين
-- منصة تام لمقيمي أبوظبي
-- GDRFA دبي لمقيمي دبي
-- تطبيق MOI UAE لباقي الإمارات
-
-المستندات المطلوبة:
-- جواز سفر ساري المفعول (6 أشهر على الأقل)
-- الهوية الإماراتية
-- وثائق الكفيل (لتأشيرة العمل)
-- تأمين صحي ساري (إلزامي اعتباراً من 1 يناير 2025 في جميع الإمارات)
-- شهادة لياقة طبية
-- صور شخصية`
+Note: Eye test, theory test, and road test require physical attendance.`,
+    canResolveDigitally: false,
+    source: "RTA Dubai Driving Schools",
+    policyRef: "DL-NEW-001",
   },
-
   {
-    id: 'POL-007',
-    emirate: 'All UAE',
-    category: 'identity',
-    title: 'New Residence Visa Application',
-    content: `New residence visas in the UAE are sponsored by an employer, family member, or obtained through investment/property ownership.
-
-Types of residence visas:
-- Employment visa (sponsored by employer)
-- Family visa (sponsored by resident family member)
-- Investor/property owner visa
-- Golden Visa (long-term, 5 or 10 years)
-- Student visa
-- Retirement visa
-
-Apply via:
-- ICA Smart Services (icp.gov.ae)
-- TAMM (Abu Dhabi)
-- GDRFA Dubai (gdrfad.gov.ae) for Dubai
-- MOI UAE app for other emirates
-
-General requirements:
-- Valid passport
-- Medical fitness certificate
-- Valid health insurance (mandatory from 1 January 2025)
-- Sponsor's documents
-
----
-
-طلب تأشيرة إقامة جديدة
-
-تُمنح تأشيرات الإقامة في الإمارات بكفالة صاحب عمل أو أحد أفراد الأسرة أو عبر الاستثمار أو تملك العقار.
-
-أنواع تأشيرات الإقامة:
-- تأشيرة عمل (بكفالة صاحب العمل)
-- تأشيرة أسرة (بكفالة فرد مقيم)
-- تأشيرة مستثمر / مالك عقار
-- الإقامة الذهبية (طويلة الأمد، 5 أو 10 سنوات)
-- تأشيرة طالب
-- تأشيرة تقاعد
-
-التقديم عبر: icp.gov.ae أو منصة تام أو GDRFA دبي أو تطبيق MOI UAE.`
+    id: "TWF-007",
+    sourceId: "DL-007",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Can I exchange a foreign driving license for a UAE license?",
+    content: `Yes, residents from approved countries can exchange without full training. Requirements: valid Emirates ID, original foreign licence, RTA-approved eye test (AED 140–180), translation if not in Arabic/English, and applicable fees. Some nationalities may also need an embassy letter. Check the approved country list at rta.ae — it changes periodically. Not all countries are on the list; if yours isn't, full training is required.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai \u2014 Licence Exchange Service",
+    policyRef: "DL-EXCH-001",
   },
-
   {
-    id: 'POL-008',
-    emirate: 'All UAE',
-    category: 'housing',
-    title: 'Building Permit Application',
-    content: `Building permits are required for all construction, renovation, and modification works in the UAE. Applications are managed by each emirate's municipality.
-
-Abu Dhabi: Apply via TAMM (tamm.abudhabi) — Abu Dhabi City Municipality.
-Dubai: Apply via Dubai Municipality (dm.gov.ae).
-Sharjah: Apply via Sharjah City Municipality (shjmun.gov.ae).
-Ajman: Apply via Ajman Municipality (ajman.ae).
-Umm Al Quwain: Apply via UAQ Municipality.
-Ras Al Khaimah: Apply via RAK Municipality (mun.rak.ae).
-Fujairah: Apply via Fujairah Municipality.
-
-General requirements:
-- Approved architectural drawings
-- Land ownership documents
-- No objection certificate (NOC) where applicable
-
----
-
-طلب رخصة البناء في الإمارات
-
-تُشترط رخصة البناء لجميع أعمال البناء والتجديد والتعديل. تُدار الطلبات عبر بلدية كل إمارة.
-
-أبوظبي: عبر منصة تام.
-دبي: عبر بلدية دبي (dm.gov.ae).
-الشارقة: عبر بلدية مدينة الشارقة (shjmun.gov.ae).
-عجمان: عبر بلدية عجمان (ajman.ae).
-أم القيوين: عبر بلدية أم القيوين.
-رأس الخيمة: عبر بلدية رأس الخيمة (mun.rak.ae).
-الفجيرة: عبر بلدية الفجيرة.`
+    id: "TWF-008",
+    sourceId: "DL-008",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Where can I do the eye test for driving license renewal in Dubai?",
+    content: `At any RTA-approved optometry clinic across Dubai. Cost: AED 140–180. Results are valid for 2 years and auto-uploaded directly to RTA's system — you no longer receive a paper printout. You can then complete the renewal entirely online. A list of approved clinics is on rta.ae under 'Driving Licence Services'.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "DL-EYE-001",
   },
-
   {
-    id: 'POL-013',
-    emirate: 'All UAE',
-    category: 'education',
-    title: 'Higher Education and University Admission',
-    content: `University and higher education admissions in the UAE are managed by the Ministry of Education and individual institutions.
+    id: "TWF-009",
+    sourceId: "DL-009",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I add a new vehicle category to my existing driving license?",
+    content: `You can apply online at rta.ae or via the Dubai Drive app to add categories (e.g., motorcycle, heavy vehicle, bus). You will need to complete training and pass tests for the new category at an approved driving school. The application can be started digitally, but physical training and testing are mandatory for the new category.
 
-Key regulatory body: Ministry of Education — Commission for Academic Accreditation (CAA).
-
-Public universities (free for UAE nationals): UAE University, Zayed University, Higher Colleges of Technology.
-Private universities operate across all 7 emirates and accept both nationals and expatriates.
-
-General admission requirements:
-- Secondary school certificate (or equivalent)
-- Minimum grade requirements per institution
-- English/Arabic proficiency tests (IELTS, TOEFL, EmSAT)
-- Medical fitness certificate
-
-Apply directly to institutions or via the UAE Ministry of Education portal (moe.gov.ae).
-
----
-
-القبول في التعليم العالي والجامعات بالإمارات
-
-تُدار قبولات الجامعات في الإمارات من قِبَل وزارة التربية والتعليم والمؤسسات الأكاديمية.
-
-الجامعات الحكومية (مجانية للمواطنين): جامعة الإمارات، جامعة زايد، كليات التقنية العليا.
-تقبل الجامعات الخاصة في جميع الإمارات المواطنين والمقيمين الأجانب.
-
-متطلبات القبول العامة:
-- شهادة الثانوية العامة أو ما يعادلها
-- الحد الأدنى من الدرجات حسب كل مؤسسة
-- اختبارات اللغة الإنجليزية/العربية (IELTS، TOEFL، EmSAT)
-- شهادة لياقة طبية`
+Note: Training and testing for new licence categories require physical attendance.`,
+    canResolveDigitally: false,
+    source: "RTA Dubai",
+    policyRef: "DL-CAT-001",
   },
-
   {
-    id: 'POL-016',
-    emirate: 'All UAE',
-    category: 'healthcare',
-    title: 'Medical Fitness Certificate',
-    content: `A medical fitness certificate is required for residence visa applications and renewals across all UAE emirates. It is issued by Ministry of Health approved centers.
-
-The medical fitness test includes:
-- Blood test (HIV, Hepatitis B and C, TB screening)
-- Chest X-ray
-- General physical examination
-
-Where to apply:
-- Abu Dhabi: SEHA health centers or approved clinics
-- Dubai: DHA-approved medical fitness centers
-- Other emirates: MOH-approved medical fitness centers
-
-Fee: Approximately AED 220–320 depending on center and emirate.
-Processing time: Same day to 3 working days.
-Results are sent directly to ICP/immigration system.
-
----
-
-شهادة اللياقة الطبية في الإمارات
-
-تُشترط شهادة اللياقة الطبية لطلبات تأشيرة الإقامة وتجديدها في جميع إمارات الدولة. تصدرها المراكز الصحية المعتمدة من وزارة الصحة.
-
-يشمل الفحص الطبي:
-- تحليل دم (فيروس نقص المناعة، التهاب الكبد B وC، السل)
-- أشعة الصدر
-- فحص طبي عام
-
-أماكن التقديم:
-- أبوظبي: مراكز صحة أو عيادات معتمدة
-- دبي: مراكز اللياقة الطبية المعتمدة من هيئة الصحة
-- باقي الإمارات: مراكز معتمدة من وزارة الصحة
-
-الرسوم: من 220 إلى 320 درهماً. وقت المعالجة: في نفس اليوم إلى 3 أيام عمل.`
+    id: "TWF-010",
+    sourceId: "DL-010",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I replace a lost or damaged driving license in Dubai?",
+    content: `Apply online at rta.ae or on the Dubai Drive app: (1) Log in with UAE Pass or Emirates ID. (2) Select 'Replace Driving Licence'. (3) Confirm your details and pay the replacement fee (AED 100). (4) Your new licence is delivered by courier or available at an RTA kiosk. No need to visit a centre for a standard replacement.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "DL-REPL-001",
   },
-
   {
-    id: 'POL-020',
-    emirate: 'All UAE',
-    category: 'housing',
-    title: 'Property Purchase by Expatriates',
-    content: `Expatriates can purchase freehold property in designated areas across all UAE emirates.
-
-Abu Dhabi: Freehold areas include Yas Island, Saadiyat Island, Al Reem Island, Al Maryah Island.
-Dubai: Over 60 designated freehold areas including Downtown Dubai, Dubai Marina, Palm Jumeirah.
-Sharjah: Limited freehold areas; GCC nationals have broader rights. Check SRERD for current designated areas.
-Ajman, Ras Al Khaimah, Fujairah: Freehold areas available; check respective land departments.
-
-Property ownership may entitle expatriates to a UAE residence visa:
-- Investment of AED 750,000+: 2-year investor visa
-- Investment of AED 2,000,000+: 10-year Golden Visa
-
----
-
-شراء العقارات للمقيمين الأجانب في الإمارات
-
-يحق للمقيمين الأجانب شراء عقارات تملك حر في مناطق مخصصة في جميع الإمارات.
-
-أبوظبي: جزيرة ياس، جزيرة السعديات، جزيرة الريم، جزيرة الماريا.
-دبي: أكثر من 60 منطقة تملك حر تشمل وسط دبي ومرسى دبي ونخلة جميرا.
-الشارقة: مناطق تملك حر محدودة؛ للمواطنين الخليجيين صلاحيات أوسع.
-عجمان، رأس الخيمة، الفجيرة: مناطق تملك حر متاحة؛ راجع دائرة الأراضي المعنية.
-
-قد يُتيح تملك العقار للأجانب الحصول على تأشيرة إقامة:
-- استثمار 750,000 درهم+: تأشيرة مستثمر لمدة سنتين
-- استثمار 2,000,000 درهم+: إقامة ذهبية لمدة 10 سنوات`
+    id: "TWF-011",
+    sourceId: "TF-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I check my traffic fines in Dubai?",
+    content: `Multiple ways — all digital, no office visit needed: (1) Dubai Drive app — log in, tap 'Fines Inquiry', see full details including violation photo, date, GPS location. (2) rta.ae — enter your plate or licence number. (3) Dubai Police app — best for black point checks. (4) SMS — send your plate number to RTA's official SMS service. (5) RTA Smart Kiosks — 32 kiosks at 21 locations, open 24/7. All methods are free to check.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Fine Check",
+    policyRef: "TF-CHECK-001",
   },
-
   {
-    id: 'POL-023',
-    emirate: 'All UAE',
-    category: 'business',
-    title: 'Value Added Tax (VAT) Registration',
-    content: `VAT was introduced in the UAE on 1 January 2018 at a standard rate of 5%.
-
-Mandatory registration: Businesses with taxable supplies exceeding AED 375,000 per year must register for VAT.
-Voluntary registration: Businesses with taxable supplies exceeding AED 187,500 per year may register voluntarily.
-
-Register via the Federal Tax Authority (FTA) portal: tax.gov.ae
-
-Filing: VAT returns must be filed quarterly (or monthly for large businesses).
-Penalty for late registration: AED 10,000–20,000.
-Penalty for late filing: AED 1,000 first time, AED 2,000 subsequent times.
-
-Zero-rated supplies include: healthcare, education, international transport, exports.
-Exempt supplies include: bare land, local passenger transport, residential property (first sale).
-
----
-
-التسجيل في ضريبة القيمة المضافة بالإمارات
-
-طُبِّقت ضريبة القيمة المضافة في الإمارات في 1 يناير 2018 بمعدل 5%.
-
-التسجيل الإلزامي: الشركات التي تتجاوز إمداداتها الخاضعة للضريبة 375,000 درهم سنوياً.
-التسجيل الاختياري: الشركات التي تتجاوز إمداداتها 187,500 درهم سنوياً.
-
-التسجيل عبر: موقع الهيئة الاتحادية للضرائب (tax.gov.ae).
-التقديم: كل 3 أشهر (أو شهرياً للشركات الكبيرة).`
+    id: "TWF-012",
+    sourceId: "TF-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I pay traffic fines in Dubai online?",
+    content: `Pay via: (1) Dubai Drive app — pay directly after viewing fines, using saved cards, Apple Pay, or Samsung Pay. Status updates within hours. (2) rta.ae — enter fine details and pay by card. (3) DubaiNow app — manage multiple government fines in one place. (4) MOI UAE app — for fines across all emirates. (5) RTA Smart Kiosks — accept cash, credit card, and NFC/mobile pay. Always download your receipt after payment.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "TF-PAY-001",
   },
-
   {
-    id: 'POL-024',
-    emirate: 'All UAE',
-    category: 'business',
-    title: 'Freelance Permit and Self-Employment',
-    content: `Freelance permits allow individuals to work independently in the UAE without a company sponsor.
-
-Available through:
-- Abu Dhabi: ADIO Freelance Permit (via tamm.abudhabi)
-- Dubai: Dubai Economy and Tourism (DET) or free zones (Dubai Media City, Dubai Internet City)
-- Sharjah: SHAMS Free Zone — freelance license from AED 5,750/year
-- Ajman: Ajman Media City — from AED 5,500/year (includes 1-year visa)
-- Ras Al Khaimah: RAKEZ freelance license
-- Umm Al Quwain: UAQ Free Trade Zone
-- Fujairah: Fujairah Free Zone
-
-Freelance permits allow:
-- Self-sponsorship of residence visa
-- Opening a personal UAE bank account
-- Invoicing clients legally
-
----
-
-تصريح العمل الحر في الإمارات
-
-تتيح تصاريح العمل الحر للأفراد العمل باستقلالية دون كفيل.
-
-المتاح عبر:
-- أبوظبي: تصريح العمل الحر من ADIO (عبر منصة تام)
-- دبي: اقتصاد دبي والسياحة أو المناطق الحرة
-- الشارقة: منطقة شمس الحرة — من 5,750 درهم سنوياً
-- عجمان: مدينة عجمان الإعلامية — من 5,500 درهم سنوياً (تشمل تأشيرة سنة)
-- رأس الخيمة: RAKEZ
-- أم القيوين: المنطقة الحرة لأم القيوين
-- الفجيرة: المنطقة الحرة في الفجيرة
-
-تتيح تصاريح العمل الحر: كفالة تأشيرة الإقامة الذاتية، فتح حساب مصرفي، إصدار فواتير للعملاء قانونياً.`
+    id: "TWF-013",
+    sourceId: "TF-003",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What are the fines for common traffic violations in Dubai?",
+    content: `Key fines (Federal Decree-Law No. 14 of 2024, effective March 2025): Speeding 20–30 km/h over limit: AED 600. Speeding 60+ km/h over: AED 3,000 + 12 black points + 30-day impound. Speeding 80+ km/h over: AED 3,000 + 23 black points + 60-day impound. Running a red light: AED 1,000 + 12 black points + 30-day impound. No seatbelt: AED 400 + 4 black points. Mobile phone while driving: AED 800 + 4 black points. Reckless driving: AED 2,000 + 23 black points + 60-day impound. No number plate: AED 3,000 + 23 black points + 90-day impound. Public transport fare evasion: AED 200.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai & UAE Traffic Law 2025",
+    policyRef: "TF-RATES-001",
   },
-
   {
-    id: 'POL-026',
-    emirate: 'All UAE',
-    category: 'social',
-    title: 'Zakat and Charitable Support',
-    content: `Zakat management and charitable giving in the UAE is regulated by the General Authority of Islamic Affairs and Endowments.
-
-Official Zakat channels:
-- Zakat Fund (zakatfund.gov.ae): Accepts Zakat payments and distributes to eligible beneficiaries.
-- Emirates Red Crescent: Charitable donations for humanitarian causes.
-- Community Development Authority (CDA) Dubai: Regulates social support and charity.
-
-Zakat is calculated at 2.5% of eligible savings and assets held for one lunar year (nisab threshold).
-
----
-
-الزكاة والدعم الخيري في الإمارات
-
-تُنظِّم الهيئة العامة للشؤون الإسلامية والأوقاف إدارة الزكاة والعمل الخيري في الإمارات.
-
-قنوات الزكاة الرسمية:
-- صندوق الزكاة (zakatfund.gov.ae): يقبل دفعات الزكاة ويوزعها على المستحقين.
-- الهلال الأحمر الإماراتي: التبرعات الخيرية للأعمال الإنسانية.
-- هيئة تنمية المجتمع دبي: تنظيم الدعم الاجتماعي والعمل الخيري.
-
-تُحسب الزكاة بنسبة 2.5% من المدخرات والأصول المؤهلة المحتفظ بها لمدة سنة هجرية.`
+    id: "TWF-014",
+    sourceId: "TF-004",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How many black points lead to licence suspension in Dubai?",
+    content: `24 black points: 1-year licence suspension. Black points expire automatically 12 months after the violation date if no further offences occur. You can reduce points by attending a black point reduction course at an approved institute: up to 8 points removed per course, cost AED 810. Check your black points on the Dubai Police app or rta.ae — no office visit needed.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai & Dubai Police",
+    policyRef: "TF-BP-001",
   },
-
   {
-    id: 'POL-027',
-    emirate: 'All UAE',
-    category: 'social',
-    title: 'People of Determination — Support Services',
-    content: `The UAE provides comprehensive support for People of Determination (individuals with disabilities) across all emirates.
-
-Key services:
-- Determination Card (Bata'qa Al Himma): Issued by Ministry of Community Development. Provides access to discounts and priority services.
-- Parking permits: Free designated parking across UAE.
-- Education: Inclusive education programs in public and private schools.
-- Employment: Mandatory 1% employment quota for People of Determination in private sector companies with 50+ employees (Federal Law No. 29 of 2006).
-
-Apply via:
-- Ministry of Community Development: mocd.gov.ae
-- Each emirate's social services authority
-
----
-
-خدمات دعم ذوي الهمم في الإمارات
-
-توفر الإمارات دعماً شاملاً لذوي الهمم في جميع الإمارات.
-
-الخدمات الرئيسية:
-- بطاقة الهمة: تصدرها وزارة تنمية المجتمع وتتيح الخصومات والأولوية في الخدمات.
-- تصاريح مواقف: مواقف مخصصة مجانية في جميع أنحاء الإمارات.
-- التعليم: برامج التعليم الدامج في المدارس الحكومية والخاصة.
-- التوظيف: حصة إلزامية 1% لتوظيف ذوي الهمم في الشركات الخاصة التي لديها 50 موظفاً فأكثر.
-
-التقديم عبر: وزارة تنمية المجتمع (mocd.gov.ae) أو جهة الخدمات الاجتماعية في كل إمارة.`
+    id: "TWF-015",
+    sourceId: "TF-005",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I dispute a traffic fine in Dubai?",
+    content: `Submit a dispute digitally: (1) Go to rta.ae and find 'Dispute Fines'. (2) Fill the dispute form with your Emirates ID, fine reference number, and supporting evidence (dashcam footage, photos). (3) Alternatively, visit any RTA Customer Happiness Centre. Processing takes a few business days. Tip: fines over AED 5,000 (individuals) or AED 20,000 (companies) can be paid in 3, 6, 9, or 12-month instalment plans.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "TF-DISP-001",
   },
-
   {
-    id: 'POL-028',
-    emirate: 'All UAE',
-    category: 'social',
-    title: 'Retirement and End of Service Benefits',
-    content: `End of service gratuity is a legal right for all private sector employees in the UAE who have completed at least 1 year of service.
-
-Calculation (UAE Labour Law):
-- 21 days basic salary per year for the first 5 years
-- 30 days basic salary per year for each year beyond 5 years
-- Maximum gratuity: 2 years total basic salary
-
-Paid by employer upon resignation, termination, or contract end.
-For unlimited contracts: gratuity reduces if employee resigns before 5 years.
-
-Public sector employees in Abu Dhabi, Dubai, and Sharjah: covered by UAE Pension Authority (GPSSA) or emirate-level pension authority.
-
-File a complaint for non-payment: Ministry of Human Resources and Emiratisation (mohre.gov.ae).
-
----
-
-مكافأة نهاية الخدمة والتقاعد في الإمارات
-
-مكافأة نهاية الخدمة حق قانوني لجميع موظفي القطاع الخاص الذين أتمّوا سنة خدمة على الأقل.
-
-الحساب (قانون العمل الإماراتي):
-- 21 يوماً من الراتب الأساسي عن كل سنة للسنوات الخمس الأولى
-- 30 يوماً من الراتب الأساسي عن كل سنة تتجاوز الخمس سنوات
-- الحد الأقصى: راتب أساسي لسنتين
-
-يدفعها صاحب العمل عند الاستقالة أو الإنهاء أو انتهاء العقد.
-للشكوى عند عدم الدفع: وزارة الموارد البشرية والتوطين (mohre.gov.ae).`
+    id: "TWF-016",
+    sourceId: "TF-006",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Can I pay traffic fines in instalments in Dubai?",
+    content: `Yes. Fines above AED 5,000 for individuals (AED 20,000 for companies) can be paid in instalment plans of 3, 6, 9, or 12 months. Pay the first instalment by credit card online, then contact your bank to convert to an instalment arrangement. For standard fines under these thresholds, full payment is required before vehicle registration renewal.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "TF-INST-001",
   },
-
   {
-    id: 'POL-031',
-    emirate: 'All UAE',
-    category: 'identity',
-    title: 'Birth Certificate Registration',
-    content: `Birth certificates in the UAE must be registered within 30 days of birth. Late registration (after 30 days) requires additional approvals.
-
-Abu Dhabi: Register at SEHA hospitals or via TAMM platform.
-Dubai: Register at DHA hospitals or via Dubai Health Authority.
-Other emirates: Register at the Ministry of Health hospital where the birth occurred.
-
-Required documents:
-- Hospital birth notification
-- Parents' passports and Emirates IDs
-- Parents' marriage certificate
-- UAE residence visa of the mother
-
-The birth certificate is required for Emirates ID registration and residence visa for the child.
-
----
-
-تسجيل شهادات الميلاد في الإمارات
-
-يجب تسجيل شهادات الميلاد في الإمارات خلال 30 يوماً من الولادة.
-
-أبوظبي: في مستشفيات صحة أو عبر منصة تام.
-دبي: في مستشفيات هيئة الصحة أو عبر الهيئة.
-باقي الإمارات: في مستشفى وزارة الصحة حيث جرت الولادة.
-
-المستندات المطلوبة:
-- إشعار الولادة من المستشفى
-- جوازات سفر الوالدين وهوياتهم الإماراتية
-- عقد زواج الوالدين
-- تأشيرة إقامة الأم في الإمارات`
+    id: "TWF-017",
+    sourceId: "TF-007",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What is the penalty for expired vehicle registration in Dubai?",
+    content: `AED 500 fine + black points on your licence + possible vehicle impoundment for up to 7 days. You have a 30-day grace period after expiry with no additional fees. After the grace period, fines accumulate. Driving with expired registration also invalidates your car insurance. Renew online via rta.ae or the Dubai Drive app up to 150 days before expiry.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "TF-EXPR-001",
   },
-
   {
-    id: 'POL-032',
-    emirate: 'All UAE',
-    category: 'identity',
-    title: 'Marriage Certificate — UAE',
-    content: `Marriage registration and attestation in the UAE applies to both Muslims and non-Muslims.
-
-Muslim marriages: Registered at the Islamic Affairs and Charitable Activities Department (IACAD) in Dubai, or equivalent authority in each emirate.
-
-Non-Muslim marriages: Registered at the Abu Dhabi Judicial Department (for Abu Dhabi) or Personal Status Courts.
-
-Foreign marriage certificates must be attested by:
-1. Country of origin's Ministry of Foreign Affairs
-2. UAE Embassy in that country
-3. UAE Ministry of Foreign Affairs
-
-Required for: family visa applications, residence visa for spouse, Emirates ID for spouse.
-
----
-
-تسجيل عقد الزواج في الإمارات
-
-ينطبق تسجيل الزواج وتوثيقه في الإمارات على المسلمين وغير المسلمين.
-
-زواج المسلمين: يُسجَّل في دائرة الشؤون الإسلامية والعمل الخيري في دبي أو الجهة المعادلة في كل إمارة.
-زواج غير المسلمين: يُسجَّل في دائرة القضاء في أبوظبي أو محاكم الأحوال الشخصية.
-
-يجب توثيق شهادات الزواج الأجنبية عبر: وزارة الخارجية في بلد المنشأ، ثم السفارة الإماراتية، ثم وزارة الخارجية الإماراتية.`
+    id: "TWF-018",
+    sourceId: "TF-008",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I check if my vehicle has any fines before selling it?",
+    content: `Check fines on: (1) rta.ae — enter plate or file number. (2) Dubai Drive app — under 'Fines Inquiry'. (3) Dubai Police app. All outstanding fines must be cleared before ownership transfer. Unpaid fines will block the transfer at the RTA. You can check and pay digitally without visiting any office.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "TF-SELL-001",
   },
-
   {
-    id: 'POL-033',
-    emirate: 'All UAE',
-    category: 'identity',
-    title: 'UAE Passport Renewal — Nationals',
-    content: `UAE national passport renewal is handled by the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP).
-
-Apply via:
-- ICP Smart Services (icp.gov.ae)
-- TAMM platform (Abu Dhabi)
-- UAE Pass app
-
-Required documents:
-- Current UAE passport
-- Emirates ID
-- Recent passport-size photograph
-
-Fees: Vary by processing speed (normal, urgent, express).
-Processing time: 2–7 working days.
-
-Expatriates must renew their home country passport through their home country embassy in the UAE.
-
----
-
-تجديد جواز السفر الإماراتي للمواطنين
-
-تُنجز الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ (ICP) تجديد جوازات السفر الإماراتية.
-
-التقديم عبر: موقع ICP (icp.gov.ae) أو منصة تام أو تطبيق الهوية الرقمية UAE Pass.
-
-المستندات المطلوبة:
-- جواز السفر الحالي
-- الهوية الإماراتية
-- صورة شخصية حديثة
-
-وقت المعالجة: 2-7 أيام عمل. الرسوم تختلف حسب سرعة الإنجاز.`
+    id: "TWF-019",
+    sourceId: "VR-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I renew my vehicle registration (Mulkiya) in Dubai?",
+    content: `Online renewal takes 10–15 minutes. Requirements: valid Emirates ID, valid car insurance, cleared traffic fines, and inspection certificate (if car is over 3 years old). Methods: (1) rta.ae website. (2) Dubai Drive app. (3) S'hail app. (4) RTA Smart Kiosks (28 services, 24/7 at 23 metro stations). (5) WhatsApp RTA service. Fees: AED 350–380 for light vehicles + optional home delivery AED 25. You can renew up to 150 days before expiry.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "VR-RENEW-001",
   },
-
   {
-    id: 'POL-034',
-    emirate: 'All UAE',
-    category: 'environment',
-    title: 'Noise and Environmental Complaints',
-    content: `Environmental and noise complaints can be filed with the relevant authority in each emirate.
+    id: "TWF-020",
+    sourceId: "VR-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Does my car need inspection before registration renewal in Dubai?",
+    content: `Yes — if your vehicle is more than 3 years old, a technical/roadworthiness inspection is mandatory. Cars under 3 years: no inspection needed. Book inspection at RTA-approved testing centres. Results are linked to your vehicle's digital file. After passing, proceed to renew online. If your car fails inspection, you must fix the issues and re-test before renewal is allowed.
 
-Abu Dhabi: Environment Agency Abu Dhabi (EAD) — ead.gov.ae or call 800-EAD (323).
-Dubai: Dubai Municipality Environment Department — dm.gov.ae or Dubai Now app.
-Sharjah: Sharjah Environment and Protected Areas Authority — epaa.shj.ae.
-Ajman: Ajman Municipality — ajman.ae.
-Umm Al Quwain: UAQ Municipality.
-Ras Al Khaimah: RAK Environment and Protected Areas Authority.
-Fujairah: Fujairah Municipality.
-
-Common reportable issues: construction noise, air/water pollution, illegal dumping, industrial emissions.
-
----
-
-شكاوى الضوضاء والبيئة في الإمارات
-
-يمكن تقديم شكاوى بيئية وشكاوى الضوضاء للجهة المختصة في كل إمارة.
-
-أبوظبي: هيئة البيئة أبوظبي (ead.gov.ae) أو الاتصال على 800-323.
-دبي: دائرة البيئة ببلدية دبي (dm.gov.ae) أو تطبيق دبي ناو.
-الشارقة: هيئة البيئة والمناطق المحمية في الشارقة (epaa.shj.ae).
-عجمان: بلدية عجمان (ajman.ae).
-أم القيوين: بلدية أم القيوين.
-رأس الخيمة: هيئة البيئة والمناطق المحمية برأس الخيمة.
-الفجيرة: بلدية الفجيرة.`
+Note: Vehicle inspection must be done in person at an RTA-approved testing centre.`,
+    canResolveDigitally: false,
+    source: "RTA Dubai",
+    policyRef: "VR-INSP-001",
   },
-
   {
-    id: 'POL-035',
-    emirate: 'All UAE',
-    category: 'identity',
-    title: 'Golden Visa Application',
-    content: `The UAE Golden Visa grants long-term residency of 5 or 10 years to eligible individuals without needing a sponsor.
-
-Eligible categories (10-year Golden Visa):
-- Investors: Minimum AED 2 million real estate investment or AED 2 million in a UAE company
-- Entrepreneurs: Owner of a project valued at AED 500,000+
-- Specialized talents: Doctors, engineers, scientists, artists, athletes
-- Outstanding students: Top graduates from UAE or international universities
-- Humanitarian pioneers
-
-Eligible categories (5-year Golden Visa):
-- Property owners with property valued at AED 750,000+
-- Real estate investors
-
-Apply via:
-- ICA Smart Services (icp.gov.ae)
-- TAMM (Abu Dhabi)
-- GDRFA Dubai
-
-Benefits: 10-year residence, sponsor family members, self-sponsorship, multiple entry.
-
----
-
-طلب الإقامة الذهبية في الإمارات
-
-تمنح الإقامة الذهبية إقامة طويلة الأمد لمدة 5 أو 10 سنوات دون الحاجة إلى كفيل.
-
-فئات الأهلية (إقامة 10 سنوات):
-- المستثمرون: حد أدنى 2 مليون درهم في العقارات أو الشركات الإماراتية
-- رواد الأعمال: أصحاب مشاريع بقيمة 500,000 درهم فأكثر
-- الكفاءات المتخصصة: أطباء، مهندسون، علماء، فنانون، رياضيون
-- الطلاب المتميزون: خريجو الجامعات الإماراتية والدولية بتقدير مميز
-- الرواد الإنسانيون
-
-فئات أهلية الإقامة الذهبية (5 سنوات):
-- مالكو العقارات بقيمة 750,000 درهم فأكثر
-
-التقديم عبر: icp.gov.ae أو منصة تام أو GDRFA دبي.
-المزايا: إقامة 10 سنوات، كفالة أفراد الأسرة، الكفالة الذاتية، تأشيرة متعددة الدخول.`
+    id: "TWF-021",
+    sourceId: "VR-003",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I transfer vehicle ownership in Dubai?",
+    content: `Can be done online at rta.ae or via the Dubai Drive app with UAE Pass login. Both buyer and seller must be present digitally. Steps: (1) Clear all fines and Salik tolls. (2) Buyer secures insurance in their name. (3) Get vehicle inspected if 3+ years old. (4) Upload: Mulkiya, Emirates IDs for both parties, insurance certificate, inspection report, bank NOC if financed. (5) Pay AED 400 transfer fee + AED 20 Knowledge fee. Processing: same day if done online with no issues. Physical visit possible at any RTA Customer Happiness Centre.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Service ID 601",
+    policyRef: "VR-TRANS-001",
   },
-
-  // ─── ABU DHABI ────────────────────────────────────────────────────────────
-
   {
-    id: 'POL-010',
-    emirate: 'Abu Dhabi',
-    category: 'healthcare',
-    title: 'Health Card Application — Abu Dhabi',
-    content: `The Abu Dhabi Health Card (Daman) provides access to government healthcare services in Abu Dhabi.
-
-Eligible: UAE nationals and expatriate residents of Abu Dhabi.
-
-Apply via:
-- Daman website (damanhealth.ae)
-- TAMM platform (tamm.abudhabi)
-- Abu Dhabi Department of Health service centers
-
-Required documents:
-- Emirates ID
-- Residence visa
-- Passport
-
-Health insurance is mandatory for all Abu Dhabi residents. Employers must provide health insurance for employees. Domestic workers' insurance is the sponsor's responsibility.
-
----
-
-طلب البطاقة الصحية في أبوظبي
-
-توفر البطاقة الصحية لأبوظبي (ضمان) الوصول إلى خدمات الرعاية الصحية الحكومية.
-
-المستحقون: المواطنون والمقيمون الأجانب في أبوظبي.
-
-التقديم عبر: موقع ضمان (damanhealth.ae) أو منصة تام أو مراكز دائرة الصحة.
-
-المستندات المطلوبة: الهوية الإماراتية، تأشيرة الإقامة، جواز السفر.
-التأمين الصحي إلزامي لجميع مقيمي أبوظبي.`
+    id: "TWF-022",
+    sourceId: "VR-004",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What documents are needed for vehicle registration renewal in Dubai?",
+    content: `Required: (1) Valid Emirates ID. (2) Valid comprehensive or third-party car insurance certificate. (3) Cleared traffic fines (unpaid fines block renewal). (4) Cleared Salik balance. (5) Technical inspection certificate (cars 3+ years old). Optional: (6) Bank NOC letter if vehicle is under finance. All documents can be uploaded digitally — no physical trip needed for standard renewals.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "VR-DOCS-001",
   },
-
   {
-    id: 'POL-012',
-    emirate: 'Abu Dhabi',
-    category: 'education',
-    title: 'School Enrollment — Abu Dhabi (ADEK)',
-    content: `School enrollment in Abu Dhabi is regulated by the Abu Dhabi Department of Education and Knowledge (ADEK).
+    id: "TWF-023",
+    sourceId: "VR-005",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I register a new vehicle in Dubai for the first time?",
+    content: `For brand-new vehicles, the dealer usually handles initial registration. For private imports or non-dealer purchases: (1) Get UAE car insurance. (2) Vehicle inspection at RTA-approved centre. (3) Apply at rta.ae or RTA Customer Happiness Centre. (4) Pay registration fees. (5) Receive Mulkiya (registration card) and number plates. First-time registration typically requires an in-person visit to assign plates.
 
-Public schools (free for UAE nationals): Enroll via ADEK portal (adek.gov.ae).
-Private schools: Apply directly to the school. ADEK licenses and regulates all private schools.
-
-General enrollment requirements:
-- Emirates ID of child and parents
-- Birth certificate (attested)
-- Previous school records (transfer students)
-- Vaccination record
-- Passport copies
-
-Enrollment periods: March–May for the following academic year (September start).
-Age for KG1: Child must turn 4 by 31 December of enrollment year.
-
----
-
-التسجيل المدرسي في أبوظبي (ADEK)
-
-تُشرف دائرة التعليم والمعرفة في أبوظبي (ADEK) على التسجيل المدرسي.
-
-المدارس الحكومية (مجانية للمواطنين): التسجيل عبر بوابة ADEK (adek.gov.ae).
-المدارس الخاصة: التقديم مباشرة للمدرسة. تُرخِّص ADEK جميع المدارس الخاصة وتُنظِّمها.
-
-متطلبات التسجيل العامة:
-- الهوية الإماراتية للطفل والوالدين
-- شهادة الميلاد (موثقة)
-- السجلات المدرسية السابقة (للمنتقلين)
-- سجل التطعيمات
-- صور جوازات السفر
-
-فترات التسجيل: مارس-مايو للعام الدراسي التالي.`
+Note: First-time registration and plate assignment requires a visit to an RTA centre.`,
+    canResolveDigitally: false,
+    source: "RTA Dubai",
+    policyRef: "VR-NEW-001",
   },
-
   {
-    id: 'POL-015',
-    emirate: 'Abu Dhabi',
-    category: 'healthcare',
-    title: 'Health Insurance — Abu Dhabi (HAAD/DoH)',
-    content: `Health insurance is mandatory for all Abu Dhabi residents under the Health Authority Abu Dhabi (now Department of Health — DoH).
-
-Employers must provide health insurance for all employees.
-Sponsors must provide health insurance for sponsored dependents and domestic workers.
-
-Minimum coverage (Basic Health Insurance Plan):
-- Inpatient and outpatient care
-- Emergency care
-- Maternity care
-- Chronic disease management
-
-Regulated by: Department of Health Abu Dhabi (DOH) — doh.gov.ae
-Insurance providers must be licensed by DOH.
-
-Fine for employer non-compliance: AED 500 per uninsured employee per month.
-
----
-
-التأمين الصحي الإلزامي في أبوظبي (DoH)
-
-التأمين الصحي إلزامي لجميع مقيمي أبوظبي بموجب دائرة الصحة.
-
-يجب على أصحاب العمل توفير التأمين الصحي لجميع موظفيهم.
-يجب على الكفلاء توفير التأمين الصحي للمعالين والعمالة المنزلية.
-
-الحد الأدنى من التغطية:
-- الرعاية الداخلية والخارجية
-- الرعاية الطارئة
-- رعاية الأمومة
-- إدارة الأمراض المزمنة
-
-الجهة التنظيمية: دائرة الصحة أبوظبي (doh.gov.ae).
-غرامة المخالفة: 500 درهم لكل موظف غير مؤمَّن شهرياً.`
+    id: "TWF-024",
+    sourceId: "VR-006",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Can I check my vehicle registration status online in Dubai?",
+    content: `Yes. Check via: (1) Dubai Drive app — dashboard shows Mulkiya expiry date and renewal reminders. (2) rta.ae — enter your plate or file number. (3) S'hail app. (4) RTA Smart Kiosks. No office visit needed. You'll also receive automated SMS reminders before expiry if your mobile is registered with RTA.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "VR-CHECK-001",
   },
-
   {
-    id: 'POL-019',
-    emirate: 'Abu Dhabi',
-    category: 'housing',
-    title: 'Tawtheeq Tenancy Registration — Abu Dhabi',
-    content: `Tawtheeq is Abu Dhabi's official tenancy contract registration system, managed by the Department of Municipalities and Transport (DMT).
-
-Registration is mandatory for all rental agreements in Abu Dhabi.
-The landlord (or property manager) is legally responsible for registering the contract.
-
-Register via:
-- TAMM platform (tamm.abudhabi) using UAE Pass
-- SmartHub platform
-
-Required documents:
-- Signed tenancy agreement
-- Landlord's Emirates ID and ownership documents
-- Tenant's Emirates ID and residence visa
-
-Fees:
-- Property first registration: AED 900 per property (landlord's responsibility)
-- New tenancy contract: AED 50 per year
-- Contract renewal: AED 50 per year
-
-A valid Tawtheeq contract is required to activate ADDC (water and electricity) services.
-
----
-
-نظام توثيق عقود الإيجار في أبوظبي
-
-توثيق هو نظام تسجيل عقود الإيجار الرسمي في أبوظبي، تديره دائرة البلديات والنقل.
-
-التسجيل إلزامي لجميع عقود الإيجار في أبوظبي. المالك (أو مدير العقار) مسؤول قانونياً عن تسجيل العقد.
-
-التسجيل عبر: منصة تام (tamm.abudhabi) باستخدام UAE Pass أو منصة SmartHub.
-
-الرسوم:
-- أول تسجيل عقار: 900 درهم لكل عقار (على المالك)
-- عقد إيجار جديد: 50 درهم سنوياً
-- تجديد العقد: 50 درهم سنوياً
-
-يُشترط عقد توثيق ساري للحصول على خدمات شركة توزيع الكهرباء والمياه (ADDC).`
+    id: "TWF-025",
+    sourceId: "VR-007",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What is the fee for vehicle registration renewal in Dubai?",
+    content: `Light vehicles: AED 350–380 total (includes registration fee + knowledge/innovation levy). Heavy vehicles and commercial: higher rates. Optional home delivery of Mulkiya card: AED 25. Late renewal within grace period: no additional fee. After grace period: late fees accumulate. Inspection fee (if required): varies by test centre, typically AED 100–150.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Fee Schedule",
+    policyRef: "VR-FEE-001",
   },
-
   {
-    id: 'POL-022',
-    emirate: 'Abu Dhabi',
-    category: 'business',
-    title: 'Trade License Renewal — Abu Dhabi',
-    content: `Trade licenses in Abu Dhabi are issued and renewed by the Abu Dhabi Department of Economic Development (ADDED).
-
-Renew via:
-- TAMM platform (tamm.abudhabi)
-- ADDED website (added.gov.ae)
-- Abu Dhabi service centers
-
-Required documents for renewal:
-- Current trade license
-- Tenancy contract (Tawtheeq registered)
-- Partner/owner passport copies and Emirates IDs
-- No objection certificates where applicable
-
-Fees: Vary by business activity, legal structure, and office size. Contact ADDED for exact fees.
-Renewal must be done annually before license expiry.
-Grace period: 30 days after expiry before fines apply.
-
----
-
-تجديد الرخصة التجارية في أبوظبي
-
-تُصدر دائرة التنمية الاقتصادية في أبوظبي (ADDED) الرخص التجارية وتجدّدها.
-
-التجديد عبر: منصة تام أو موقع ADDED (added.gov.ae) أو مراكز الخدمة.
-
-المستندات المطلوبة للتجديد:
-- الرخصة التجارية الحالية
-- عقد الإيجار (مسجَّل في توثيق)
-- صور جوازات الشركاء/الملاك وهوياتهم
-- شهادات عدم ممانعة عند الاقتضاء
-
-يجب التجديد سنوياً قبل انتهاء الرخصة. فترة السماح: 30 يوماً بعد الانتهاء.`
+    id: "TWF-026",
+    sourceId: "SK-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I open a Salik account in Dubai?",
+    content: `Register online at salik.gov.ae or the Dubai Drive app: (1) Enter your vehicle plate and Emirates ID. (2) Purchase a Salik tag (AED 100, includes AED 50 credit). (3) The tag is mailed to you or available for pickup — no office visit required. Alternatively, buy a tag at any RTA Customer Happiness Centre, petrol station (ENOC/EPPCO), or authorised retailers. Your tag is activated within 24 hours.`,
+    canResolveDigitally: true,
+    source: "Salik Dubai \u2014 salik.gov.ae",
+    policyRef: "SK-OPEN-001",
   },
-
   {
-    id: 'POL-025',
-    emirate: 'Abu Dhabi',
-    category: 'social',
-    title: 'Social Support Application — Abu Dhabi',
-    content: `Social support in Abu Dhabi is managed by the Department of Community Development (DCD).
-
-Eligible for support:
-- Low-income UAE national families
-- Widows and divorcees
-- Orphans
-- Families of prisoners
-- Individuals with disabilities
-
-Apply via:
-- TAMM platform (tamm.abudhabi)
-- DCD website (dcd.gov.ae)
-- Abu Dhabi Social Support Centers
-
-Required documents:
-- Emirates ID
-- Family book (Khulasat Al Qaid) for nationals
-- Proof of income and financial status
-- Medical reports (where applicable)
-
----
-
-طلب الدعم الاجتماعي في أبوظبي
-
-تُدير دائرة التنمية المجتمعية (DCD) الدعم الاجتماعي في أبوظبي.
-
-المستحقون للدعم:
-- الأسر الإماراتية ذات الدخل المنخفض
-- الأرامل والمطلقات
-- الأيتام
-- أسر المسجونين
-- ذوو الإعاقات
-
-التقديم عبر: منصة تام أو موقع DCD (dcd.gov.ae) أو مراكز الدعم الاجتماعي.
-
-المستندات المطلوبة: الهوية الإماراتية، خلاصة القيد للمواطنين، إثبات الدخل، التقارير الطبية عند الاقتضاء.`
+    id: "TWF-027",
+    sourceId: "SK-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I recharge my Salik account?",
+    content: `Recharge via: (1) salik.gov.ae — card payment, any time. (2) Dubai Drive app — integrated Salik top-up, Apple Pay / Samsung Pay accepted. (3) DubaiNow app. (4) ENOC/EPPCO petrol stations — cash or card. (5) RTA Smart Kiosks (24/7). (6) Carrefour and authorised retailers. Minimum top-up: AED 50. Enable auto-recharge on salik.gov.ae to never run out.`,
+    canResolveDigitally: true,
+    source: "Salik Dubai",
+    policyRef: "SK-TOPUP-001",
   },
-
   {
-    id: 'POL-030',
-    emirate: 'Abu Dhabi',
-    category: 'utilities',
-    title: 'ADDC/AADC Connection — Abu Dhabi',
-    content: `Electricity and water connections in Abu Dhabi are managed by Abu Dhabi Distribution Company (ADDC) for Abu Dhabi city, and Al Ain Distribution Company (AADC) for Al Ain.
-
-Apply via:
-- ADDC website (addc.ae) or app
-- TAMM platform (tamm.abudhabi)
-- ADDC service centers
-
-Required documents:
-- Valid Tawtheeq (tenancy contract registration) — mandatory
-- Emirates ID
-- Property ownership document (for owners)
-
-A security deposit is required (amount varies by property type).
-Processing time: 1–3 working days after document submission.
-
----
-
-توصيل الكهرباء والمياه في أبوظبي
-
-تُدير شركة أبوظبي لتوزيع الكهرباء والمياه (ADDC) توصيل الكهرباء والمياه في مدينة أبوظبي، وشركة العين لتوزيع الكهرباء والمياه (AADC) لمدينة العين.
-
-التقديم عبر: موقع ADDC (addc.ae) أو تطبيقها أو منصة تام أو مراكز الخدمة.
-
-المستندات المطلوبة:
-- عقد توثيق ساري (إلزامي)
-- الهوية الإماراتية
-- وثيقة ملكية العقار (للملاك)
-
-يُطلب مبلغ تأمين يختلف حسب نوع العقار. وقت المعالجة: 1-3 أيام عمل.`
+    id: "TWF-028",
+    sourceId: "SK-003",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What is the Salik toll charge per gate in Dubai?",
+    content: `AED 4 per gate crossing. There are 8 Salik gates in Dubai (including Al Safa, Al Garhoud, Al Maktoum Bridge, Atrium Centre, Business Bay Tunnel, Al Mamzar South, Al Mamzar North, and Shindagha Tunnel). Maximum daily charge: AED 24 (6 crossings). You are charged only if your balance is sufficient and the tag is active and correctly fitted.`,
+    canResolveDigitally: true,
+    source: "Salik Dubai",
+    policyRef: "SK-RATES-001",
   },
-
-  // ─── DUBAI ───────────────────────────────────────────────────────────────
-
   {
-    id: 'POL-009',
-    emirate: 'Dubai',
-    category: 'social',
-    title: 'Muwafaq Social Support — Dubai',
-    content: `Social support in Dubai is managed by the Community Development Authority (CDA) through the Muwafaq program.
-
-Eligible for support:
-- Low-income UAE national families in Dubai
-- Orphans and children of unknown parentage
-- Elderly without family support
-- Individuals with disabilities
-
-Apply via:
-- CDA website (cda.gov.ae)
-- Dubai Now app
-- CDA service centers in Dubai
-
-Required documents:
-- Emirates ID
-- Family book (for nationals)
-- Proof of residence in Dubai
-- Financial status documentation
-
----
-
-برنامج موافق للدعم الاجتماعي في دبي
-
-تُدير هيئة تنمية المجتمع (CDA) الدعم الاجتماعي في دبي عبر برنامج موافق.
-
-المستحقون للدعم:
-- الأسر الإماراتية ذات الدخل المنخفض في دبي
-- الأيتام ومجهولو النسب
-- كبار السن بلا دعم أسري
-- ذوو الإعاقات
-
-التقديم عبر: موقع CDA (cda.gov.ae) أو تطبيق دبي ناو أو مراكز الهيئة في دبي.`
+    id: "TWF-029",
+    sourceId: "SK-004",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What happens if I pass a Salik gate without enough balance?",
+    content: `You get a 5-working-day grace period to recharge after a crossing with insufficient balance. If not recharged: AED 50 fine per day added until payment clears. Ongoing violations accumulate quickly. Register your mobile number on salik.gov.ae to receive SMS alerts when balance is low. Enable auto-recharge to prevent this entirely.`,
+    canResolveDigitally: true,
+    source: "Salik Dubai",
+    policyRef: "SK-FINE-001",
   },
-
   {
-    id: 'POL-011',
-    emirate: 'Dubai',
-    category: 'education',
-    title: 'School Enrollment — Dubai (KHDA)',
-    content: `School enrollment in Dubai is regulated by the Knowledge and Human Development Authority (KHDA).
-
-Public schools (free for UAE nationals): Managed by Dubai Schools (formerly DSOA schools).
-Private schools: Apply directly to the school. KHDA licenses and inspects all private schools.
-
-Enrollment requirements:
-- Emirates ID of child and parents
-- Birth certificate (attested)
-- Previous school records (transfer students)
-- Vaccination record
-- Passport copies
-
-Enrollment periods: Typically February–April for the following September academic year.
-Age for KG1: Child must turn 4 by 31 August of the enrollment year.
-
-Inspect school ratings at: khda.gov.ae
-
----
-
-التسجيل المدرسي في دبي (KHDA)
-
-تُنظِّم هيئة المعرفة والتنمية البشرية (KHDA) التسجيل المدرسي في دبي.
-
-المدارس الحكومية (مجانية للمواطنين): تُدارها مدارس دبي.
-المدارس الخاصة: التقديم مباشرة للمدرسة. KHDA تُرخِّص وتتفقد جميع المدارس.
-
-متطلبات التسجيل:
-- الهوية الإماراتية للطفل والوالدين
-- شهادة الميلاد (موثقة)
-- السجلات المدرسية السابقة (للمنتقلين)
-- سجل التطعيمات
-- صور جوازات السفر
-
-فترات التسجيل: فبراير-أبريل للعام الدراسي التالي (سبتمبر).`
+    id: "TWF-030",
+    sourceId: "SK-005",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I check my Salik balance and transaction history?",
+    content: `Check via: (1) salik.gov.ae — log in to see balance, all crossings, and receipts. (2) Dubai Drive app — Salik section in the dashboard. (3) SMS — send a message to the official Salik number. (4) RTA Smart Kiosks. All methods are free and digital. No office visit needed.`,
+    canResolveDigitally: true,
+    source: "Salik Dubai",
+    policyRef: "SK-BAL-001",
   },
-
   {
-    id: 'POL-014',
-    emirate: 'Dubai',
-    category: 'healthcare',
-    title: 'Health Insurance — Dubai (DHA)',
-    content: `Health insurance is mandatory for all Dubai residents under the Dubai Health Authority (DHA).
-
-Employers must provide health insurance for all employees.
-Sponsors must provide health insurance for sponsored dependents and domestic workers.
-
-Minimum coverage (Essential Benefits Plan — EBP):
-- Annual limit: AED 150,000 per year
-- Covers: Emergency care, inpatient and outpatient treatment, maternity care
-- Co-payment: 20% of costs up to AED 500 per claim, maximum AED 1,000 per year (inpatient)
-- Outpatient co-payment: 25% up to AED 100 per visit
-
-Insurance must be from a DHA-approved provider. List available at dha.gov.ae.
-
-Fine for employer non-compliance: AED 500 per uninsured employee per month.
-
----
-
-التأمين الصحي الإلزامي في دبي (DHA)
-
-التأمين الصحي إلزامي لجميع مقيمي دبي بموجب هيئة الصحة بدبي (DHA).
-
-يجب على أصحاب العمل توفير التأمين لجميع موظفيهم والكفلاء توفيره للمعالين.
-
-الحد الأدنى من التغطية (خطة المنافع الأساسية):
-- السقف السنوي: 150,000 درهم سنوياً
-- التغطية: الطوارئ، العلاج الداخلي والخارجي، الأمومة
-- المشاركة: 20% حتى 500 درهم لكل مطالبة، بحد أقصى 1,000 درهم سنوياً (داخلي)
-
-غرامة المخالفة: 500 درهم لكل موظف غير مؤمَّن شهرياً.`
+    id: "TWF-031",
+    sourceId: "SK-006",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I transfer my Salik tag to a new vehicle?",
+    content: `Update your vehicle details on salik.gov.ae or the Dubai Drive app under 'Manage Tag'. If you've sold your car, remove or cancel the tag immediately — otherwise you'll continue being charged for the new owner's crossings. Transfer the tag to your new vehicle digitally by updating the plate number in your Salik account profile.`,
+    canResolveDigitally: true,
+    source: "Salik Dubai",
+    policyRef: "SK-TRANS-001",
   },
-
   {
-    id: 'POL-017',
-    emirate: 'Dubai',
-    category: 'healthcare',
-    title: 'Dubai Health Authority (DHA) Professional License',
-    content: `Healthcare professionals working in Dubai must obtain a DHA professional license before practicing.
+    id: "TWF-032",
+    sourceId: "NOL-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What is a NOL card and do I need one in Dubai?",
+    content: `The NOL card (نول — Arabic for fare) is Dubai's mandatory contactless smart card for all RTA public transport. Cash is NOT accepted on the Metro, buses, trams, or ferries. You must tap in and tap out at every journey. Over 3 million people use NOL cards daily. The card also works at paid parking, public parks, and 2,000+ retail outlets including Carrefour and ENOC. Buy your card at any Metro station ticket machine, RTA Customer Happiness Centre, or authorised retailers.
 
-Eligible professions: Doctors, nurses, pharmacists, dentists, physiotherapists, and all regulated healthcare roles.
-
-Apply via:
-- Sheryan platform (sheryan.dha.gov.ae)
-
-Requirements:
-- Primary source verification of qualifications
-- Good Standing Certificate from previous licensing authority
-- UAE residence visa
-- Emirates ID
-- Medical fitness certificate
-- Valid health insurance
-
-Exam: Some professions require a DHA licensing exam.
-
-Processing time: Varies by profession; typically 4–12 weeks.
-License must be renewed annually.
-
----
-
-رخصة المهن الصحية من هيئة الصحة بدبي (DHA)
-
-يجب على المهنيين الصحيين العاملين في دبي الحصول على رخصة مهنية من DHA قبل مزاولة العمل.
-
-المهن المؤهلة: الأطباء، الممرضون، الصيادلة، أطباء الأسنان، المعالجون الفيزيائيون وجميع المهن الصحية المنظَّمة.
-
-التقديم عبر: منصة شريان (sheryan.dha.gov.ae).
-
-المتطلبات: التحقق من المؤهلات، شهادة حسن السيرة من جهة الترخيص السابقة، الإقامة، الهوية، اللياقة الطبية، التأمين الصحي.
-قد يُشترط اجتياز اختبار ترخيص DHA في بعض المهن. وقت المعالجة: 4-12 أسبوعاً. تُجدَّد الرخصة سنوياً.`
+IMPORTANT: The NOL card is ONLY for Dubai (RTA) transport services. It does NOT work on Sharjah, Abu Dhabi, Ajman, RAK, Fujairah, or UAQ public transport. Abu Dhabi uses the Hafilat card. Sharjah uses the Sayer card.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai \u2014 NOL Card",
+    policyRef: "NOL-INFO-001",
   },
-
   {
-    id: 'POL-018',
-    emirate: 'Dubai',
-    category: 'housing',
-    title: 'Ejari Tenancy Registration — Dubai',
-    content: `Ejari is Dubai's official tenancy contract registration system, managed by the Real Estate Regulatory Authority (RERA) under the Dubai Land Department (DLD).
-
-All tenancy contracts in Dubai must be registered with Ejari. The tenant is typically responsible for registration.
-
-Register via:
-- Dubai REST app
-- DLD website (dubailand.gov.ae)
-- Ejari typing centers across Dubai
-- RERA-registered real estate brokers
-
-Required documents:
-- Signed tenancy contract
-- Landlord's Emirates ID or passport
-- Tenant's Emirates ID and residence visa
-- Previous Ejari certificate (for renewal)
-- DEWA premise number
-
-Fee: AED 220 (online) or AED 220 + typing center service charge (in person).
-
-Ejari is required to activate DEWA (electricity and water) and for visa applications.
-
----
-
-تسجيل عقد الإيجار في إيجاري — دبي
-
-إيجاري هو نظام تسجيل عقود الإيجار الرسمي في دبي، يديره مؤسسة التنظيم العقاري (RERA) التابعة لدائرة الأراضي والأملاك.
-
-يجب تسجيل جميع عقود الإيجار في دبي مع إيجاري. المستأجر عادةً مسؤول عن التسجيل.
-
-التسجيل عبر: تطبيق Dubai REST أو موقع DLD أو مراكز الطباعة المعتمدة.
-
-المستندات المطلوبة: عقد الإيجار الموقَّع، هوية المالك أو جواز سفره، هوية المستأجر وتأشيرة إقامته، شهادة إيجاري السابقة (للتجديد)، رقم مبنى DEWA.
-
-الرسوم: 220 درهم (إلكترونياً). يُشترط إيجاري لتفعيل خدمات DEWA وتقديم طلبات التأشيرة.`
+    id: "TWF-033",
+    sourceId: "NOL-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What are the types of NOL cards available in Dubai?",
+    content: `4 types: (1) Red Ticket — AED 2, paper-based, up to 10 single journeys or 5 daily passes, expires 90 days from first use, Metro and tram only. (2) Silver Card — AED 25 (includes AED 19 credit), rechargeable, all transport modes, 5-year validity, most popular. (3) Gold Card — AED 25, same as Silver but accesses Gold Class (premium) cabins on Metro. (4) Blue Card — AED 70 (includes AED 20 credit), for students, senior citizens, and People of Determination — 50% fare discount; People of Determination travel free.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai \u2014 NOL Card Types",
+    policyRef: "NOL-TYPES-001",
   },
-
   {
-    id: 'POL-021',
-    emirate: 'Dubai',
-    category: 'business',
-    title: 'Trade License Renewal — Dubai',
-    content: `Trade licenses in Dubai are issued by the Department of Economy and Tourism (DET), formerly Dubai Economic Department (DED).
-
-Renew via:
-- Dubai Now app
-- DET website (dubaided.gov.ae)
-- Amer Centers
-- Business registration service centers
-
-Required documents for renewal:
-- Current trade license
-- Ejari-registered tenancy contract
-- Partner/owner passport copies and Emirates IDs
-- Activity-specific approvals where required
-
-Fees: Vary by business activity and number of activities. Contact DET for exact fees.
-Annual renewal required before license expiry.
-Grace period: 30 days after expiry.
-
----
-
-تجديد الرخصة التجارية في دبي
-
-تُصدر دائرة الاقتصاد والسياحة في دبي (DET) الرخص التجارية وتجدِّدها.
-
-التجديد عبر: تطبيق دبي ناو أو موقع DET أو مراكز أمر أو مراكز خدمة تسجيل الأعمال.
-
-المستندات المطلوبة للتجديد:
-- الرخصة التجارية الحالية
-- عقد إيجار مسجَّل في إيجاري
-- صور جوازات الشركاء/الملاك وهوياتهم
-- موافقات خاصة بالنشاط عند الاقتضاء
-
-التجديد سنوياً قبل انتهاء الرخصة. فترة السماح: 30 يوماً.`
+    id: "TWF-034",
+    sourceId: "NOL-003",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What are the Dubai Metro fares using a NOL card?",
+    content: `Zone-based fares using Silver NOL card: 1 zone — AED 3. 2 zones — AED 5. 3+ zones — AED 7.50. Daily fare cap: AED 14 for Silver and Blue cards — after hitting the cap, all travel is free until midnight. Gold card fares are higher. Red ticket fares are higher than Silver. Blue card fares are 50% of Silver rates.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Metro Fare Schedule",
+    policyRef: "NOL-FARES-001",
   },
-
   {
-    id: 'POL-029',
-    emirate: 'Dubai',
-    category: 'utilities',
-    title: 'DEWA Connection — Dubai',
-    content: `Electricity and water connections in Dubai are provided by Dubai Electricity and Water Authority (DEWA).
-
-Apply via:
-- DEWA website (dewa.gov.ae)
-- DEWA app
-- Dubai Now app
-
-Required documents:
-- Valid Ejari certificate — mandatory
-- Emirates ID
-- Property ownership document (for owners)
-
-Security deposit: AED 2,000 for apartments, AED 4,000 for villas (refundable).
-Processing time: Connection within 1–2 working days after approval.
-Green visa holders and UAE nationals may have different deposit requirements.
-
----
-
-توصيل الكهرباء والمياه في دبي (DEWA)
-
-تُوفِّر هيئة كهرباء ومياه دبي (DEWA) خدمات توصيل الكهرباء والمياه في دبي.
-
-التقديم عبر: موقع DEWA (dewa.gov.ae) أو تطبيق DEWA أو تطبيق دبي ناو.
-
-المستندات المطلوبة:
-- شهادة إيجاري سارية (إلزامية)
-- الهوية الإماراتية
-- وثيقة الملكية (للملاك)
-
-التأمين: 2,000 درهم للشقق، 4,000 درهم للفيلات (قابل للاسترداد).
-وقت التوصيل: 1-2 يوم عمل بعد الموافقة.`
+    id: "TWF-035",
+    sourceId: "NOL-004",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I recharge my NOL card in Dubai?",
+    content: `Top up via: (1) rta.ae website — card payment. (2) S'hail app — integrated digital top-up. (3) Dubai Drive app. (4) Smart ticket machines at all Metro/bus stations. (5) RTA Customer Happiness Centres. (6) Authorised retailers and ENOC stations. (7) Carrefour. Minimum top-up: AED 10. Maximum balance: AED 500 on Silver/Gold cards. Digital channels showed a 20% rise in 2025 — queues at physical stations have dropped significantly.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "NOL-TOPUP-001",
   },
-
-  // ─── SHARJAH ─────────────────────────────────────────────────────────────
-
   {
-    id: 'POL-036',
-    emirate: 'Sharjah',
-    category: 'driving',
-    title: 'Driving License Renewal — Sharjah',
-    content: `Sharjah driving licenses are renewed through the Ministry of Interior (MOI) portal or MOI UAE smart app. In-person renewal is available at the Traffic and Licensing Services Centre in Al Ramtha, Sharjah.
-
-Online: Visit moi.gov.ae or download MOI UAE app, log in via UAE Pass, navigate to Traffic Services > Renew Driving License.
-In-person: Visit Traffic and Licensing Services Centre, Al Ramtha, Sharjah.
-
-Required documents:
-- Emirates ID
-- Current driving license
-- Eye test certificate from an approved optician (mandatory)
-- Passport-size photograph
-
-Fees:
-- Under 21 years: AED 120
-- 21 years and above: AED 320
-- Delivery fee: AED 15 (waived if collected in person)
-- Late fine: AED 10 per month after 30-day grace period (maximum AED 500)
-
-Validity after renewal:
-- UAE and GCC nationals (above 21): 10 years
-- Expatriate residents (above 21): 5 years
-- Under 21: 1 year
-- Senior citizens (65+): must renew annually with enhanced eye test
-
----
-
-تجديد رخصة القيادة في الشارقة
-
-يتم تجديد رخصة القيادة في الشارقة عبر موقع وزارة الداخلية (moi.gov.ae) أو تطبيق MOI UAE أو بالحضور الشخصي إلى مركز خدمات الترخيص المروري في الرملة بالشارقة.
-
-المستندات المطلوبة:
-- الهوية الإماراتية
-- رخصة القيادة الحالية
-- شهادة فحص النظر من طبيب بصريات معتمد (إلزامية)
-- صورة شخصية
-
-الرسوم:
-- أقل من 21 سنة: 120 درهم
-- 21 سنة فأكثر: 320 درهم
-- رسوم التوصيل: 15 درهم (يُعفى منها عند الاستلام شخصياً)
-- غرامة التأخير: 10 درهم شهرياً بعد فترة السماح (30 يوماً) بحد أقصى 500 درهم
-
-مدة الصلاحية:
-- المواطنون الإماراتيون والخليجيون (فوق 21): 10 سنوات
-- المقيمون الأجانب (فوق 21): 5 سنوات
-- أقل من 21: سنة واحدة
-- كبار السن (65+): تجديد سنوي مع فحص بصر معزَّز`
+    id: "TWF-036",
+    sourceId: "NOL-005",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I check my NOL card balance in Dubai?",
+    content: `Check balance via: (1) S'hail app — tap your card or enter card number. (2) rta.ae. (3) Ticket office at any Metro or bus station. (4) Tap-in gates at metro stations — your balance is shown after tapping. (5) RTA Smart Kiosks. All methods are free. For Silver and Blue cards registered online, you get low-balance SMS alerts.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "NOL-BAL-001",
   },
-
   {
-    id: 'POL-037',
-    emirate: 'Sharjah',
-    category: 'healthcare',
-    title: 'Health Insurance — Sharjah',
-    content: `Health insurance is mandatory for all private sector employees and domestic workers in Sharjah as of 1 January 2025, under a UAE Cabinet decision.
-
-Employer obligation: All private sector employers must provide health insurance as a condition for issuing or renewing employee residence permits.
-Domestic worker sponsors must also provide health insurance.
-
-Minimum coverage (Basic Workers Health Insurance — WHI Plan):
-- Annual cost: AED 320 per employee per year
-- Covers individuals aged 1–64 years
-- Inpatient and outpatient care
-- Emergency care
-- No waiting period for chronic illness
-- Outpatient co-payment: 25% per visit (capped at AED 100 per visit)
-- Inpatient co-payment: 20% per stay (capped at AED 500 per claim)
-- Medication co-payment: 30% (annual cap AED 1,500)
-
-Purchase insurance via: whi.ae (official Workers Health Insurance portal)
-
-Penalty for non-compliance: Monthly fines ranging from AED 300 to AED 150,000 for groups; fines double for repeat violations within one year.
-
----
-
-التأمين الصحي الإلزامي في الشارقة
-
-أصبح التأمين الصحي إلزامياً لجميع موظفي القطاع الخاص والعمالة المنزلية في الشارقة اعتباراً من 1 يناير 2025.
-
-التزام صاحب العمل: يجب على جميع أصحاب العمل في القطاع الخاص توفير التأمين الصحي شرطاً لإصدار أو تجديد تصاريح الإقامة.
-
-الحد الأدنى من التغطية (خطة التأمين الصحي الأساسية للعمال):
-- التكلفة السنوية: 320 درهم للموظف سنوياً
-- تغطي الأعمار من 1 إلى 64 سنة
-- رعاية داخلية وخارجية وطوارئ
-- بدون فترة انتظار للأمراض المزمنة
-
-موقع الشراء: whi.ae (البوابة الرسمية للتأمين الصحي للعمال)
-
-غرامة المخالفة: من 300 إلى 150,000 درهم شهرياً؛ تتضاعف الغرامة عند التكرار خلال عام.`
+    id: "TWF-037",
+    sourceId: "NOL-006",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What is the fine for travelling without a valid NOL card in Dubai?",
+    content: `AED 200 fine for travelling on Dubai Metro, Tram, bus, or ferry without a valid, sufficiently-charged NOL card. Inspectors routinely check cards on all transport modes. Ensure your card is tapped in before boarding. Red ticket holders: ensure sufficient trips are loaded. If your card has insufficient balance, top up before your next journey.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "NOL-FINE-001",
   },
-
   {
-    id: 'POL-038',
-    emirate: 'Sharjah',
-    category: 'education',
-    title: 'School Enrollment — Sharjah (SPEA)',
-    content: `School enrollment in Sharjah is regulated by the Sharjah Private Education Authority (SPEA) for private schools, established under Emiri Decree No. 45 of 2018.
-
-Public schools: Managed by the Ministry of Education Sharjah educational zone (free for UAE nationals).
-Private schools: Apply directly to the school. SPEA licenses and inspects all private schools in Sharjah.
-
-Enrollment requirements:
-- Emirates ID of child and parents
-- Birth certificate (attested)
-- Previous school records (transfer students)
-- Vaccination record
-- Passport copies
-
-Enrollment periods: Typically March–May for the following September academic year.
-Age for KG1: Child must turn 4 by 31 December of the enrollment year (confirm with specific school).
-
-Search for schools: spea.shj.ae
-
----
-
-التسجيل المدرسي في الشارقة (SPEA)
-
-تُنظِّم هيئة التعليم الخاص في الشارقة (SPEA) التسجيل في المدارس الخاصة.
-
-المدارس الحكومية: تُدارها وزارة التربية والتعليم عبر المنطقة التعليمية في الشارقة (مجانية للمواطنين).
-المدارس الخاصة: التقديم مباشرة للمدرسة. SPEA تُرخِّصها وتتفقدها.
-
-متطلبات التسجيل:
-- الهوية الإماراتية للطفل والوالدين
-- شهادة الميلاد (موثقة)
-- السجلات المدرسية السابقة (للمنتقلين)
-- سجل التطعيمات
-- صور جوازات السفر
-
-البحث عن المدارس: spea.shj.ae`
+    id: "TWF-038",
+    sourceId: "NOL-007",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Can I use my NOL card for parking in Dubai?",
+    content: `Yes. Silver, Gold, and Blue NOL cards can be used to pay for RTA-managed public paid parking across Dubai. Tap your card at parking meters. Your parking fee is deducted from your NOL card balance. This works at RTA-designated paid parking zones. Red tickets cannot be used for parking.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "NOL-PARK-001",
   },
-
   {
-    id: 'POL-039',
-    emirate: 'Sharjah',
-    category: 'housing',
-    title: 'Tenancy Contract Registration — Sharjah (Tasdeeq)',
-    content: `Tenancy contract attestation (Tasdeeq / تصديق) is mandatory for all residential and commercial rental contracts in Sharjah, managed by Sharjah City Municipality.
-
-Register via:
-- Sharjah City Municipality website (shjmun.gov.ae)
-- Sharjah City Municipality service centers
-
-Required documents:
-- Signed tenancy contract
-- Landlord's Emirates ID or ownership document
-- Tenant's Emirates ID and residence visa
-- Passport copies of both parties
-
-Fees:
-- Attestation fee: 4% of annual rent (minimum AED 500) — typically the tenant's responsibility
-- In-person form fee: AED 100
-- Express service: AED 150 per transaction
-
-Processing time: Within 1 working day.
-
-A valid attested tenancy contract is required to activate SEWA (Sharjah Electricity and Water Authority) connections.
-
----
-
-تسجيل عقد الإيجار في الشارقة (التصديق)
-
-التصديق على عقد الإيجار إلزامي لجميع عقود الإيجار السكنية والتجارية في الشارقة، تُديره بلدية مدينة الشارقة.
-
-التسجيل عبر: موقع بلدية مدينة الشارقة (shjmun.gov.ae) أو مراكز الخدمة.
-
-المستندات المطلوبة:
-- عقد الإيجار الموقَّع
-- هوية المالك أو وثيقة الملكية
-- هوية المستأجر الإماراتية وتأشيرة إقامته
-- صور جوازات الطرفين
-
-الرسوم:
-- رسوم التصديق: 4% من قيمة الإيجار السنوي (حد أدنى 500 درهم) — عادةً على المستأجر
-- رسوم الاستمارة (حضورياً): 100 درهم
-- الخدمة العاجلة: 150 درهم لكل معاملة
-
-وقت المعالجة: يوم عمل واحد. يُشترط العقد الموثَّق لتفعيل خدمات SEWA.`
+    id: "TWF-039",
+    sourceId: "NOL-008",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I get a Blue NOL card for a student or senior citizen in Dubai?",
+    content: `Apply online at rta.ae or visit an RTA Customer Happiness Centre: Students: provide valid student ID and Emirates ID. Senior citizens (60+): provide Emirates ID. People of Determination: provide disability card and Emirates ID. Card cost: AED 70 (includes AED 20 credit). Benefit: 50% fare discount on all RTA transport. People of Determination: free travel. Processing: 3–5 working days. Card can be delivered by mail.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai \u2014 Blue NOL Card",
+    policyRef: "NOL-BLUE-001",
   },
-
   {
-    id: 'POL-040',
-    emirate: 'Sharjah',
-    category: 'business',
-    title: 'Trade License Renewal — Sharjah (SEDD)',
-    content: `Trade licenses in Sharjah are issued and renewed by the Sharjah Economic Development Department (SEDD).
-
-Renew via:
-- SEDD website (sedd.gov.ae)
-- SEDD service centers in Sharjah
-
-Required documents for renewal:
-- Current trade license
-- Tenancy contract (Tasdeeq attested by Sharjah City Municipality)
-- Partner/owner passport copies and Emirates IDs
-- Activity-specific government approvals where applicable
-
-Fees:
-- Renewal fee: 13% of annual office rent, minimum AED 11,000 for mainland licenses
-- Free zone licenses (SHAMS, SAIF Zone, Hamriyah): fees vary by zone
-
-Renewal must be done annually. Grace period: 30 days after expiry before fines apply.
-If expired more than 3 months: contact SEDD Inspection Division.
-
----
-
-تجديد الرخصة التجارية في الشارقة (SEDD)
-
-تُصدر دائرة التنمية الاقتصادية في الشارقة (SEDD) الرخص التجارية وتجدِّدها.
-
-التجديد عبر: موقع SEDD (sedd.gov.ae) أو مراكز الخدمة في الشارقة.
-
-المستندات المطلوبة للتجديد:
-- الرخصة التجارية الحالية
-- عقد إيجار موثَّق من بلدية الشارجة
-- صور جوازات الشركاء/الملاك وهوياتهم
-- موافقات حكومية خاصة بالنشاط عند الاقتضاء
-
-الرسوم:
-- رسوم التجديد: 13% من قيمة الإيجار السنوي، بحد أدنى 11,000 درهم لرخص البر الرئيسي
-- رخص المناطق الحرة: تختلف حسب المنطقة
-
-التجديد سنوياً. فترة السماح: 30 يوماً. إذا انتهت الرخصة منذ أكثر من 3 أشهر: تواصل مع قسم التفتيش في SEDD.`
+    id: "TWF-040",
+    sourceId: "NOL-009",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What is the NOL card travel pass and how does it work?",
+    content: `Silver, Gold, and Blue card holders can buy travel passes: 7-day pass, 30-day pass, 90-day pass, or 365-day annual pass. Passes are loaded onto your existing NOL card. You save approximately 40% compared to paying per journey, according to RTA data. A 30-day pass is automatically renewed every 30 days. Buy passes at rta.ae, the S'hail app, or Metro station ticket machines.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "NOL-PASS-001",
   },
-
-  // ─── AJMAN ───────────────────────────────────────────────────────────────
-
   {
-    id: 'POL-041',
-    emirate: 'Ajman',
-    category: 'driving',
-    title: 'Driving License Renewal — Ajman',
-    content: `Ajman driving licenses are renewed through the Ministry of Interior (MOI) portal at moi.gov.ae or the MOI UAE smart app. In-person renewal is available at the Ajman Traffic Department.
-
-Online: Visit moi.gov.ae or MOI UAE app > Traffic Services > Renew Driving License > Select Ajman.
-In-person: Ajman Traffic Department.
-
-Required documents:
-- Emirates ID
-- Current driving license
-- Eye test certificate from an approved optician (mandatory — available at Ajman Medical Center, AED 100)
-- Passport-size photograph
-
-Fees:
-- Under 21 years: AED 100
-- 21 years and above: AED 400
-- Total including knowledge and service fees: approximately AED 330 (AED 300 + AED 20 knowledge fee + AED 10 service fee)
-- Late fine: AED 10 per month after 30-day grace period (maximum AED 500)
-
-Validity after renewal:
-- UAE and GCC nationals (above 21): 10 years
-- Expatriate residents (above 21): 5 years
-- Under 21: 1 year
-
-Driving with expired license penalty:
-- AED 500 fine
-- 4 black points
-- Vehicle impounded for 7 days (if expired more than 3 months)
-
----
-
-تجديد رخصة القيادة في عجمان
-
-يتم التجديد عبر موقع وزارة الداخلية (moi.gov.ae) أو تطبيق MOI UAE أو بالحضور لإدارة المرور في عجمان.
-
-المستندات المطلوبة:
-- الهوية الإماراتية
-- رخصة القيادة الحالية
-- شهادة فحص النظر من طبيب بصريات معتمد (إلزامية)
-- صورة شخصية
-
-الرسوم:
-- أقل من 21 سنة: 100 درهم
-- 21 سنة فأكثر: 400 درهم
-- الإجمالي مع رسوم الخدمة والمعرفة: نحو 330 درهم
-- غرامة التأخير: 10 درهم شهرياً (حد أقصى 500 درهم)
-
-عقوبة القيادة برخصة منتهية:
-- غرامة 500 درهم
-- 4 نقاط سوداء
-- مصادرة السيارة 7 أيام إذا مضى أكثر من 3 أشهر`
+    id: "TWF-041",
+    sourceId: "NOL-010",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What happens if I lose my NOL card in Dubai?",
+    content: `Blue cards: report immediately via rta.ae or RTA Customer Happiness Centre. Your remaining balance can be transferred to a replacement card. Cost: AED 30–50 for replacement. Silver/Gold: if registered online, you may be able to retrieve remaining balance — contact RTA at 800 90 90. Red tickets: cannot be replaced or recovered. Register all personal NOL cards online at rta.ae to protect your balance.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "NOL-LOST-001",
   },
-
   {
-    id: 'POL-042',
-    emirate: 'Ajman',
-    category: 'healthcare',
-    title: 'Health Insurance — Ajman',
-    content: `Health insurance is mandatory for all private sector employees and domestic workers in Ajman as of 1 January 2025, under a UAE Cabinet decision.
-
-Employer obligation: All private sector employers must provide health insurance as a condition for issuing or renewing employee residence permits.
-
-Minimum coverage (Basic Workers Health Insurance — WHI Plan):
-- Annual cost: AED 320 per employee per year
-- Covers individuals aged 1–64 years
-- Inpatient and outpatient care, emergency care, no waiting period for chronic illness
-- Outpatient co-payment: 25% per visit (capped at AED 100 per visit)
-- Inpatient co-payment: 20% per stay (capped at AED 500 per claim)
-- Medication co-payment: 30% (annual cap AED 1,500)
-
-Purchase via: whi.ae (official Workers Health Insurance portal)
-
----
-
-التأمين الصحي الإلزامي في عجمان
-
-أصبح التأمين الصحي إلزامياً لجميع موظفي القطاع الخاص والعمالة المنزلية في عجمان اعتباراً من 1 يناير 2025.
-
-التزام صاحب العمل: توفير التأمين الصحي شرط لإصدار أو تجديد تصاريح الإقامة.
-
-خطة التأمين الصحي الأساسية للعمال (WHI):
-- التكلفة: 320 درهم للموظف سنوياً
-- تغطي الأعمار 1-64 سنة
-- رعاية داخلية وخارجية وطوارئ
-
-موقع الشراء: whi.ae`
+    id: "TWF-042",
+    sourceId: "PT-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What are the Dubai Metro operating hours?",
+    content: `Weekdays (Monday–Thursday): 05:00–00:00 (midnight). Friday: 05:00–01:00. Saturday: 05:00–00:00. Sunday: 08:00–00:00. During Ramadan, hours are extended. The Metro runs on the Red Line (Rashidiya to UAE Exchange) and Green Line (Creek to Etisalat). Trains run every 3–7 minutes at peak times. All times on the RTA Dubai app and rta.ae.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Metro",
+    policyRef: "PT-METRO-001",
   },
-
   {
-    id: 'POL-043',
-    emirate: 'Ajman',
-    category: 'education',
-    title: 'School Enrollment — Ajman',
-    content: `Schools in Ajman are supervised by the Ministry of Education (MOE) through its Ajman educational zone for both public and private schools.
-
-Public schools (free for UAE nationals): Apply through the Ministry of Education Ajman zone.
-Private schools: Apply directly to the school. MOE oversees compliance and standards.
-
-Enrollment requirements:
-- Emirates ID of child and parents
-- Birth certificate (attested)
-- Previous school records (transfer students)
-- Vaccination record
-- Passport copies
-
-Enrollment periods: Typically March–May for the following September academic year.
-Age for KG1: Child must turn 4 by 31 December of the enrollment year (confirm with specific school and MOE Ajman zone).
-
-Contact: Ajman Government portal (ajman.ae) or Ministry of Education (moe.gov.ae).
-
----
-
-التسجيل المدرسي في عجمان
-
-تُشرف وزارة التربية والتعليم على المدارس في عجمان عبر منطقتها التعليمية.
-
-المدارس الحكومية: مجانية للمواطنين.
-المدارس الخاصة: التقديم مباشرة للمدرسة.
-
-متطلبات التسجيل:
-- الهوية الإماراتية للطفل والوالدين
-- شهادة الميلاد (موثقة)
-- السجلات المدرسية السابقة (للمنتقلين)
-- سجل التطعيمات
-- صور جوازات السفر
-
-التواصل: بوابة حكومة عجمان (ajman.ae) أو وزارة التربية والتعليم (moe.gov.ae).`
+    id: "TWF-043",
+    sourceId: "PT-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I plan a bus or metro trip in Dubai?",
+    content: `Use the S'hail app (Dubai's official journey planner): enter your start and end location, and it shows all public transport options — Metro, bus, tram, water bus, and ferry — with timings, fares, and walking directions. Available on iOS and Android. Also at wojhati.rta.ae online. No office visit needed — fully digital journey planning.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai \u2014 S'hail App",
+    policyRef: "PT-PLAN-001",
   },
-
   {
-    id: 'POL-044',
-    emirate: 'Ajman',
-    category: 'business',
-    title: 'Trade License Renewal — Ajman (DED)',
-    content: `Trade licenses in Ajman are issued and renewed by the Ajman Department of Economic Development (Ajman DED).
-
-Renew via:
-- Ajman government portal (ajman.ae) — Digital Services Portal
-- Ajman DED service centers
-
-Required documents for renewal:
-- Current trade license
-- Valid tenancy contract
-- Partner/owner passport copies and Emirates IDs
-- Activity-specific approvals where applicable
-
-Key fees (from official Ajman DED portal):
-- Economic license renewal fee: AED 600
-- Administrative services application: AED 50
-- Commercial register registration: AED 200
-- Unified economic activities register: AED 200
-- CSR UAE Fund contribution: AED 1,500 (for companies and establishments)
-- Commercial registration certificate: AED 200
-- Late renewal fine: applied per month for each month expired
-
-Renewal must be done annually before license expiry.
-
----
-
-تجديد الرخصة التجارية في عجمان
-
-تُصدر دائرة التنمية الاقتصادية في عجمان الرخص التجارية وتجدِّدها.
-
-التجديد عبر: بوابة حكومة عجمان (ajman.ae) أو مراكز الخدمة.
-
-المستندات المطلوبة للتجديد:
-- الرخصة التجارية الحالية
-- عقد إيجار ساري
-- صور جوازات الشركاء/الملاك وهوياتهم
-
-الرسوم الرئيسية (من بوابة عجمان الرسمية):
-- رسوم تجديد الرخصة الاقتصادية: 600 درهم
-- طلب الخدمات الإدارية: 50 درهم
-- تسجيل السجل التجاري: 200 درهم
-- مساهمة صندوق CSR الإماراتي: 1,500 درهم
-
-التجديد سنوياً قبل انتهاء الرخصة.`
+    id: "TWF-044",
+    sourceId: "PT-003",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I book a Dubai taxi or RTA cab?",
+    content: `Book via: (1) S'hail app — book RTA taxis, carpooling, and ride services. (2) Careem/Uber — also RTA-regulated in Dubai. (3) Call 04 208 0808 for an RTA taxi. (4) Walk-up taxi ranks at major locations, malls, and hotels. The S'hail app also offers shared rides and allows pre-booking. All digital — no office visit required.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Taxi Services",
+    policyRef: "PT-TAXI-001",
   },
-
-  // ─── UMM AL QUWAIN ───────────────────────────────────────────────────────
-
   {
-    id: 'POL-045',
-    emirate: 'Umm Al Quwain',
-    category: 'driving',
-    title: 'Driving License Renewal — Umm Al Quwain',
-    content: `Umm Al Quwain driving licenses are renewed through the Ministry of Interior (MOI) portal at moi.gov.ae or the MOI UAE smart app.
-
-Online: moi.gov.ae or MOI UAE app > Traffic Services > Renew Driving License > Select Umm Al Quwain.
-In-person: Umm Al Quwain Traffic Department.
-
-Required documents:
-- Emirates ID
-- Current driving license
-- Eye test certificate from an approved optician (mandatory)
-- Passport-size photograph
-
-Fees (standard MOI rates):
-- Under 21 years: AED 100
-- 21 years and above: AED 300
-- Late fine: AED 10 per month after 30-day grace period (maximum AED 500)
-
-Validity after renewal:
-- UAE and GCC nationals (above 21): 10 years
-- Expatriate residents (above 21): 5 years
-- Under 21: 1 year
-
----
-
-تجديد رخصة القيادة في أم القيوين
-
-يتم التجديد عبر موقع وزارة الداخلية (moi.gov.ae) أو تطبيق MOI UAE أو بالحضور لإدارة المرور في أم القيوين.
-
-المستندات المطلوبة:
-- الهوية الإماراتية
-- رخصة القيادة الحالية
-- شهادة فحص النظر (إلزامية)
-- صورة شخصية
-
-الرسوم:
-- أقل من 21 سنة: 100 درهم
-- 21 سنة فأكثر: 300 درهم
-- غرامة التأخير: 10 درهم شهرياً (حد أقصى 500 درهم)
-
-مدة الصلاحية بعد التجديد:
-- المواطنون الإماراتيون والخليجيون: 10 سنوات
-- المقيمون الأجانب: 5 سنوات`
+    id: "TWF-045",
+    sourceId: "PT-004",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How does the Dubai Tram work and what areas does it cover?",
+    content: `The Dubai Tram runs 14.5 km from Jumeirah Beach Residence (JBR) to Al Sufouh, serving Dubai Marina, JBR, Media City, Internet City, and Knowledge Village. It connects to the Metro Red Line at DAMAC Properties and Sobha Realty stations via footbridges. Tram hours: 06:00–01:00 daily (02:00 on weekends). NOL card mandatory — same zones and fares as Metro. Trams run every 7–10 minutes.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Tram",
+    policyRef: "PT-TRAM-001",
   },
-
   {
-    id: 'POL-046',
-    emirate: 'Umm Al Quwain',
-    category: 'healthcare',
-    title: 'Health Insurance — Umm Al Quwain',
-    content: `Health insurance is mandatory for all private sector employees and domestic workers in Umm Al Quwain as of 1 January 2025, under a UAE Cabinet decision.
-
-Employer obligation: All private sector employers must provide health insurance as a condition for issuing or renewing employee residence permits.
-
-Minimum coverage (Basic Workers Health Insurance — WHI Plan):
-- Annual cost: AED 320 per employee per year
-- Covers individuals aged 1–64 years
-- Inpatient and outpatient care, emergency care
-- No waiting period for chronic illness
-
-Purchase via: whi.ae (official Workers Health Insurance portal)
-
-For healthcare facilities and hospitals in Umm Al Quwain: contact UAQ Department of Health or Ministry of Health (moh.gov.ae).
-
----
-
-التأمين الصحي الإلزامي في أم القيوين
-
-أصبح التأمين الصحي إلزامياً لجميع موظفي القطاع الخاص والعمالة المنزلية في أم القيوين اعتباراً من 1 يناير 2025.
-
-خطة التأمين الصحي الأساسية للعمال:
-- التكلفة: 320 درهم للموظف سنوياً
-- تغطي الأعمار 1-64 سنة
-- رعاية داخلية وخارجية وطوارئ
-
-موقع الشراء: whi.ae
-للمرافق الصحية: وزارة الصحة (moh.gov.ae).`
+    id: "TWF-046",
+    sourceId: "PT-005",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I use the Dubai water bus or ferry?",
+    content: `RTA water buses and ferries run across Dubai Creek and along the coast. Use your NOL card to board. The Dubai Ferry runs from Dubai Marina to Al Ghubaiba (near Gold Souk) — a scenic 1-hour journey costing AED 50 per person. Water buses on the Creek: AED 1 per crossing (NOL card). Abra (traditional wooden boats): AED 1 cash. Ferry and water bus routes are on the S'hail app and rta.ae.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Marine Transport",
+    policyRef: "PT-WATER-001",
   },
-
   {
-    id: 'POL-047',
-    emirate: 'Umm Al Quwain',
-    category: 'education',
-    title: 'School Enrollment — Umm Al Quwain',
-    content: `Schools in Umm Al Quwain are supervised by the Ministry of Education (MOE) through its regional educational zone.
-
-Public schools (free for UAE nationals): Apply through the MOE Umm Al Quwain educational zone.
-Private schools: Apply directly to the school. MOE oversees compliance and quality.
-
-Enrollment requirements:
-- Emirates ID of child and parents
-- Birth certificate (attested)
-- Previous school records (transfer students)
-- Vaccination record
-- Passport copies
-
-Contact: Ministry of Education (moe.gov.ae) or UAQ Government portal for local school listings and enrollment information.
-
----
-
-التسجيل المدرسي في أم القيوين
-
-تُشرف وزارة التربية والتعليم على المدارس في أم القيوين عبر منطقتها التعليمية.
-
-المدارس الحكومية: مجانية للمواطنين.
-المدارس الخاصة: التقديم مباشرة للمدرسة.
-
-متطلبات التسجيل:
-- الهوية الإماراتية للطفل والوالدين
-- شهادة الميلاد (موثقة)
-- السجلات المدرسية السابقة (للمنتقلين)
-- سجل التطعيمات
-
-التواصل: وزارة التربية والتعليم (moe.gov.ae).`
+    id: "TWF-047",
+    sourceId: "PT-006",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I get from Dubai to Sharjah or Abu Dhabi by public transport?",
+    content: `Dubai to Sharjah: RTA Bus E303/E307 from Union Metro Station or Al Ghubaiba Bus Terminal. Fare: AED 6–10 with NOL card. No advance booking needed — frequent service. Dubai to Abu Dhabi: No direct metro. Options: (1) GDRFA Inter-City Bus from Union/Ibn Battuta Metro — AED 25 one-way. (2) Hala or Yango taxi. (3) Careem/Uber. Inter-city buses accept NOL card or buy ticket at station. Journey: ~2 hours by bus.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Inter-City Services",
+    policyRef: "PT-INTER-001",
   },
-
-  // ─── RAS AL KHAIMAH ──────────────────────────────────────────────────────
-
   {
-    id: 'POL-048',
-    emirate: 'Ras Al Khaimah',
-    category: 'driving',
-    title: 'Driving License Renewal — Ras Al Khaimah',
-    content: `Ras Al Khaimah driving licenses are renewed exclusively online through the Ministry of Interior (MOI) portal or MOI UAE app. RAK Police officially moved all renewals online and stopped in-person renewals at service centers.
-
-Online: moi.gov.ae or MOI UAE app > Traffic Services > Renew Driving License > Select Ras Al Khaimah.
-For assistance: RAK Police website (rakpolice.gov.ae).
-
-Required documents:
-- Emirates ID
-- Current driving license
-- Eye test certificate from an approved optician (mandatory)
-- Passport-size photograph
-
-Fees (standard MOI rates):
-- Under 21 years: AED 100
-- 21 years and above: AED 300
-- Late fine: AED 10 per month after 30-day grace period (maximum AED 500)
-
-Validity after renewal:
-- UAE and GCC nationals (above 21): 10 years
-- Expatriate residents (above 21): 5 years
-- Under 21: 1 year
-
----
-
-تجديد رخصة القيادة في رأس الخيمة
-
-تجديد رخصة القيادة في رأس الخيمة متاح حصرياً عبر الإنترنت من خلال موقع وزارة الداخلية أو تطبيق MOI UAE. أوقفت شرطة رأس الخيمة رسمياً التجديد الشخصي في مراكز الخدمة.
-
-الإنترنت: moi.gov.ae أو تطبيق MOI UAE.
-للمساعدة: موقع شرطة رأس الخيمة (rakpolice.gov.ae).
-
-المستندات المطلوبة:
-- الهوية الإماراتية
-- رخصة القيادة الحالية
-- شهادة فحص النظر (إلزامية)
-- صورة شخصية
-
-الرسوم:
-- أقل من 21 سنة: 100 درهم
-- 21 سنة فأكثر: 300 درهم
-- غرامة التأخير: 10 درهم شهرياً (حد أقصى 500 درهم)`
+    id: "TWF-048",
+    sourceId: "PK-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I pay for parking in Dubai?",
+    content: `Multiple cashless methods: (1) MPARK app — enter your plate and parking zone. (2) RTA Dubai app — pay for parking digitally. (3) NOL Silver/Gold/Blue card — tap at parking meter. (4) SMS — send zone code to 7275. (5) Parking meters — card and NFC payment. (6) Pay-by-phone via registered plate. Cash is being phased out at most meters. The MPARK app is the most convenient — start and stop sessions remotely.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Parking Services",
+    policyRef: "PK-PAY-001",
   },
-
   {
-    id: 'POL-049',
-    emirate: 'Ras Al Khaimah',
-    category: 'healthcare',
-    title: 'Health Insurance — Ras Al Khaimah',
-    content: `Health insurance is mandatory for all private sector employees and domestic workers in Ras Al Khaimah as of 1 January 2025, under a UAE Cabinet decision.
-
-Employer obligation: All private sector employers must provide health insurance as a condition for issuing or renewing employee residence permits.
-
-Minimum coverage (Basic Workers Health Insurance — WHI Plan):
-- Annual cost: AED 320 per employee per year
-- Covers individuals aged 1–64 years
-- Inpatient and outpatient care, emergency care
-- No waiting period for chronic illness
-
-Purchase via: whi.ae (official Workers Health Insurance portal)
-
-For healthcare in RAK: RAK Hospital, Ibrahim Bin Hamad Obaidallah Hospital, and Ministry of Health clinics.
-Contact: RAK Government portal (rak.ae) or Ministry of Health (moh.gov.ae).
-
----
-
-التأمين الصحي الإلزامي في رأس الخيمة
-
-أصبح التأمين الصحي إلزامياً لجميع موظفي القطاع الخاص والعمالة المنزلية في رأس الخيمة اعتباراً من 1 يناير 2025.
-
-خطة التأمين الصحي الأساسية للعمال:
-- التكلفة: 320 درهم للموظف سنوياً
-- تغطي الأعمار 1-64 سنة
-- رعاية داخلية وخارجية وطوارئ بلا فترة انتظار للأمراض المزمنة
-
-موقع الشراء: whi.ae
-للرعاية الصحية في رأس الخيمة: مستشفى رأس الخيمة ومستشفى إبراهيم بن حمد عبيدالله وعيادات وزارة الصحة.`
+    id: "TWF-049",
+    sourceId: "PK-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "What are Dubai paid parking zones and hours?",
+    content: `Paid parking is colour-coded: Gold zone — AED 4/hour. Silver zone — AED 2/hour. Bronze zone — AED 1/hour. Standard hours: Saturday–Thursday, 08:00–22:00. Fridays: some areas are free until 13:00 then paid. Some areas operate 24/7. During Ramadan, free parking in evenings. Parking is free on public holidays. Check zone and hours on the RTA Dubai app or rta.ae before parking.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Parking",
+    policyRef: "PK-ZONES-001",
   },
-
   {
-    id: 'POL-050',
-    emirate: 'Ras Al Khaimah',
-    category: 'education',
-    title: 'School Enrollment — Ras Al Khaimah',
-    content: `Schools in Ras Al Khaimah are supervised by the Ministry of Education (MOE) through its RAK educational zone.
-
-Public schools (free for UAE nationals): Apply through the MOE Ras Al Khaimah educational zone.
-Private schools: Apply directly to the school. MOE oversees compliance.
-
-Enrollment requirements:
-- Emirates ID of child and parents
-- Birth certificate (attested)
-- Previous school records (transfer students)
-- Vaccination record
-- Passport copies
-
-Search for schools: RAK Government portal (rak.ae) or Ministry of Education (moe.gov.ae).
-
----
-
-التسجيل المدرسي في رأس الخيمة
-
-تُشرف وزارة التربية والتعليم على المدارس في رأس الخيمة عبر منطقتها التعليمية.
-
-المدارس الحكومية: مجانية للمواطنين.
-المدارس الخاصة: التقديم مباشرة للمدرسة.
-
-متطلبات التسجيل:
-- الهوية الإماراتية للطفل والوالدين
-- شهادة الميلاد (موثقة)
-- السجلات المدرسية السابقة
-- سجل التطعيمات
-
-البحث عن المدارس: bوابة حكومة رأس الخيمة (rak.ae) أو وزارة التربية والتعليم (moe.gov.ae).`
+    id: "TWF-050",
+    sourceId: "PK-003",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I get a seasonal parking permit in Dubai?",
+    content: `Apply for a seasonal permit (monthly, quarterly, annual) at rta.ae or the RTA Dubai app: (1) Log in with UAE Pass or Emirates ID. (2) Select your parking zone and permit duration. (3) Pay online. (4) Permit is linked to your vehicle plate — no physical sticker needed. Permits allow unlimited parking in your designated zone during permit hours. Residents can apply for residential parking permits at rta.ae.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Parking Permits",
+    policyRef: "PK-PERM-001",
   },
-
   {
-    id: 'POL-051',
-    emirate: 'Ras Al Khaimah',
-    category: 'business',
-    title: 'Trade License Renewal — Ras Al Khaimah (RAK DED / RAKEZ)',
-    content: `Trade licenses in Ras Al Khaimah are issued by the RAK Department of Economic Development (RAK DED) for mainland businesses, or RAKEZ (Ras Al Khaimah Economic Zone) for free zone businesses.
-
-Renew mainland license via:
-- RAK DED website or service centers
-
-Renew RAKEZ free zone license via:
-- RAKEZ portal (rakez.com)
-
-Required documents for renewal (mainland):
-- Current trade license
-- Valid tenancy contract with Ejari (minimum 1-month lease)
-- Partner/owner passport copies and Emirates IDs
-- Activity-specific approvals where applicable
-
-Fees:
-- Mainland (RAK DED): Varies by business activity and size. Contact RAK DED for exact fees.
-- RAKEZ free zone: Starting from AED 6,250/year for basic packages; varies by license type, office space, and visa allocation.
-
-License is valid for 1 year and must be renewed annually.
-
----
-
-تجديد الرخصة التجارية في رأس الخيمة
-
-تُصدر دائرة التنمية الاقتصادية في رأس الخيمة الرخص التجارية للبر الرئيسي، وRAKEZ للمناطق الحرة.
-
-التجديد (البر الرئيسي): عبر موقع RAK DED أو مراكز الخدمة.
-التجديد (المنطقة الحرة): عبر بوابة RAKEZ (rakez.com).
-
-المستندات المطلوبة (البر الرئيسي):
-- الرخصة التجارية الحالية
-- عقد إيجار ساري مع إيجاري (شهر على الأقل)
-- صور جوازات الشركاء/الملاك وهوياتهم
-
-الرسوم:
-- البر الرئيسي: تختلف حسب النشاط والحجم
-- RAKEZ: تبدأ من 6,250 درهم سنوياً للباقات الأساسية
-
-الرخصة سارية لمدة سنة وتُجدَّد سنوياً.`
+    id: "TWF-051",
+    sourceId: "RP-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I apply for a road permit for heavy vehicles in Dubai?",
+    content: `Apply online at rta.ae under 'Road and Transport Permits': (1) Log in with UAE Pass or Emirates ID. (2) Select the permit type (overweight, oversize, abnormal load). (3) Upload vehicle details, load specifications, and travel route. (4) Pay the applicable fee. (5) Permit is issued digitally — no office visit for standard permits. Emergency or complex permits may require RTA approval and can take 2–5 working days.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai Road Permits",
+    policyRef: "RP-HEAVY-001",
   },
-
-  // ─── FUJAIRAH ────────────────────────────────────────────────────────────
-
   {
-    id: 'POL-052',
-    emirate: 'Fujairah',
-    category: 'driving',
-    title: 'Driving License Renewal — Fujairah',
-    content: `Fujairah driving licenses are renewed through the Ministry of Interior (MOI) portal at moi.gov.ae or the MOI UAE smart app. In-person renewal is available at the Fujairah Traffic Department.
-
-Online: moi.gov.ae or MOI UAE app > Traffic Services > Renew Driving License > Select Fujairah.
-In-person: Fujairah Traffic Department.
-
-Required documents:
-- Emirates ID
-- Current driving license
-- Eye test certificate from an approved optician (mandatory)
-- Passport-size photograph
-
-Fees (standard MOI rates):
-- Under 21 years: AED 100
-- 21 years and above: AED 300
-- Late fine: AED 10 per month after 30-day grace period (maximum AED 500)
-
-Validity after renewal:
-- UAE and GCC nationals (above 21): 10 years
-- Expatriate residents (above 21): 5 years
-- Under 21: 1 year
-
----
-
-تجديد رخصة القيادة في الفجيرة
-
-يتم التجديد عبر موقع وزارة الداخلية (moi.gov.ae) أو تطبيق MOI UAE أو بالحضور لإدارة المرور في الفجيرة.
-
-المستندات المطلوبة:
-- الهوية الإماراتية
-- رخصة القيادة الحالية
-- شهادة فحص النظر (إلزامية)
-- صورة شخصية
-
-الرسوم:
-- أقل من 21 سنة: 100 درهم
-- 21 سنة فأكثر: 300 درهم
-- غرامة التأخير: 10 درهم شهرياً (حد أقصى 500 درهم)
-
-مدة الصلاحية:
-- المواطنون الإماراتيون والخليجيون: 10 سنوات
-- المقيمون الأجانب: 5 سنوات`
+    id: "TWF-052",
+    sourceId: "RP-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "How do I apply for a no-objection certificate (NOC) from RTA in Dubai?",
+    content: `Apply at rta.ae or the RTA Dubai app: (1) Log in with Emirates ID or UAE Pass. (2) Select 'No Objection Certificate'. (3) Specify the purpose (construction, access road, utility works near roads). (4) Attach supporting documents. (5) Pay the applicable fee. (6) Receive the NOC digitally within 3–7 working days. Complex infrastructure NOCs near major roads may require a site visit by RTA engineers.`,
+    canResolveDigitally: true,
+    source: "RTA Dubai",
+    policyRef: "RP-NOC-001",
   },
-
   {
-    id: 'POL-053',
-    emirate: 'Fujairah',
-    category: 'healthcare',
-    title: 'Health Insurance — Fujairah',
-    content: `Health insurance is mandatory for all private sector employees and domestic workers in Fujairah as of 1 January 2025, under a UAE Cabinet decision.
-
-Employer obligation: All private sector employers must provide health insurance as a condition for issuing or renewing employee residence permits.
-
-Minimum coverage (Basic Workers Health Insurance — WHI Plan):
-- Annual cost: AED 320 per employee per year
-- Covers individuals aged 1–64 years
-- Inpatient and outpatient care, emergency care
-- No waiting period for chronic illness
-
-Purchase via: whi.ae (official Workers Health Insurance portal)
-
-For healthcare in Fujairah: Fujairah Hospital and Ministry of Health clinics.
-Contact: Fujairah Government portal or Ministry of Health (moh.gov.ae).
-
----
-
-التأمين الصحي الإلزامي في الفجيرة
-
-أصبح التأمين الصحي إلزامياً لجميع موظفي القطاع الخاص والعمالة المنزلية في الفجيرة اعتباراً من 1 يناير 2025.
-
-خطة التأمين الصحي الأساسية للعمال:
-- التكلفة: 320 درهم للموظف سنوياً
-- تغطي الأعمار 1-64 سنة
-- رعاية داخلية وخارجية وطوارئ
-
-موقع الشراء: whi.ae
-للرعاية الصحية في الفجيرة: مستشفى الفجيرة وعيادات وزارة الصحة.`
+    id: "TWF-053",
+    sourceId: "EID-001",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Do I need a UAE PASS to access RTA services?",
+    content: `UAE PASS is recommended but not mandatory. With UAE PASS, you can log into rta.ae, Dubai Drive app, and most RTA digital services with a single secure sign-in — no separate RTA account needed. Without UAE PASS, use your Emirates ID number and registered mobile. Download UAE PASS from the App Store or Google Play. Registration requires Emirates ID and face scan — fully digital.`,
+    canResolveDigitally: true,
+    source: "UAE PASS / RTA Dubai",
+    policyRef: "EID-PASS-001",
   },
-
   {
-    id: 'POL-054',
-    emirate: 'Fujairah',
-    category: 'education',
-    title: 'School Enrollment — Fujairah',
-    content: `Schools in Fujairah are supervised by the Ministry of Education (MOE) through its Fujairah educational zone.
-
-Public schools (free for UAE nationals): Apply through the MOE Fujairah educational zone.
-Private schools: Apply directly to the school. MOE ensures compliance with national standards.
-
-Enrollment requirements:
-- Emirates ID of child and parents
-- Birth certificate (attested)
-- Previous school records (transfer students)
-- Vaccination record
-- Passport copies
-
-Education in Fujairah includes vocational programs aligned with the emirate's economy (fisheries, agriculture, tourism, logistics) through the Institute of Applied Technology Fujairah.
-
-Search for schools: Fujairah Government portal or Ministry of Education (moe.gov.ae).
-
----
-
-التسجيل المدرسي في الفجيرة
-
-تُشرف وزارة التربية والتعليم على المدارس في الفجيرة عبر منطقتها التعليمية.
-
-المدارس الحكومية: مجانية للمواطنين.
-المدارس الخاصة: التقديم مباشرة للمدرسة.
-
-متطلبات التسجيل:
-- الهوية الإماراتية للطفل والوالدين
-- شهادة الميلاد (موثقة)
-- السجلات المدرسية السابقة
-- سجل التطعيمات
-
-يشمل التعليم في الفجيرة برامج مهنية عبر معهد التقنية التطبيقية في الفجيرة.
-البحث عن المدارس: بوابة حكومة الفجيرة أو moe.gov.ae.`
+    id: "TWF-054",
+    sourceId: "EID-002",
+    emirate: "Dubai",
+    category: "transport",
+    title: "Can I renew my Emirates ID online and does it affect my RTA services?",
+    content: `Emirates ID renewal: apply at ICA (Federal Authority for Identity, Citizenship, Customs and Ports Security) at icp.gov.ae or the UAEICP app. It does not require an RTA visit. However, an expired Emirates ID blocks RTA licence and vehicle renewals. Renew your Emirates ID before it expires to avoid disruption to driving licence, vehicle registration, and other RTA digital services.`,
+    canResolveDigitally: true,
+    source: "ICA UAE / RTA Dubai",
+    policyRef: "EID-RENEW-001",
   },
-
   {
-    id: 'POL-055',
-    emirate: 'Fujairah',
-    category: 'business',
-    title: 'Trade License Renewal — Fujairah (FED / FFZA)',
-    content: `Trade licenses in Fujairah are issued by the Fujairah Economic Department (FED) for mainland businesses, or the Fujairah Free Zone Authority (FFZA) for free zone businesses.
+    id: "TWF-055",
+    sourceId: "OE-001",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "How do I renew my vehicle registration in Abu Dhabi?",
+    content: `Use the TAMM portal (tamm.abudhabi) or the TAMM app. Steps: (1) Log in with UAE PASS. (2) Ensure insurance is valid and fines are cleared. (3) Book vehicle inspection if car is 3+ years old. (4) Pay fees online. (5) Mulkiya is updated digitally. Abu Dhabi vehicle inspection is mandatory at ADNOC or authorised centres for cars over 3 years. Service is fully digital for standard renewals.`,
+    canResolveDigitally: true,
+    source: "TAMM Abu Dhabi",
+    policyRef: "OE-AUH-REG-001",
+  },
+  {
+    id: "TWF-056",
+    sourceId: "OE-002",
+    emirate: "Sharjah",
+    category: "transport",
+    title: "How do I renew my driving licence in Sharjah?",
+    content: `Sharjah driving licences are issued by the Sharjah Police General HQ — Traffic and Licensing Department. Apply online at shjpolice.gov.ae or in person at Sharjah Traffic Department. You'll need: Emirates ID, eye test (at approved Sharjah clinics), and existing licence. Fees and procedures are similar to Dubai. Online renewal is available for straightforward cases.`,
+    canResolveDigitally: true,
+    source: "Sharjah Police \u2014 Traffic Department",
+    policyRef: "OE-SHJ-DL-001",
+  },
+  {
+    id: "TWF-057",
+    sourceId: "OE-003",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "How do I check and pay traffic fines in Abu Dhabi?",
+    content: `Check and pay Abu Dhabi fines via: (1) TAMM portal — tamm.abudhabi. (2) Abu Dhabi Police app. (3) MOI UAE app — covers all emirates. (4) Darb (Abu Dhabi's toll system) portal for toll violations. All methods are fully digital. Fines must be cleared before vehicle registration renewal in Abu Dhabi.`,
+    canResolveDigitally: true,
+    source: "Abu Dhabi Police / TAMM",
+    policyRef: "OE-AUH-FINES-001",
+  },
+  {
+    id: "TWF-058",
+    sourceId: "OE-004",
+    emirate: "Sharjah",
+    category: "transport",
+    title: "How do I renew my vehicle registration in Sharjah?",
+    content: `Sharjah vehicle registration (Mulkiya) renewal is handled by the Sharjah Police Traffic Department. Apply online at shjpolice.gov.ae or visit a Sharjah Vehicle Testing Centre. Required: valid insurance, cleared fines, vehicle inspection if 3+ years old. Online renewal is available for eligible vehicles. Fees are similar to Dubai.`,
+    canResolveDigitally: true,
+    source: "Sharjah Police Traffic Department",
+    policyRef: "OE-SHJ-REG-001",
+  },
+  {
+    id: "TWF-059",
+    sourceId: "OE-005",
+    emirate: "All UAE",
+    category: "transport",
+    title: "How do I check traffic fines in RAK or Fujairah?",
+    content: `Use the MOI UAE app or moi.gov.ae to check fines from all emirates including RAK (Ras Al Khaimah) and Fujairah. Enter your Emirates ID or vehicle plate number. Pay online via card. RAK-specific: RAK Police app (available on iOS/Android). Fujairah-specific: Fujairah Police portal. All fines across UAE are viewable in one place on the MOI UAE app.`,
+    canResolveDigitally: true,
+    source: "MOI UAE / RAK Police / Fujairah Police",
+    policyRef: "OE-RAK-FINES-001",
+  },
+  {
+    id: "TWF-060",
+    sourceId: "AUH-DL-001",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "How do I renew my driving license in Abu Dhabi?",
+    content: `Abu Dhabi driving licenses are managed by the Integrated Transport Centre (ITC) — not RTA. Renew in 6–10 minutes via: (1) TAMM portal (tamm.abudhabi) — log in with UAE Pass, go to 'Vehicles and Transportation' → 'Driving Service' → 'Driving License Renewal'. (2) TAMM app. (3) MOI UAE app. Upload Emirates ID and eye test certificate. Pay online by card, Apple Pay, or Samsung Pay. Your renewed licence arrives by courier within 2–3 business days, or collect at a TAMM Customer Happiness Centre. No office visit required for standard renewals.
 
-Renew mainland license via:
-- Fujairah Economic Department (FED) service centers
-- Fujairah Digital Platform
+Authority: Integrated Transport Centre (ITC) — Department of Municipalities and Transport
+Portal: tamm.abudhabi`,
+    canResolveDigitally: true,
+    source: "TAMM Abu Dhabi \u2014 tamm.abudhabi",
+    policyRef: "AUH-DL-RENEW-001",
+  },
+  {
+    id: "TWF-061",
+    sourceId: "AUH-DL-002",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "What are the driving license renewal fees in Abu Dhabi?",
+    content: `Abu Dhabi driving licence renewal fees: Standard renewal AED 200–400 depending on licence type and validity period chosen (1 or 2 years). Late renewal: AED 10 per month fine after expiry. UAE/GCC nationals: valid for 10 years. Expatriates: valid for 5 years. You can renew up to 6 months before expiry. Eye test at an approved Abu Dhabi clinic: AED 100. All fines must be cleared before renewal.
 
-Renew FFZA free zone license via:
-- FFZA portal or service centers
+Authority: Integrated Transport Centre (ITC) — Department of Municipalities and Transport
+Portal: tamm.abudhabi`,
+    canResolveDigitally: true,
+    source: "TAMM Abu Dhabi",
+    policyRef: "AUH-DL-FEE-001",
+  },
+  {
+    id: "TWF-062",
+    sourceId: "AUH-DL-003",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "How do I get a new driving license in Abu Dhabi from scratch?",
+    content: `Process via Abu Dhabi ITC: (1) Open a traffic file — via TAMM app (navigate to Traffic Services → Open Traffic File) or visit an ITC-approved driving school. (2) Eye test at approved Abu Dhabi clinic (AED 100). (3) Enrol in theory classes at an approved driving school. (4) Pass theory test. (5) Complete yard and road tests. (6) Pay licence issuance fees (AED 600 via TAMM). Total cost: AED 3,000–6,000. Approved Abu Dhabi schools include Emirates Driving Company (EDC) and Belhasa.
 
-Required documents for renewal:
-- Current trade license
-- Valid tenancy contract registered with Fujairah Municipality
-- Partner/owner passport copies and Emirates IDs
-- Activity-specific approvals where applicable
+Authority: Integrated Transport Centre (ITC) — Department of Municipalities and Transport
+Portal: tamm.abudhabi
 
-Fees:
-- Mainland (FED): Basic professional license from AED 4,500/year; varies by activity and structure. Contact FED for exact fees.
-- FFZA free zone: AED 8,000–15,000/year depending on license type and package.
+Note: Eye test, theory test, and road test require physical attendance at Abu Dhabi ITC-approved facilities.`,
+    canResolveDigitally: false,
+    source: "TAMM Abu Dhabi / ITC",
+    policyRef: "AUH-DL-NEW-001",
+  },
+  {
+    id: "TWF-063",
+    sourceId: "AUH-VR-001",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "How do I renew my vehicle registration (Mulkiya) in Abu Dhabi?",
+    content: `Renew online via: (1) TAMM portal (tamm.abudhabi) — log in with UAE Pass, go to 'Vehicles and Transportation' → 'Renew Vehicle Registration'. (2) TAMM app. (3) Abu Dhabi Police e-services. (4) MOI UAE app. Requirements: valid insurance, cleared fines, cleared Darb toll balance, inspection certificate (cars 3+ years old). Fees: AED 120–1,000 depending on vehicle type. Receive updated Mulkiya digitally or in person. Expired registration fine: AED 500 + black points + possible impoundment.
 
-License is valid for 1 year and must be renewed annually.
+Authority: Integrated Transport Centre (ITC) — Department of Municipalities and Transport
+Portal: tamm.abudhabi`,
+    canResolveDigitally: true,
+    source: "TAMM Abu Dhabi",
+    policyRef: "AUH-VR-RENEW-001",
+  },
+  {
+    id: "TWF-064",
+    sourceId: "AUH-VR-002",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "Does my car need inspection before registration renewal in Abu Dhabi?",
+    content: `Yes — cars 3 years or older require a technical inspection at ADNOC Distribution centres or other ITC-approved testing centres in Abu Dhabi. Cars under 3 years: no inspection needed. After passing, your inspection certificate is linked digitally — proceed to renew on TAMM. Failed inspection: fix issues and re-test before renewal.
 
----
+Authority: Integrated Transport Centre (ITC) — Department of Municipalities and Transport
+Portal: tamm.abudhabi
 
-تجديد الرخصة التجارية في الفجيرة
+Note: Vehicle inspection must be done in person at ADNOC Distribution or ITC-approved centre.`,
+    canResolveDigitally: false,
+    source: "TAMM Abu Dhabi / ITC",
+    policyRef: "AUH-VR-INSP-001",
+  },
+  {
+    id: "TWF-065",
+    sourceId: "AUH-TF-001",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "How do I check and pay traffic fines in Abu Dhabi?",
+    content: `Check and pay via: (1) TAMM portal — tamm.abudhabi. (2) TAMM app — log in with UAE Pass. (3) Abu Dhabi Police app — best for detailed fine info and black points. (4) MOI UAE app — covers all emirates. (5) Sahl kiosks — self-service machines across Abu Dhabi malls and government buildings. Enter your Emirates ID or plate number. Pay by card online. All fines must be cleared before vehicle renewal. Early payment discount up to 25% available on some fines.
 
-تُصدر دائرة الاقتصاد في الفجيرة (FED) رخص البر الرئيسي، وهيئة منطقة الفجيرة الحرة (FFZA) رخص المنطقة الحرة.
+Authority: Integrated Transport Centre (ITC) — Department of Municipalities and Transport
+Portal: tamm.abudhabi`,
+    canResolveDigitally: true,
+    source: "Abu Dhabi Police / TAMM",
+    policyRef: "AUH-TF-CHECK-001",
+  },
+  {
+    id: "TWF-066",
+    sourceId: "AUH-DARB-001",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "What is the Darb toll system in Abu Dhabi and how do I register?",
+    content: `Darb is Abu Dhabi's free-flow road toll system, managed by ITC (Integrated Transport Centre). Toll: AED 4 per gate crossing. No daily or monthly cap (cap removed September 1, 2025). Gates operate during peak hours. Registration: (1) Visit darb.abudhabi or TAMM portal. (2) Enter your traffic code (on back of licence). (3) Pay AED 100 registration fee (AED 50 credited back as wallet balance). Vehicles from all emirates must register if driving through Abu Dhabi gates. Unregistered vehicle fine: AED 100 first day, AED 200 second day, AED 400 third day onwards. Recharge wallet on TAMM, Darb app, or at service centres.
 
-التجديد (البر الرئيسي): عبر مراكز دائرة الاقتصاد في الفجيرة أو المنصة الرقمية.
-التجديد (المنطقة الحرة): عبر بوابة FFZA أو مراكز الخدمة.
+Authority: Integrated Transport Centre (ITC) — Department of Municipalities and Transport
+Portal: tamm.abudhabi`,
+    canResolveDigitally: true,
+    source: "ITC Abu Dhabi \u2014 Darb System",
+    policyRef: "AUH-DARB-001",
+  },
+  {
+    id: "TWF-067",
+    sourceId: "AUH-PT-001",
+    emirate: "Abu Dhabi",
+    category: "transport",
+    title: "What public transport options are available in Abu Dhabi?",
+    content: `Abu Dhabi public transport is managed by ITC (not RTA): (1) City buses — intercity and intracity routes operated by ICAD and Transdev Abu Dhabi. (2) Al Reem Bus — serves Al Reem Island. (3) Hala Abu Dhabi taxis — book via TAMM app or Careem. (4) Abu Dhabi-Dubai intercity bus from Musaffah Bus Station — AED 25 one-way. (5) Water taxis — Al Bateen Marina and Corniche area. Payment: Hafilat card (Abu Dhabi's equivalent of NOL card). Buy Hafilat card at bus stations and authorised retailers for AED 10. No cash accepted on buses.
 
-المستندات المطلوبة للتجديد:
-- الرخصة التجارية الحالية
-- عقد إيجار ساري مسجَّل لدى بلدية الفجيرة
-- صور جوازات الشركاء/الملاك وهوياتهم
+Authority: Integrated Transport Centre (ITC) — Department of Municipalities and Transport
+Portal: tamm.abudhabi`,
+    canResolveDigitally: true,
+    source: "ITC Abu Dhabi",
+    policyRef: "AUH-PT-001",
+  },
+  {
+    id: "TWF-068",
+    sourceId: "SHJ-DL-001",
+    emirate: "Sharjah",
+    category: "transport",
+    title: "How do I renew my driving license in Sharjah?",
+    content: `Sharjah driving licences are issued by Sharjah Police — Traffic and Licensing Department (not RTA). Renew online at: (1) shjpolice.gov.ae — go to E-Services → Traffic Services → Driving License Renewal. (2) MOI UAE app — log in with UAE Pass, select Sharjah. (3) In person at Sharjah Police Traffic Department or Customer Happiness Centres. Requirements: valid Emirates ID, RTA/Sharjah-approved eye test, existing licence, cleared fines. Fees similar to Dubai: AED 300 standard renewal + AED 20 Knowledge fee. Late renewal: AED 10 per month.
 
-الرسوم:
-- البر الرئيسي: من 4,500 درهم سنوياً للرخص المهنية الأساسية
-- FFZA: من 8,000 إلى 15,000 درهم سنوياً
+Authority: Sharjah Roads and Transport Authority (SRTA) & Sharjah Police
+Portal: srta.gov.ae / shjpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Sharjah Police \u2014 shjpolice.gov.ae",
+    policyRef: "SHJ-DL-RENEW-001",
+  },
+  {
+    id: "TWF-069",
+    sourceId: "SHJ-VR-001",
+    emirate: "Sharjah",
+    category: "transport",
+    title: "How do I renew my vehicle registration in Sharjah?",
+    content: `Sharjah vehicle registration renewal: (1) shjpolice.gov.ae — E-Services → Traffic Services → Vehicle Registration Renewal. (2) MOI UAE app. (3) Sahl kiosks across Sharjah. (4) SRTA-approved vehicle testing centres (for inspection). Requirements: valid insurance, cleared fines, inspection certificate (cars 3+ years). Fees similar to Dubai: AED 350–400 for light vehicles. Expired registration fine: AED 500 + black points. Renew early to avoid disruption.
 
-الرخصة سارية لمدة سنة وتُجدَّد سنوياً.`
-  }
+Authority: Sharjah Roads and Transport Authority (SRTA) & Sharjah Police
+Portal: srta.gov.ae / shjpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Sharjah Police / SRTA",
+    policyRef: "SHJ-VR-RENEW-001",
+  },
+  {
+    id: "TWF-070",
+    sourceId: "SHJ-TF-001",
+    emirate: "Sharjah",
+    category: "transport",
+    title: "How do I check and pay traffic fines in Sharjah?",
+    content: `Check Sharjah fines via: (1) shjpolice.gov.ae — Traffic Services → Traffic Fines Payment. Enter plate number + plate code + emirate OR traffic file number. (2) MOI UAE app — covers all emirates including Sharjah. (3) EVG (Emirates Vehicle Gate) website — evg.ae. (4) Sahl self-service kiosks in malls and government buildings. (5) Sharjah Police app. Call 800 60000 for phone inquiry. Discounts: Sharjah occasionally offers up to 25–35% early payment discounts. Dispute fines within 15 days via shjpolice.gov.ae or at any Sharjah Police Customer Happiness Centre.
 
+Authority: Sharjah Roads and Transport Authority (SRTA) & Sharjah Police
+Portal: srta.gov.ae / shjpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Sharjah Police / SRTA",
+    policyRef: "SHJ-TF-CHECK-001",
+  },
+  {
+    id: "TWF-071",
+    sourceId: "SHJ-TF-002",
+    emirate: "Sharjah",
+    category: "transport",
+    title: "What are Sharjah traffic fine amounts for common violations?",
+    content: `Sharjah follows UAE federal traffic law. Key fines: Speeding under 60 km/h over: AED 1,500 + 6 black points. Speeding 60–80 km/h over: AED 2,000 + 12 black points. Speeding 80+ km/h over: AED 3,000 + 23 black points + 60-day impound. Red light violation: AED 1,000 + 12 black points + 30-day impound. No seatbelt: AED 400 + 4 black points. Mobile phone while driving: AED 800 + 4 black points. Note: Sharjah applies a 20 km/h speed buffer on its roads — cameras activate after you exceed the limit by more than 20 km/h on most roads.
+
+Authority: Sharjah Roads and Transport Authority (SRTA) & Sharjah Police
+Portal: srta.gov.ae / shjpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Sharjah Police / SRTA",
+    policyRef: "SHJ-TF-RATES-001",
+  },
+  {
+    id: "TWF-072",
+    sourceId: "SHJ-PT-001",
+    emirate: "Sharjah",
+    category: "transport",
+    title: "What public transport options are available in Sharjah?",
+    content: `Sharjah public transport is managed by SRTA (Sharjah Roads and Transport Authority). It does NOT use the NOL card — that is Dubai only.
+
+SAYER CARD (Sharjah's smart transit card):
+- Blue Card: AED 6 per ticket. Gives 25% discount on main bus fares.
+- Gray Card: AED 225/month. Unlimited trips on all SRTA buses.
+- Top up: Pay directly to the bus driver in cash, or top up at Al Jubail Bus Station (main Sharjah bus terminal).
+- No app or online top-up available currently.
+- Website: srta.gov.ae
+
+SRTA BUS NETWORK:
+- Intercity buses within Sharjah city and to Khor Fakkan, Kalba, Dibba.
+- RTA inter-emirate buses to Dubai (E303/E307 from Sharjah border) — those accept NOL card.
+- Shared taxis (Mowasalat) from Rolla Square to Dubai and other emirates.
+- SRTA Bus Terminal: Al Jubail Bus Station, Al Jubail area, Sharjah.
+
+TAXIS IN SHARJAH:
+- Mowasalat Sharjah taxis — meter-based, no app booking.
+- Careem and InDriver also operate in Sharjah.
+- No Uber in Sharjah.
+
+NOTE: The NOL card is ONLY for Dubai's RTA buses, Metro, Tram and Ferry. It does NOT work on Sharjah SRTA buses.
+
+Authority: Sharjah Roads and Transport Authority (SRTA) & Sharjah Police
+Portal: srta.gov.ae / shjpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "SRTA \u2014 srta.gov.ae",
+    policyRef: "SHJ-PT-001",
+  },
+  {
+    id: "TWF-073",
+    sourceId: "AJM-DL-001",
+    emirate: "Ajman",
+    category: "transport",
+    title: "How do I renew my driving license in Ajman?",
+    content: `Ajman driving licences are managed by Ajman Police Traffic Department (not RTA). Renew online in ~7 minutes: (1) Ajman Police e-Services portal (ajmanpolice.ae) — log in with UAE Pass, select 'UAE Driving License Renewal' → 'Ajman'. (2) MOI UAE app. (3) AjmanOne app — Ajman's smart city app. Upload Emirates ID, eye test certificate (from Ajman-approved clinic, AED 100 at Ajman Medical Center), and existing licence. Pay AED 300 renewal fee + AED 20 Knowledge fee. Licence delivered by courier or collect at Ajman Police centre. Clear all fines before applying.
+
+Authority: Ajman Police — Traffic & Licensing Department
+Portal: ajman.ae / ajmanpolice.ae`,
+    canResolveDigitally: true,
+    source: "Ajman Police \u2014 ajmanpolice.ae",
+    policyRef: "AJM-DL-RENEW-001",
+  },
+  {
+    id: "TWF-074",
+    sourceId: "AJM-DL-002",
+    emirate: "Ajman",
+    category: "transport",
+    title: "How do I get a new driving license in Ajman from scratch?",
+    content: `New licence in Ajman: (1) Open traffic file at Ajman Traffic Department or via AjmanOne app. Opening fee: AED 150–300. (2) Eye test at approved Ajman clinic (AED 100 — Ajman Medical Center offers 30-minute slots). (3) Enrol in theory classes at an Ajman-approved driving school. (4) Pass theory test and road tests. (5) Pay licence issuance fee. Total cost: AED 3,000–6,000. Ajman-approved driving schools: Ajman Driving Centre (ADC). Minimum age: 18 years.
+
+Authority: Ajman Police — Traffic & Licensing Department
+Portal: ajman.ae / ajmanpolice.ae
+
+Note: Training, theory test, and road test require physical attendance.`,
+    canResolveDigitally: false,
+    source: "Ajman Police \u2014 Traffic Department",
+    policyRef: "AJM-DL-NEW-001",
+  },
+  {
+    id: "TWF-075",
+    sourceId: "AJM-VR-001",
+    emirate: "Ajman",
+    category: "transport",
+    title: "How do I renew my vehicle registration in Ajman?",
+    content: `Renew Ajman vehicle registration via: (1) ajman.ae — My Vehicle section → 'Issuance of a New Registration Card'. (2) AjmanOne app. (3) MOI UAE app. (4) Ajman Police app. Requirements: valid insurance, cleared fines, inspection (cars 3+ years at Ajman-approved test centres). Expired registration fine: AED 500 + 4 black points + 7-day impound. Ajman Police has historically offered grace periods (up to 3 months) for expired registrations — check ajman.ae for active campaigns.
+
+Authority: Ajman Police — Traffic & Licensing Department
+Portal: ajman.ae / ajmanpolice.ae`,
+    canResolveDigitally: true,
+    source: "Ajman Police / Department of Digital Ajman",
+    policyRef: "AJM-VR-RENEW-001",
+  },
+  {
+    id: "TWF-076",
+    sourceId: "AJM-TF-001",
+    emirate: "Ajman",
+    category: "transport",
+    title: "How do I check and pay traffic fines in Ajman?",
+    content: `Check Ajman fines via: (1) Ajman Police website (ajmanpolice.ae) — E-Services → Traffic Services → Fine Payment. Log in with UAE Pass. (2) AjmanOne app — select 'Ajman Police' → 'Fine Payment'. (3) MOI UAE app — works for all emirates. (4) EVG (evg.ae) — Emirates Vehicle Gate. Enter plate number, licence, or Emirates ID. Pay online by card. Contact Ajman Police call centre: 80070. Instalment plans: fines AED 1,000+ can be paid in 3–12 month plans via partner banks at 0% interest.
+
+Authority: Ajman Police — Traffic & Licensing Department
+Portal: ajman.ae / ajmanpolice.ae`,
+    canResolveDigitally: true,
+    source: "Ajman Police \u2014 ajmanpolice.ae",
+    policyRef: "AJM-TF-CHECK-001",
+  },
+  {
+    id: "TWF-077",
+    sourceId: "AJM-TF-002",
+    emirate: "Ajman",
+    category: "transport",
+    title: "What are Ajman traffic fine rates for common violations?",
+    content: `Ajman follows UAE federal traffic law: Red light violation: AED 1,000–3,000 + black points + vehicle impoundment. No seatbelt: AED 400 + 4 black points. Reckless driving: AED 2,000 + 12 black points + 30-day impound. DUI/drugs: court decision + 24 black points + 60-day impound. Parking violations: AED 200–500. Ajman Police occasionally announces 50% discount campaigns on fines — typically during UAE National Day (December). Check ajmanpolice.ae for active discount periods.
+
+Authority: Ajman Police — Traffic & Licensing Department
+Portal: ajman.ae / ajmanpolice.ae`,
+    canResolveDigitally: true,
+    source: "Ajman Police",
+    policyRef: "AJM-TF-RATES-001",
+  },
+  {
+    id: "TWF-078",
+    sourceId: "AJM-PT-001",
+    emirate: "Ajman",
+    category: "transport",
+    title: "What public transport is available in Ajman?",
+    content: `Ajman has limited public transport. Options: (1) Ajman city buses — basic network within Ajman city. (2) RTA inter-emirate buses from Dubai to Ajman (Route E401 from Union Metro Station) — pay with NOL card. (3) Taxis — Ajman Taxi (07 748 3700), Careem, InDriver. (4) Private car services. Ajman does not have a metro or tram. Most residents commute via car or inter-emirate bus. The SRTA (Sharjah) buses also serve Ajman–Sharjah corridor.
+
+Authority: Ajman Police — Traffic & Licensing Department
+Portal: ajman.ae / ajmanpolice.ae`,
+    canResolveDigitally: true,
+    source: "Ajman Government",
+    policyRef: "AJM-PT-001",
+  },
+  {
+    id: "TWF-079",
+    sourceId: "RAK-DL-001",
+    emirate: "Ras Al Khaimah",
+    category: "transport",
+    title: "How do I renew my driving license in Ras Al Khaimah?",
+    content: `RAK driving licences are managed by RAK Police Traffic Department (not RTA). Renew online via: (1) MOI UAE app — log in with UAE Pass, select RAK. (2) rakpolice.gov.ae — Traffic Services → Driving License Renewal. (3) rak.ae e-services portal. Requirements: valid Emirates ID, eye test from RAK-approved clinic, existing licence, cleared fines. Fees: AED 300 standard + AED 20 Knowledge fee. Late renewal: AED 10 per month. Deliver by courier or collect at RAK Police HQ or service centres.
+
+Authority: RAK Police — Traffic & Licensing Department / RAK Government (rak.ae)
+Portal: rak.ae / rakpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "RAK Police \u2014 rakpolice.gov.ae",
+    policyRef: "RAK-DL-RENEW-001",
+  },
+  {
+    id: "TWF-080",
+    sourceId: "RAK-VR-001",
+    emirate: "Ras Al Khaimah",
+    category: "transport",
+    title: "How do I renew my vehicle registration in Ras Al Khaimah?",
+    content: `Renew RAK vehicle registration via: (1) rak.ae — e-services → Traffic → Vehicle Registration Renewal. (2) MOI UAE app. (3) RAK Police app. (4) Sahl kiosks across RAK. Requirements: valid insurance, cleared fines, inspection (cars 3+ years at RAK-approved test centres). Fees: similar to other emirates — AED 300–400 for light vehicles. Note: RAK has NO Salik or Darb toll system — no toll clearance needed. Expired registration fine: AED 500 + black points.
+
+Authority: RAK Police — Traffic & Licensing Department / RAK Government (rak.ae)
+Portal: rak.ae / rakpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "RAK Police / RAK Government",
+    policyRef: "RAK-VR-RENEW-001",
+  },
+  {
+    id: "TWF-081",
+    sourceId: "RAK-TF-001",
+    emirate: "Ras Al Khaimah",
+    category: "transport",
+    title: "How do I check and pay traffic fines in Ras Al Khaimah?",
+    content: `Check RAK fines via: (1) rak.ae — e-services → RAK Police → Pay Traffic Fines. Enter TC Number, vehicle details, or driving licence number. (2) RAK Police app (iOS/Android). (3) MOI UAE app — covers all emirates. (4) EVG (evg.ae) website. (5) Sahl kiosks across RAK. Pay by card online. Dispute fines within 30 days via MOI app (Traffic Services → Fine Complaint) — upload evidence. RAK has no Salik/Darb toll system. If you drive into Dubai, Dubai's Salik applies separately.
+
+Authority: RAK Police — Traffic & Licensing Department / RAK Government (rak.ae)
+Portal: rak.ae / rakpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "RAK Police / RAK Government",
+    policyRef: "RAK-TF-CHECK-001",
+  },
+  {
+    id: "TWF-082",
+    sourceId: "RAK-TF-002",
+    emirate: "Ras Al Khaimah",
+    category: "transport",
+    title: "What are Ras Al Khaimah traffic fine rates?",
+    content: `RAK follows UAE federal traffic law with some local fine scales: Speeding 20 km/h over: AED 500. Speeding 30 km/h over: AED 600. Speeding 40 km/h over: AED 700. Speeding 50 km/h over: AED 800. Speeding 60 km/h over: AED 900 + 6 black points. Speeding 60+ km/h over: AED 1,000 + 12 black points + 30-day impound. No seatbelt: AED 400 + 4 black points. Reckless driving: AED 2,000 + 12 black points + 30-day impound. Children under 10 in front seat: AED 400 + 4 black points. RAK has offered 50% discount campaigns on older fines — check rakpolice.gov.ae for active offers.
+
+Authority: RAK Police — Traffic & Licensing Department / RAK Government (rak.ae)
+Portal: rak.ae / rakpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "RAK Police Traffic Department",
+    policyRef: "RAK-TF-RATES-001",
+  },
+  {
+    id: "TWF-083",
+    sourceId: "RAK-PT-001",
+    emirate: "Ras Al Khaimah",
+    category: "transport",
+    title: "What public transport is available in Ras Al Khaimah?",
+    content: `RAK public transport options: (1) RAK Transport Authority buses — limited city routes within RAK. (2) RAK to Dubai intercity bus — from RAK Bus Terminal to Union Metro Station Dubai (approx. 1.5 hours, AED 20–25). (3) RAK Taxi — RAK Taxi Company, also Careem and InDriver. (4) RAK Airport transfers — taxis and pre-booked services. RAK has no metro or tram. Most transport is by car or taxi. For inter-emirate travel, the RAK–Dubai bus is the most economical option. Book RAK taxis via Careem app.
+
+Authority: RAK Police — Traffic & Licensing Department / RAK Government (rak.ae)
+Portal: rak.ae / rakpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "RAK Transport Authority",
+    policyRef: "RAK-PT-001",
+  },
+  {
+    id: "TWF-084",
+    sourceId: "FUJ-DL-001",
+    emirate: "Fujairah",
+    category: "transport",
+    title: "How do I renew my driving license in Fujairah?",
+    content: `Fujairah driving licences are managed by Fujairah Police Traffic Department (not RTA). Renew via: (1) Fujairah Police e-Services portal (eservice.fujairahpolice.gov.ae) — go to E-Services → Driving License Services → Renewal. (2) MOI UAE app. Requirements: valid Emirates ID, eye test from Fujairah-approved clinic, existing licence, cleared fines. Fees: AED 300 standard + AED 20 Knowledge fee. Late renewal: AED 10/month. Fujairah Police Traffic and Licensing Centre handles 76 services — for complex cases visit in person.
+
+Authority: Fujairah Police — Traffic and Licensing Department
+Portal: eservice.fujairahpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Fujairah Police \u2014 eservice.fujairahpolice.gov.ae",
+    policyRef: "FUJ-DL-RENEW-001",
+  },
+  {
+    id: "TWF-085",
+    sourceId: "FUJ-VR-001",
+    emirate: "Fujairah",
+    category: "transport",
+    title: "How do I renew my vehicle registration in Fujairah?",
+    content: `Renew Fujairah vehicle registration via: (1) Fujairah Police e-services portal (eservice.fujairahpolice.gov.ae). (2) MOI UAE app. (3) EVG website (evg.ae). Requirements: valid insurance, cleared fines, inspection (cars 3+ years at Fujairah Police-approved test centres). Fujairah has NO Salik or Darb toll system. Expired registration fine: AED 500 + black points. For urgent cases, visit Fujairah Police HQ — emergency line available 24/7.
+
+Authority: Fujairah Police — Traffic and Licensing Department
+Portal: eservice.fujairahpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Fujairah Police",
+    policyRef: "FUJ-VR-RENEW-001",
+  },
+  {
+    id: "TWF-086",
+    sourceId: "FUJ-TF-001",
+    emirate: "Fujairah",
+    category: "transport",
+    title: "How do I check and pay traffic fines in Fujairah?",
+    content: `Check Fujairah fines via: (1) Fujairah Police e-services (eservice.fujairahpolice.gov.ae) — E-Services → Traffic Violations Inquiry. Enter plate number and licence details. (2) Fujairah Police app (iOS/Android) — Traffic Violations tab. (3) MOI UAE app — UAE-wide fines. (4) EVG website (evg.ae) — single dashboard for all emirates. Pay by credit/debit card online. To dispute: visit nearest Fujairah Police Station, submit written objection with evidence (photos, dashcam). Disputes reviewed within a few working days. No toll fines (no Salik/Darb) in Fujairah.
+
+Authority: Fujairah Police — Traffic and Licensing Department
+Portal: eservice.fujairahpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Fujairah Police",
+    policyRef: "FUJ-TF-CHECK-001",
+  },
+  {
+    id: "TWF-087",
+    sourceId: "FUJ-TF-002",
+    emirate: "Fujairah",
+    category: "transport",
+    title: "What are Fujairah traffic fine rates for common violations?",
+    content: `Fujairah follows UAE federal traffic law: Speeding: AED 300–3,000 depending on how much over the limit. Red light violation: AED 1,000 + black points + impound. No seatbelt: AED 400 + 4 black points. Reckless driving: AED 2,000 + black points + impound. Speeding fines range from AED 300 (minor) up to AED 3,000 (80+ km/h over limit) with black points and vehicle confiscation for serious violations. All 24 black points = licence suspension applies federally across all emirates.
+
+Authority: Fujairah Police — Traffic and Licensing Department
+Portal: eservice.fujairahpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Fujairah Police Traffic Department",
+    policyRef: "FUJ-TF-RATES-001",
+  },
+  {
+    id: "TWF-088",
+    sourceId: "FUJ-PT-001",
+    emirate: "Fujairah",
+    category: "transport",
+    title: "What public transport is available in Fujairah?",
+    content: `Fujairah public transport options: (1) Fujairah city buses — limited routes within Fujairah city and Dibba. (2) Fujairah–Dubai intercity bus — from Fujairah Bus Station to Union Metro Station Dubai (approx. 2 hours). (3) Fujairah Taxi — Fujairah Taxi Company (+971 9 222 4411), also Careem and InDriver in some areas. (4) Shared transport to Sharjah/Dubai available from Fujairah Bus Station. Fujairah has no metro or tram. Most residents rely on private cars. For inter-emirate travel, budget taxis and intercity buses are the main options.
+
+Authority: Fujairah Police — Traffic and Licensing Department
+Portal: eservice.fujairahpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "Fujairah Government",
+    policyRef: "FUJ-PT-001",
+  },
+  {
+    id: "TWF-089",
+    sourceId: "UAQ-DL-001",
+    emirate: "Umm Al Quwain",
+    category: "transport",
+    title: "How do I renew my driving license in Umm Al Quwain?",
+    content: `UAQ driving licences are managed by UAQ Police Traffic Department (not RTA). Renew via: (1) uaqpolice.gov.ae — Services section → Traffic Services → Driving License Renewal. (2) UAQ Police app (iOS/Android) — log in with UAE Pass. (3) MOI UAE app. Requirements: valid Emirates ID, eye test from UAQ-approved clinic, existing licence, cleared fines. Fees: AED 300 standard + AED 20 Knowledge fee. Late renewal: AED 10/month. Contact UAQ Police Traffic Department: 06 706 2700 (Mon–Thu 07:30–15:30, Fri 07:30–12:00).
+
+Authority: UAQ Police — Traffic & Licensing Department
+Portal: uaqpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "UAQ Police \u2014 uaqpolice.gov.ae",
+    policyRef: "UAQ-DL-RENEW-001",
+  },
+  {
+    id: "TWF-090",
+    sourceId: "UAQ-VR-001",
+    emirate: "Umm Al Quwain",
+    category: "transport",
+    title: "How do I renew my vehicle registration in Umm Al Quwain?",
+    content: `Renew UAQ vehicle registration via: (1) uaqpolice.gov.ae — Traffic Services → Vehicle Registration. (2) UAQ Police app. (3) MOI UAE app. (4) Sahl kiosks in UAQ government buildings. Requirements: valid insurance, cleared fines, inspection (cars 3+ years at UAQ-approved test centres). UAQ has NO Salik or Darb toll system. Expired registration fine: AED 500 + 4 black points + 7-day impound. UAQ Police has offered grace periods (up to 3 months) for expired registrations — check uaqpolice.gov.ae for active campaigns.
+
+Authority: UAQ Police — Traffic & Licensing Department
+Portal: uaqpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "UAQ Police",
+    policyRef: "UAQ-VR-RENEW-001",
+  },
+  {
+    id: "TWF-091",
+    sourceId: "UAQ-TF-001",
+    emirate: "Umm Al Quwain",
+    category: "transport",
+    title: "How do I check and pay traffic fines in Umm Al Quwain?",
+    content: `Check UAQ fines via: (1) uaqpolice.gov.ae — Services → Traffic Fines Inquiry. Enter plate number, Emirates ID, or traffic file number. (2) UAQ Police app — log in with UAE Pass, select Traffic Services → Fine Payment. (3) MOI UAE app. (4) SMS service — send 'UAQ [vehicle registration number]' to 5566. (5) Sahl kiosks in UAQ. Pay by card online. UAQ Police contact: 06 706 2700. Instalment plans: FAB credit cardholders can convert fines AED 500+ to 0% interest instalments (3–12 months) by texting EPP to 2121. UAQ regularly offers 40–50% discount on fines during UAE National Day (December).
+
+Authority: UAQ Police — Traffic & Licensing Department
+Portal: uaqpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "UAQ Police \u2014 uaqpolice.gov.ae",
+    policyRef: "UAQ-TF-CHECK-001",
+  },
+  {
+    id: "TWF-092",
+    sourceId: "UAQ-TF-002",
+    emirate: "Umm Al Quwain",
+    category: "transport",
+    title: "What are Umm Al Quwain traffic fine rates and black point rules?",
+    content: `UAQ follows UAE federal traffic law: No seatbelt: AED 400 + 4 black points. Mobile phone while driving: AED 800 + 4 black points. Reckless driving: AED 2,000 + black points + impound. DUI/drugs: court decision + 24 black points + impound. Illegal parking: AED 200–500. Black points in UAQ: 24 points within 12 months = licence suspension 3 months (1st offence), 6 months (2nd), 12 months (3rd). UAQ actively runs fine discount campaigns — 50% off is common during National Day period for non-serious violations.
+
+Authority: UAQ Police — Traffic & Licensing Department
+Portal: uaqpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "UAQ Police Traffic Department",
+    policyRef: "UAQ-TF-RATES-001",
+  },
+  {
+    id: "TWF-093",
+    sourceId: "UAQ-PT-001",
+    emirate: "Umm Al Quwain",
+    category: "transport",
+    title: "What public transport is available in Umm Al Quwain?",
+    content: `UAQ is the smallest emirate with minimal public transport. Options: (1) UAQ Taxi — local taxi service, also Careem in some areas. (2) Shared transport to Sharjah/Dubai — available from UAQ town centre. (3) Inter-emirate buses from Sharjah to UAQ. (4) Private car is the main mode of transport for most UAQ residents. UAQ has no metro, tram, or extensive bus network. For inter-emirate travel to Dubai, most residents drive or take shared taxis (about 1 hour to Dubai).
+
+Authority: UAQ Police — Traffic & Licensing Department
+Portal: uaqpolice.gov.ae`,
+    canResolveDigitally: true,
+    source: "UAQ Government",
+    policyRef: "UAQ-PT-001",
+  },
 ];
 
 module.exports = policies;

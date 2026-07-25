@@ -1,7 +1,7 @@
 {
-  "name": "govassist-qa-pilot",
+  "name": "tawfeer-ai",
   "version": "1.0.0",
-  "description": "A mini government-services AI assistant (RAG + agentic chatbot) with a full QA suite. Built as a portfolio project",
+  "description": "UAE's AI Platform for Trip Reduction and Emissions Savings",
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
@@ -15,11 +15,13 @@
     "perf": "k6 run tests/performance/load-test.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fayaz Basha Shaik",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "@axe-core/playwright": "^4.12.1",
+    "@supabase/supabase-js": "^2.110.8",
+    "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
@@ -30,6 +32,6 @@
     "@types/node": "^26.1.1"
   },
   "engines": {
-  "node": ">=20.0.0"
-}
+    "node": ">=20.0.0"
+  }
 }
