@@ -15,9 +15,8 @@
       flex: 1; display: flex; flex-direction: column;
       padding: 20px 16px 16px; gap: 12px;
     }
-    #messages { flex: 1; display: flex; flex-direction: column; gap: 12px; min-height: 340px; }
+    #messages { flex: 1; display: flex; flex-direction: column; gap: 12px; min-height: 200px; }
 
-    /* Both banners hidden by default */
     #area-prompt-banner  { display: none; }
     #trip-confirm-banner { display: none; }
 
@@ -30,13 +29,13 @@
     .area-input-row { display: flex; gap: 8px; }
     .area-input-row input {
       flex: 1; border: 1.5px solid var(--border); border-radius: 8px;
-      padding: 8px 12px; font-size: 0.85rem; font-family: 'Inter', sans-serif;
+      padding: 8px 12px; font-size: 16px; font-family: 'Inter', sans-serif;
       outline: none; color: var(--text); background: white;
     }
     .area-input-row input:focus { border-color: #d97706; }
     .area-input-row button {
       background: #d97706; color: white; border: none; border-radius: 8px;
-      padding: 8px 16px; font-size: 0.82rem; font-weight: 600;
+      padding: 8px 14px; font-size: 0.82rem; font-weight: 600;
       cursor: pointer; font-family: 'Inter', sans-serif; white-space: nowrap;
     }
     .area-input-row button:hover { background: #b45309; }
@@ -64,11 +63,11 @@
       <div class="user-badge" data-test-id="user-badge">
         <div class="avatar" id="user-avatar" data-test-id="user-avatar">?</div>
         <span id="user-name-display" data-test-id="user-name-display">—</span>
-        &nbsp;·&nbsp;
-        <span id="user-emirate-display" data-test-id="user-emirate-display">—</span>
+        <span class="emirate-sep">&nbsp;·&nbsp;</span>
+        <span id="user-emirate-display" data-test-id="user-emirate-display" class="emirate-display">—</span>
       </div>
       <button class="btn-ghost" onclick="toggleLang()" data-test-id="lang-toggle-btn">عربي</button>
-      <button class="btn-ghost" onclick="newConversation()" data-test-id="new-chat-btn">+ New chat</button>
+      <button class="btn-ghost" onclick="newConversation()" data-test-id="new-chat-btn">+ New</button>
       <button class="btn-ghost" onclick="logout()" data-test-id="logout-btn">Sign out</button>
     </div>
   </header>
@@ -93,7 +92,6 @@
 
       <div id="messages" data-test-id="messages-container"></div>
 
-      <!-- AREA PROMPT — shown once per session before first trip confirm -->
       <div class="area-prompt-banner" id="area-prompt-banner" data-test-id="area-prompt-banner">
         <p>📍 Which area are you in?</p>
         <small>Helps us calculate exactly how far your trip was saved.<br>
@@ -106,7 +104,6 @@
         </div>
       </div>
 
-      <!-- TRIP CONFIRM — shown after area is known -->
       <div class="trip-confirm-banner" id="trip-confirm-banner" data-test-id="trip-confirm-banner">
         <p id="trip-confirm-text" data-test-id="trip-confirm-text">
           Were you going to visit a government office for this?
@@ -141,17 +138,59 @@
 // ── AUTH ──────────────────────────────────────────────────────────
 if (!requireAuth()) { throw new Error('not logged in'); }
 
-var currentUser   = getStoredUser();
-var sessionId     = 'sess_' + Math.random().toString(36).slice(2) + Date.now();
-var messagesEl    = document.getElementById('messages');
+var currentUser  = getStoredUser();
+var sessionId    = 'sess_' + Math.random().toString(36).slice(2) + Date.now();
+var messagesEl   = document.getElementById('messages');
 
-// KEY STATE — initialized fresh every page load
-// Never read from localStorage — always starts null
-var userArea      = null;   // set once via area prompt per session
-var pendingImpact  = null;
-  var pendingEmirate = null;   // waiting for user to confirm/skip
+var userArea      = null;
+var pendingImpact = null;
+var pendingEmirate = null;
 var lastQuestion  = '';
-var canShowTrip   = false;  // gate: only true after area is confirmed
+var canShowTrip   = false;
+
+// ── VOICE CORRECTION MAP ──────────────────────────────────────────
+// Common speech-to-text errors for UAE transport terms
+var VOICE_CORRECTIONS = {
+  // English mishears
+  'driving legends':    'driving license',
+  'driving licence':    'driving license',
+  'driving lesson':     'driving license',
+  'drivers license':    'driving license',
+  'driver license':     'driving license',
+  'driving lysine':     'driving license',
+  'diving license':     'driving license',
+  'driving licence':    'driving license',
+  'vehicle registration renewal': 'vehicle registration',
+  'register vehicle':   'vehicle registration',
+  'registration vehicle': 'vehicle registration',
+  'nol card recharge':  'NOL card',
+  'knowledge and human development': 'Knowledge and Human Development Authority',
+  'salic':              'Salik',
+  'malik':              'Salik',
+  'traffic fines':      'RTA fines',
+  'traffic fine':       'RTA fines',
+  'rta fine':           'RTA fines',
+  'fine check':         'check fines',
+  'book appointment':   'book an appointment',
+  // Arabic mishears
+  'رخصة':               'رخصة القيادة',
+  'رخصه':               'رخصة القيادة',
+  'تجديد رخصه':         'تجديد رخصة القيادة',
+  'مخالفه':             'مخالفة',
+};
+
+function correctVoiceText(text) {
+  var lower = text.toLowerCase().trim();
+  // Check full string corrections first
+  if (VOICE_CORRECTIONS[lower]) return VOICE_CORRECTIONS[lower];
+  // Then check if any key is contained within the transcript
+  var result = text;
+  Object.keys(VOICE_CORRECTIONS).forEach(function(wrong) {
+    var re = new RegExp(wrong.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+    result = result.replace(re, VOICE_CORRECTIONS[wrong]);
+  });
+  return result;
+}
 
 // ── LANG ──────────────────────────────────────────────────────────
 initLang();
@@ -159,6 +198,10 @@ function applyLang() {
   document.documentElement.lang = currentLang;
   document.documentElement.dir  = currentLang === 'ar' ? 'rtl' : 'ltr';
   document.querySelector('[data-test-id="lang-toggle-btn"]').textContent = t('langBtn');
+  // Update voice language if recognition is active
+  if (recognition) {
+    recognition.lang = currentLang === 'ar' ? 'ar-AE' : 'en-US';
+  }
 }
 applyLang();
 
@@ -173,7 +216,7 @@ if (currentUser) {
 function loadTotalKm() {
   TawfeerAPI.getImpact()
     .then(function(d) {
-      document.getElementById('total-km').textContent = Number(d.totalKm || 0).toLocaleString();
+      document.getElementById('total-km').textContent = Math.round(Number(d.totalKm || 0)).toLocaleString();
     }).catch(function() {});
 }
 loadTotalKm();
@@ -190,9 +233,10 @@ if (!SpeechRecognition) {
   document.getElementById('voice-btn').style.display = 'none';
 } else {
   recognition = new SpeechRecognition();
-  recognition.continuous = false;
-  recognition.interimResults = true;
-  recognition.lang = 'ar-AE';
+  recognition.continuous      = false;
+  recognition.interimResults  = true;
+  // Use current language, not hardcoded Arabic
+  recognition.lang = currentLang === 'ar' ? 'ar-AE' : 'en-US';
 
   recognition.onstart = function() {
     isListening = true;
@@ -201,36 +245,50 @@ if (!SpeechRecognition) {
     document.getElementById('voice-status').textContent = t('listeningMsg');
     document.getElementById('user-input').value = '';
   };
+
   recognition.onresult = function(event) {
     var interim = '', final = '';
     for (var i = event.resultIndex; i < event.results.length; i++) {
       var tx = event.results[i][0].transcript;
-      if (event.results[i].isFinal) final += tx; else interim += tx;
+      if (event.results[i].isFinal) final += tx;
+      else interim += tx;
     }
-    document.getElementById('user-input').value = final || interim;
+    var raw = final || interim;
+    // Apply correction map to interim so user sees corrected text live
+    document.getElementById('user-input').value = correctVoiceText(raw);
   };
+
   recognition.onend = function() {
     isListening = false;
     document.getElementById('voice-btn').classList.remove('listening');
     document.getElementById('voice-btn').textContent = '🎙';
     document.getElementById('voice-status').textContent = '';
-    if (document.getElementById('user-input').value.trim()) setTimeout(sendMessage, 400);
+    var val = document.getElementById('user-input').value.trim();
+    if (val) setTimeout(sendMessage, 400);
   };
+
   recognition.onerror = function(event) {
     isListening = false;
     document.getElementById('voice-btn').classList.remove('listening');
     document.getElementById('voice-btn').textContent = '🎙';
-    var msg = event.error === 'no-speech' ? t('noSpeech') :
-              event.error === 'not-allowed' ? t('micDenied') : 'Error: ' + event.error;
+    var msg = event.error === 'no-speech'    ? t('noSpeech') :
+              event.error === 'not-allowed'  ? t('micDenied') :
+              event.error === 'network'      ? 'Network error — check connection' :
+              'Error: ' + event.error;
     document.getElementById('voice-status').textContent = msg;
-    setTimeout(function() { document.getElementById('voice-status').textContent = ''; }, 3000);
+    setTimeout(function() { document.getElementById('voice-status').textContent = ''; }, 3500);
   };
 }
 
 function toggleVoice() {
   if (!recognition) return;
-  if (isListening) recognition.stop();
-  else { recognition.lang = 'ar-AE'; try { recognition.start(); } catch(e) {} }
+  if (isListening) {
+    recognition.stop();
+  } else {
+    // Always sync language before starting
+    recognition.lang = currentLang === 'ar' ? 'ar-AE' : 'en-US';
+    try { recognition.start(); } catch(e) {}
+  }
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────
@@ -292,26 +350,19 @@ function hideAreaPrompt() {
 
 function submitArea() {
   var areaVal = document.getElementById('area-input').value.trim();
-  if (!areaVal) {
-    document.getElementById('area-input').focus();
-    return;
-  }
+  if (!areaVal) { document.getElementById('area-input').focus(); return; }
 
-  // BUG FIX: Show area as a chat message in the conversation
   appendMessage('user', '📍 My area: ' + escapeHtml(areaVal));
-
-  userArea     = areaVal;
-  canShowTrip  = true;
+  userArea    = areaVal;
+  canShowTrip = true;
   hideAreaPrompt();
 
-  // Tell server about this area
   fetch('/api/session/' + sessionId + '/area', {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
     body:    JSON.stringify({ userArea: areaVal })
   }).catch(function() {});
 
-  // Fetch real impact with area and show trip confirm
   fetch('/api/impact/calculate', {
     method:  'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -325,23 +376,21 @@ function submitArea() {
     .catch(function() { showTripConfirm(); });
 }
 
-// ── TRIP CONFIRM ─────────────────────────────────────────────────
+// ── TRIP CONFIRM ──────────────────────────────────────────────────
 function showTripConfirm() {
-  if (!canShowTrip) return; // gate: never show before area is confirmed
+  if (!canShowTrip) return;
   document.getElementById('trip-confirm-banner').style.display = 'block';
-  document.getElementById('area-prompt-banner').style.display = 'none';
+  document.getElementById('area-prompt-banner').style.display  = 'none';
   messagesEl.scrollTop = messagesEl.scrollHeight;
 }
 function hideTripConfirm() {
   document.getElementById('trip-confirm-banner').style.display = 'none';
 }
 
-// BUG FIX: ONLY log trip when user explicitly clicks Yes
 function confirmTrip(confirmed) {
   var impact = pendingImpact;
   hideTripConfirm();
   pendingImpact = null;
-
   if (!confirmed || !currentUser || !impact) return;
 
   TawfeerAPI.logTrip({
@@ -358,7 +407,7 @@ function confirmTrip(confirmed) {
       appendMessage('assistant', t('tripLogged') + buildSustainCard(impact));
       if (data.newTotals) {
         document.getElementById('total-km').textContent =
-          Number(data.newTotals.totalKm).toLocaleString();
+          Math.round(Number(data.newTotals.totalKm)).toLocaleString();
       }
     })
     .catch(function() {
@@ -374,7 +423,6 @@ async function sendMessage() {
   if (isListening && recognition) recognition.stop();
   lastQuestion = text;
 
-  // Hide any open banners when user sends a new message
   hideAreaPrompt();
   hideTripConfirm();
   pendingImpact = null;
@@ -394,13 +442,12 @@ async function sendMessage() {
         message:     text,
         sessionId:   sessionId,
         userEmirate: currentUser ? currentUser.emirate : '',
-        userArea:    userArea || ''   // empty string if not set yet
+        userArea:    userArea || ''
       })
     });
     var data = await res.json();
     typing.remove();
 
-    // Build answer HTML
     var html = escapeHtml(data.reply).replace(/\n/g, '<br/>');
     var meta = '';
 
@@ -415,7 +462,6 @@ async function sendMessage() {
       meta += buildConfidenceTag(data.confidence);
     }
 
-    // Only show memory tag if NOT a guardrail and turns >= 2
     if (data.memory && data.memory.turns >= 2 && data.memory.topic && !(data.guardrail && data.guardrail.triggered)) {
       meta += '<span class="tag memory">🧠 ' + data.memory.turns + ' turns</span>';
     }
@@ -423,19 +469,13 @@ async function sendMessage() {
     if (meta) html += '<div class="meta">' + meta + '</div>';
     appendMessage('assistant', html);
 
-    // ── TRIP CONFIRM FLOW ─────────────────────────────────────────
-    // Only for office-visit topics, not public transport / info queries
     if (data.canResolveDigitally && !(data.guardrail && data.guardrail.triggered)) {
-
       if (!userArea) {
-        // BUG FIX: Area not known yet — show area prompt
-        // Store server impact (may be null since no area on server side)
-        pendingImpact = data.impact || null;
-        pendingEmirate = (data.toolUsed && data.toolUsed.result && data.toolUsed.result.emirate) ? data.toolUsed.result.emirate : null;
-          showAreaPrompt();
-
+        pendingImpact  = data.impact || null;
+        pendingEmirate = (data.toolUsed && data.toolUsed.result && data.toolUsed.result.emirate)
+          ? data.toolUsed.result.emirate : null;
+        showAreaPrompt();
       } else {
-        // Area known — show trip confirm with impact
         if (data.impact) {
           pendingImpact = data.impact;
           showTripConfirm();
@@ -457,8 +497,8 @@ async function sendMessage() {
 function newConversation() {
   TawfeerAPI.clearSession(sessionId).catch(function() {});
   sessionId     = 'sess_' + Math.random().toString(36).slice(2) + Date.now();
-  userArea      = null;    // reset area
-  canShowTrip   = false;   // reset gate
+  userArea      = null;
+  canShowTrip   = false;
   pendingImpact = null;
   messagesEl.innerHTML = '';
   hideAreaPrompt();

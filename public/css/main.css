@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
-   Tawfeer توفير — Main Stylesheet
-   UAE Trip Reduction Platform
-   DAST 2026 — 14th Edition
+  Tawfeer توفير — Main Stylesheet
+  UAE Trip Reduction Platform
+  DAST 2026 — 14th Edition
 ───────────────────────────────────────── */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -47,8 +47,9 @@ body {
 header {
   background: var(--white);
   border-bottom: 1px solid var(--border);
-  padding: 0 20px;
-  height: 64px;
+  padding: 0 12px;
+  height: auto;
+  min-height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,38 +57,59 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; }
 
 .brand-icon {
-  width: 40px; height: 40px;
+  width: 34px; height: 34px;
   background: linear-gradient(135deg, #007a4d, #0099a8);
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; flex-shrink: 0;
+  font-size: 1rem; flex-shrink: 0;
 }
 
 .brand-text h1 {
-  font-size: 1rem; font-weight: 700;
+  font-size: 0.88rem; font-weight: 700;
   color: var(--text); line-height: 1.1;
 }
 .brand-text h1 span { color: var(--teal); }
 .brand-text p {
-  font-size: 0.65rem; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px;
+  font-size: 0.58rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.04em; margin-top: 1px;
 }
 
-.header-right { display: flex; align-items: center; gap: 8px; }
+/* Hide brand tagline on very small screens */
+@media (max-width: 380px) {
+  .brand-text p { display: none; }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  max-width: calc(100% - 130px);
+}
+.header-right::-webkit-scrollbar { display: none; }
 
 .impact-pill {
   background: var(--green-light);
   border: 1px solid #b2dac9;
   border-radius: 999px;
-  padding: 4px 12px;
-  font-size: 0.7rem;
+  padding: 4px 10px;
+  font-size: 0.68rem;
   color: var(--green);
   font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-ghost {
@@ -95,15 +117,17 @@ header {
   border: 1px solid var(--border);
   color: var(--muted);
   border-radius: var(--radius);
-  padding: 6px 12px;
-  font-size: 0.76rem;
+  padding: 5px 9px;
+  font-size: 0.72rem;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
   transition: all 0.2s;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
 
@@ -126,38 +150,67 @@ header {
 .btn-primary:hover    { background: #005f3b; }
 .btn-primary:disabled { background: #a0aec0; cursor: not-allowed; }
 
-/* ── FORM CARD (used in register + login) ── */
+/* ── USER BADGE ── */
+.user-badge {
+  display: flex; align-items: center; gap: 5px;
+  background: var(--green-light);
+  border: 1px solid #b2dac9;
+  border-radius: 999px;
+  padding: 3px 10px 3px 6px;
+  font-size: 0.68rem;
+  color: var(--green);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.user-badge .avatar {
+  width: 20px; height: 20px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem; font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Hide emirate on small screens */
+@media (max-width: 480px) {
+  .user-badge .emirate-display { display: none; }
+  .user-badge .emirate-sep     { display: none; }
+}
+
+/* ── FORM CARD ── */
 .auth-page {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 16px;
+  padding: 24px 16px;
 }
 
 .auth-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 36px 32px;
+  padding: 28px 24px;
   width: 100%;
   max-width: 420px;
   box-shadow: var(--shadow-md);
 }
 
-.auth-card .card-icon { font-size: 2.2rem; margin-bottom: 14px; }
+.auth-card .card-icon { font-size: 2rem; margin-bottom: 12px; }
 
 .auth-card h2 {
-  font-size: 1.25rem; font-weight: 700;
+  font-size: 1.2rem; font-weight: 700;
   color: var(--text); margin-bottom: 4px;
 }
 .auth-card h2 span { color: var(--teal); }
 
 .auth-card .card-sub {
-  font-size: 0.82rem; color: var(--muted); margin-bottom: 24px;
+  font-size: 0.82rem; color: var(--muted); margin-bottom: 20px;
 }
 
-.form-group { margin-bottom: 16px; }
+.form-group { margin-bottom: 14px; }
 
 .form-group label {
   display: block;
@@ -177,6 +230,8 @@ header {
   background: var(--white);
   outline: none;
   transition: border-color 0.2s;
+  /* Prevent iOS zoom on focus */
+  font-size: 16px;
 }
 .form-group input:focus,
 .form-group select:focus { border-color: var(--teal); }
@@ -187,7 +242,7 @@ header {
   border-radius: var(--radius);
   padding: 10px 12px;
   font-size: 0.8rem;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   display: none;
 }
 .alert.error   { background: #fff5f5; border: 1px solid #fed7d7; color: #c53030; }
@@ -196,7 +251,7 @@ header {
 
 .auth-footer {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 18px;
   font-size: 0.78rem;
   color: var(--muted);
 }
@@ -205,7 +260,7 @@ header {
 
 .divider {
   display: flex; align-items: center; gap: 10px;
-  margin: 18px 0; color: var(--muted); font-size: 0.75rem;
+  margin: 16px 0; color: var(--muted); font-size: 0.75rem;
 }
 .divider::before, .divider::after {
   content: ''; flex: 1; height: 1px; background: var(--border);
@@ -214,26 +269,6 @@ header {
 .disclaimer {
   font-size: 0.68rem; color: var(--muted);
   text-align: center; margin-top: 12px; line-height: 1.5;
-}
-
-/* ── USER BADGE IN HEADER ── */
-.user-badge {
-  display: flex; align-items: center; gap: 7px;
-  background: var(--green-light);
-  border: 1px solid #b2dac9;
-  border-radius: 999px;
-  padding: 4px 12px 4px 8px;
-  font-size: 0.74rem;
-  color: var(--green);
-  font-weight: 500;
-}
-.user-badge .avatar {
-  width: 22px; height: 22px;
-  background: var(--green);
-  color: white;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.65rem; font-weight: 700;
 }
 
 /* ── TAGS ── */
@@ -274,8 +309,8 @@ header {
   letter-spacing: 0.05em; margin-bottom: 9px;
 }
 .sustain-card table { width: 100%; border-collapse: collapse; }
-.sustain-card td { padding: 3px 0; font-size: 0.75rem; color: var(--muted); }
-.sustain-card td:last-child { color: var(--text); font-weight: 600; text-align: right; }
+.sustain-card td { padding: 4px 0; font-size: 0.78rem; color: var(--muted); vertical-align: top; }
+.sustain-card td:last-child { color: var(--text); font-weight: 600; text-align: right; padding-left: 8px; }
 .sustain-card .sc-note {
   margin-top: 7px; font-size: 0.63rem; color: var(--muted);
   border-top: 1px solid #c8e6d8; padding-top: 6px;
@@ -289,17 +324,19 @@ header {
   padding: 14px 16px;
 }
 .trip-confirm-banner p { font-size: 0.84rem; color: var(--text); margin-bottom: 10px; font-weight: 500; }
-.trip-btns { display: flex; gap: 8px; }
+.trip-btns { display: flex; gap: 8px; flex-wrap: wrap; }
 .trip-btns .btn-yes {
   background: var(--green); color: white; border: none;
-  border-radius: 7px; padding: 8px 16px; font-size: 0.8rem;
+  border-radius: 7px; padding: 9px 16px; font-size: 0.8rem;
   font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif;
+  flex: 1; min-width: 140px;
 }
 .trip-btns .btn-yes:hover { background: #005f3b; }
 .trip-btns .btn-skip {
   background: transparent; border: 1px solid var(--border); color: var(--muted);
-  border-radius: 7px; padding: 8px 16px; font-size: 0.8rem;
+  border-radius: 7px; padding: 9px 16px; font-size: 0.8rem;
   cursor: pointer; font-family: 'Inter', sans-serif;
+  flex: 1; min-width: 80px;
 }
 
 /* ── FOOTER ── */
@@ -313,8 +350,9 @@ footer strong { color: var(--green); }
 
 /* ── MESSAGES ── */
 .message {
-  max-width: 82%; padding: 12px 15px;
-  border-radius: 12px; line-height: 1.6; font-size: 0.91rem;
+  max-width: 88%; padding: 11px 14px;
+  border-radius: 12px; line-height: 1.6; font-size: 0.88rem;
+  word-break: break-word;
 }
 .message.user {
   align-self: flex-end; background: var(--teal);
@@ -351,32 +389,37 @@ footer strong { color: var(--green); }
 
 /* ── INPUT AREA ── */
 .input-area {
-  display: flex; gap: 7px; background: var(--white);
+  display: flex; gap: 6px; background: var(--white);
   border: 1.5px solid var(--border); border-radius: 12px;
-  padding: 7px; box-shadow: var(--shadow); transition: border-color 0.2s;
+  padding: 6px; box-shadow: var(--shadow); transition: border-color 0.2s;
+  align-items: flex-end;
 }
 .input-area:focus-within { border-color: var(--teal); }
 
 .input-area textarea {
   flex: 1; border: none; outline: none;
-  font-size: 0.9rem; padding: 7px 10px; resize: none;
+  font-size: 16px; /* prevent iOS zoom */
+  padding: 7px 8px; resize: none;
   font-family: 'Inter', sans-serif; background: transparent; color: var(--text);
+  min-height: 36px; max-height: 120px;
 }
 .input-area textarea::placeholder { color: #a0aec0; }
 
 .btn-send {
   background: var(--green); color: white; border: none;
-  border-radius: var(--radius); padding: 9px 20px;
-  cursor: pointer; font-size: 0.86rem; font-weight: 600;
-  font-family: 'Inter', sans-serif; transition: background 0.2s; white-space: nowrap;
+  border-radius: var(--radius); padding: 9px 16px;
+  cursor: pointer; font-size: 0.84rem; font-weight: 600;
+  font-family: 'Inter', sans-serif; transition: background 0.2s;
+  white-space: nowrap; flex-shrink: 0;
 }
 .btn-send:hover    { background: #005f3b; }
 .btn-send:disabled { background: #a0aec0; cursor: not-allowed; }
 
 .btn-voice {
   background: transparent; border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 9px 11px;
-  cursor: pointer; font-size: 0.95rem; color: var(--muted); transition: all 0.2s;
+  border-radius: var(--radius); padding: 9px 10px;
+  cursor: pointer; font-size: 1rem; color: var(--muted);
+  transition: all 0.2s; flex-shrink: 0;
 }
 .btn-voice:hover { border-color: var(--teal); color: var(--teal); }
 .btn-voice.listening {
@@ -390,15 +433,21 @@ footer strong { color: var(--green); }
 .voice-status {
   font-size: 0.7rem; color: var(--red-uae);
   text-align: center; min-height: 15px; font-style: italic;
+  padding: 2px 0;
 }
 
 /* ── SUGGESTIONS ── */
-.suggestions { display: flex; flex-wrap: wrap; gap: 7px; }
+.suggestions {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
 .suggestion-btn {
   background: var(--white); border: 1px solid var(--border);
   color: var(--teal); border-radius: var(--radius);
-  padding: 6px 12px; font-size: 0.76rem; cursor: pointer;
-  transition: all 0.2s; font-family: 'Inter', sans-serif; box-shadow: var(--shadow);
+  padding: 7px 11px; font-size: 0.74rem; cursor: pointer;
+  transition: all 0.2s; font-family: 'Inter', sans-serif;
+  box-shadow: var(--shadow);
+  /* Make touch targets big enough */
+  min-height: 36px;
 }
 .suggestion-btn:hover { background: var(--teal-light); border-color: var(--teal); }
 
@@ -415,4 +464,13 @@ html[dir="rtl"] .message.user {
 html[dir="rtl"] .message.assistant {
   align-self: flex-end;
   border-bottom-left-radius: 12px; border-bottom-right-radius: 3px;
+}
+html[dir="rtl"] .header-right { flex-direction: row-reverse; }
+
+/* ── MOBILE SPECIFICS ── */
+@media (max-width: 600px) {
+  #chat-container { padding: 12px 10px 10px; gap: 10px; }
+  .message { max-width: 95%; font-size: 0.85rem; }
+  footer { font-size: 0.62rem; padding: 10px 12px; }
+  .sustain-card td { font-size: 0.73rem; }
 }
