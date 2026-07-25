@@ -30,9 +30,9 @@
 
   <!-- HERO COUNTER — live from Supabase -->
   <div style="background:var(--green);color:white;padding:12px 16px;text-align:center;font-size:0.82rem;font-weight:500;">
-    <span id="hero-users">—</span> registered users &nbsp;·&nbsp;
-    <span id="hero-trips">—</span> trips prevented &nbsp;·&nbsp;
-    <span id="hero-km">—</span> km saved citywide
+    <span id="hero-users">—</span> <span id="hero-l-users">registered users</span> &nbsp;·&nbsp;
+    <span id="hero-trips">—</span> <span id="hero-l-trips">trips prevented</span> &nbsp;·&nbsp;
+    <span id="hero-km">—</span> <span id="hero-l-km">km saved citywide</span>
   </div>
 
   <main class="auth-page">
@@ -131,6 +131,7 @@
           el.textContent = t(key);
         }
       });
+      if (typeof applyHeroLang === 'function') applyHeroLang();
     }
 
     applyLang();
@@ -199,14 +200,31 @@
     });
   </script>
 
-<script>
-fetch('/api/impact')
-  .then(function(r){ return r.json(); })
-  .then(function(d){
-    document.getElementById('hero-users').textContent = Number(d.totalUsers||0).toLocaleString();
-    document.getElementById('hero-trips').textContent = Number(d.totalTrips||0).toLocaleString();
-    document.getElementById('hero-km').textContent    = Number(d.totalKm||0).toLocaleString();
-  }).catch(function(){});
-</script>
+  <script>
+    var HERO_LABELS = {
+      en: { users: 'registered users', trips: 'trips prevented', km: 'km saved citywide' },
+      ar: { users: 'مستخدم مسجل',      trips: 'رحلة تم تجنبها',  km: 'كم تم توفيرها' }
+    };
+
+    function applyHeroLang() {
+      var lang = (typeof currentLang !== 'undefined' && currentLang === 'ar') ? 'ar' : 'en';
+      var L = HERO_LABELS[lang];
+      document.getElementById('hero-l-users').textContent = L.users;
+      document.getElementById('hero-l-trips').textContent = L.trips;
+      document.getElementById('hero-l-km').textContent    = L.km;
+    }
+
+    applyHeroLang();
+
+    fetch('/api/impact')
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        document.getElementById('hero-users').textContent = Math.round(Number(d.totalUsers||0)).toLocaleString();
+        document.getElementById('hero-trips').textContent = Math.round(Number(d.totalTrips||0)).toLocaleString();
+        document.getElementById('hero-km').textContent    = Math.round(Number(d.totalKm||0)).toLocaleString();
+      })
+      .catch(function(){});
+  </script>
+
 </body>
 </html>
