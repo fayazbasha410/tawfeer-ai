@@ -38,6 +38,9 @@ router.post('/trip', function(req, res) {
   if (!userId || !distanceKm) {
     return res.status(400).json({ error: 'Missing userId or distanceKm' });
   }
+  if (typeof distanceKm !== 'number' || distanceKm <= 0) {
+    return res.status(400).json({ error: 'distanceKm must be a positive number' });
+  }  
 
   db.logTrip({
     userId:        userId,
@@ -71,7 +74,7 @@ router.post('/trip', function(req, res) {
 // GET /api/impact/admin
 router.get('/admin', function(req, res) {
   var adminKey = req.headers['x-admin-key'];
-  if (adminKey !== process.env.ADMIN_KEY) {
+  if ((adminKey || '').trim() !== (process.env.ADMIN_KEY || '').trim()) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 

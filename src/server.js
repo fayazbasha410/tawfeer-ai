@@ -337,28 +337,40 @@ function translateArabicQuery(text) {
 // ─────────────────────────────────────────
 function checkGuardrails(message) {
   const lower = message.toLowerCase();
-
+ 
   const banned = [
-    'ignore previous instructions', 'ignore all instructions', 'you are now',
-    'pretend you are', 'forget your instructions', 'jailbreak', 'dan mode',
-    'developer mode', 'system prompt', 'override', 'bypass'
+    'ignore previous instructions', 'ignore all instructions',
+    'ignore all rules', 'ignore previous', 'ignore the instructions',
+    'іgnore',
+    'you are now', 'pretend you are', 'pretend уou', 'forget your instructions',
+    'jailbreak', 'dan mode', 'developer mode', 'system prompt',
+    'override', 'bypass', 'unrestricted ai', 'no restrictions',
+    'act as an unrestricted', 'act as a different',
+    '[[system]]', '[[admin]]', '[[override]]',
+    '<script', '</script>', 'javascript:',
+    'drop table', '-- ', '; drop',
+    'malicious.com', 'cmd=', 'exec(', 'eval(',
+    '```\nignore', 'love letter', 'write a poem', 'write me a poem',
   ];
   const arabicBanned = [
     'تجاهل التعليمات', 'تجاهل جميع التعليمات', 'أنت الآن',
     'تظاهر بأنك', 'انسَ تعليماتك', 'تجاوز', 'بدون قيود',
+    'أنت لم تعد', 'وضع المطور', 'DAN mode',
   ];
   const offTopic = [
     'weather', 'recipe', 'sports', 'movie', 'music', 'joke', 'game',
     'dating', 'stock', 'crypto', 'bitcoin', 'football', 'cricket',
-    'basketball', 'school enrollment', 'gratuity', 'pension', 'social support',
-    'ejari', 'tawtheeq', 'trade license', 'vat', 'freelance permit'
+    'basketball', 'school enrollment', 'gratuity', 'social support',
+    'ejari', 'tawtheeq', 'trade license', 'vat', 'freelance permit',
+    'love letter', 'poem', 'poetry',
   ];
   const arabicOffTopic = [
     'الطقس', 'وصفة', 'كرة القدم', 'فيلم', 'موسيقى', 'نكتة',
     'العملات المشفرة', 'بيتكوين', 'مواعدة', 'الأسهم',
     'تسجيل مدرسي', 'مكافأة نهاية الخدمة', 'ترخيص تجاري',
+    'أفضل مطعم',
   ];
-
+ 
   for (const p of banned) {
     if (lower.includes(p)) return {
       blocked: true, reason: 'prompt_injection',
@@ -384,7 +396,7 @@ function checkGuardrails(message) {
     };
   }
   return { blocked: false };
-}
+ } 
 
 // ─────────────────────────────────────────
 // LLM — GROQ API

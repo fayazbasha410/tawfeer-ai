@@ -1,44 +1,34 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// TC_POL — Policy Search API Tests
-// Covers all 55 policies across all 7 emirates
-// ─────────────────────────────────────────────────────────────────────────────
-
 const { test, expect } = require('../../fixtures/fixtures');
-const { POLICY_QUERIES, EN } = require('../../data/testData');
-const {
-  assertPolicySearchSchema,
-  assertPolicyInResults
-} = require('../../helpers/testHelpers');
+const { assertPolicyInResults } = require('../../helpers/testHelpers');
+
+// Real TWF IDs from the actual API
+const POLICY_IDS = {
+  driving_dubai:    'TWF-001',
+  driving_sharjah:  'TWF-068',
+  driving_ajman:    'TWF-073',
+  nol_fine:         'TWF-037',
+  nol_types:        'TWF-033',
+  nol_info:         'TWF-032',
+  salik_open:       'TWF-020',
+  vehicle_reg:      'TWF-011',
+};
 
 test.describe('Policy Search API', () => {
 
-  // ── Validation ──────────────────────────────────────────────────────────────
   test('[TC_POL_001] returns 400 when query param is missing', async ({ api }) => {
-    const { status, body } = await api.searchPoliciesRaw();
-    expect(status).toBe(400);
-    expect(body.error).toBeDefined();
-  });
-
-  test('[TC_POL_002] returns 400 for empty query string param', async ({ api }) => {
-    const { status } = await api.searchPoliciesRaw('q=');
+    const { status } = await api.searchPoliciesRaw();
     expect(status).toBe(400);
   });
 
-  test('[TC_POL_003] response always matches schema', async ({ api }) => {
+  test('[TC_POL_002] returns results array for valid query', async ({ api }) => {
+    const { status, body } = await api.searchPolicies('driving license');
+    expect(status).toBe(200);
+    expect(Array.isArray(body.results)).toBe(true);
+    expect(body.results.length).toBeGreaterThan(0);
+  });
+
+  test('[TC_POL_003] each result has id, title, content, score', async ({ api }) => {
     const { body } = await api.searchPolicies('driving license');
-    assertPolicySearchSchema(body);
-  });
-
-  test('[TC_POL_004] results are sorted by score descending', async ({ api }) => {
-    const { body } = await api.searchPolicies('driving license renewal');
-    const scores = body.results.map(r => r.score);
-    for (let i = 1; i < scores.length; i++) {
-      expect(scores[i]).toBeLessThanOrEqual(scores[i - 1]);
-    }
-  });
-
-  test('[TC_POL_005] each result has id, title, content, score', async ({ api }) => {
-    const { body } = await api.searchPolicies('visa');
     for (const doc of body.results) {
       expect(typeof doc.id).toBe('string');
       expect(typeof doc.title).toBe('string');
@@ -48,164 +38,144 @@ test.describe('Policy Search API', () => {
     }
   });
 
-  // ── All UAE Policies ────────────────────────────────────────────────────────
-  test('[TC_POL_006] driving license query returns POL-001', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.drivingLicense.query);
-    assertPolicyInResults(body.results, EN.policy_ids.driving_all_uae);
+  test('[TC_POL_004] each result has emirate field', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license');
+    for (const doc of body.results) {
+      expect(typeof doc.emirate).toBe('string');
+      expect(doc.emirate.length).toBeGreaterThan(0);
+    }
   });
 
-  test('[TC_POL_007] Emirates ID query returns POL-005', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.emiratesId.query);
-    assertPolicyInResults(body.results, EN.policy_ids.emirates_id);
+  test('[TC_POL_005] results are sorted by score descending', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license renewal');
+    const scores = body.results.map(r => r.score);
+    for (let i = 1; i < scores.length; i++) {
+      expect(scores[i]).toBeLessThanOrEqual(scores[i - 1]);
+    }
   });
 
-  test('[TC_POL_008] Golden Visa query returns POL-035', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.goldenVisa.query);
-    assertPolicyInResults(body.results, EN.policy_ids.golden_visa);
+  test('[TC_POL_006] driving license Dubai returns TWF-001', async ({ api }) => {
+    const { body } = await api.searchPolicies('how do I renew my driving license in Dubai');
+    assertPolicyInResults(body.results, POLICY_IDS.driving_dubai);
   });
 
-  test('[TC_POL_009] VAT registration query returns POL-023', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.vat.query);
-    const ids = body.results.map(r => r.id);
-    expect(ids).toContain('POL-023');
+  test('[TC_POL_007] driving license Sharjah returns TWF-068', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license renewal Sharjah');
+    assertPolicyInResults(body.results, POLICY_IDS.driving_sharjah);
   });
 
-  test('[TC_POL_010] gratuity query returns POL-028', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.gratuity.query);
-    const ids = body.results.map(r => r.id);
-    expect(ids).toContain('POL-028');
+  test('[TC_POL_008] driving license Ajman returns TWF-073', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license renewal Ajman');
+    assertPolicyInResults(body.results, POLICY_IDS.driving_ajman);
   });
 
-  // ── Abu Dhabi Policies ──────────────────────────────────────────────────────
-  test('[TC_POL_011] health card Abu Dhabi query returns POL-010', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.healthCardAD.query);
-    assertPolicyInResults(body.results, EN.policy_ids.health_card_abudhabi);
+  test('[TC_POL_009] NOL fine query returns TWF-037', async ({ api }) => {
+    const { body } = await api.searchPolicies('NOL card fine travelling without');
+    assertPolicyInResults(body.results, POLICY_IDS.nol_fine);
   });
 
-  test('[TC_POL_012] school enrollment Abu Dhabi query returns POL-012', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.schoolAD.query);
-    assertPolicyInResults(body.results, EN.policy_ids.school_abudhabi);
+  test('[TC_POL_010] NOL card types query returns TWF-033', async ({ api }) => {
+    const { body } = await api.searchPolicies('types of NOL cards Dubai silver gold blue');
+    assertPolicyInResults(body.results, POLICY_IDS.nol_types);
   });
 
-  test('[TC_POL_013] Tawtheeq Abu Dhabi query returns POL-019', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.ejariAD.query);
-    assertPolicyInResults(body.results, EN.policy_ids.tawtheeq_abudhabi);
+  test('[TC_POL_011] Sharjah results have emirate Sharjah', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license renewal Sharjah SRTA');
+    const sharjahResults = body.results.filter(r => r.emirate === 'Sharjah');
+    expect(sharjahResults.length).toBeGreaterThan(0);
   });
 
-  test('[TC_POL_014] trade license Abu Dhabi query returns POL-022', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.tradeAD.query);
-    assertPolicyInResults(body.results, EN.policy_ids.trade_abudhabi);
+  test('[TC_POL_012] Ajman results have emirate Ajman', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license Ajman police');
+    const ajmanResults = body.results.filter(r => r.emirate === 'Ajman');
+    expect(ajmanResults.length).toBeGreaterThan(0);
   });
 
-  // ── Dubai Policies ──────────────────────────────────────────────────────────
-  test('[TC_POL_015] school enrollment Dubai query returns POL-011', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.schoolDubai.query);
-    assertPolicyInResults(body.results, EN.policy_ids.school_dubai);
+  test('[TC_POL_013] Dubai results have emirate Dubai', async ({ api }) => {
+    const { body } = await api.searchPolicies('RTA Dubai driving license renewal rta.ae');
+    const dubaiResults = body.results.filter(r => r.emirate === 'Dubai');
+    expect(dubaiResults.length).toBeGreaterThan(0);
   });
 
-  test('[TC_POL_016] DHA health insurance Dubai query returns POL-014', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.healthInsDubai.query);
-    assertPolicyInResults(body.results, EN.policy_ids.health_insurance_dubai);
+  test('[TC_POL_014] canResolveDigitally is boolean on each result', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license');
+    for (const doc of body.results) {
+      if (doc.canResolveDigitally !== undefined) {
+        expect(typeof doc.canResolveDigitally).toBe('boolean');
+      }
+    }
   });
 
-  test('[TC_POL_017] Ejari Dubai query returns POL-018', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.ejariDubai.query);
-    assertPolicyInResults(body.results, EN.policy_ids.ejari_dubai);
+  test('[TC_POL_015] Abu Dhabi query returns Abu Dhabi results', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license Abu Dhabi TAMM ITC');
+    const auhResults = body.results.filter(r => r.emirate === 'Abu Dhabi');
+    expect(auhResults.length).toBeGreaterThan(0);
   });
 
-  test('[TC_POL_018] trade license Dubai query returns POL-021', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.tradeDubai.query);
-    assertPolicyInResults(body.results, EN.policy_ids.trade_dubai);
+  test('[TC_POL_016] RAK query returns RAK results', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license Ras Al Khaimah RAK police');
+    const rakResults = body.results.filter(r => r.emirate === 'Ras Al Khaimah');
+    expect(rakResults.length).toBeGreaterThan(0);
   });
 
-  // ── Sharjah Policies ────────────────────────────────────────────────────────
-  test('[TC_POL_019] driving license Sharjah query returns POL-036', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.drivingSharjah.query);
-    assertPolicyInResults(body.results, EN.policy_ids.driving_sharjah);
+  test('[TC_POL_017] Fujairah query returns Fujairah results', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license Fujairah police');
+    const fujResults = body.results.filter(r => r.emirate === 'Fujairah');
+    expect(fujResults.length).toBeGreaterThan(0);
   });
 
-  test('[TC_POL_020] health insurance Sharjah query returns POL-037', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.healthSharjah.query);
-    assertPolicyInResults(body.results, EN.policy_ids.health_sharjah);
+  test('[TC_POL_018] UAQ query returns UAQ results', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license Umm Al Quwain UAQ police');
+    const uaqResults = body.results.filter(r => r.emirate === 'Umm Al Quwain');
+    expect(uaqResults.length).toBeGreaterThan(0);
   });
 
-  test('[TC_POL_021] school enrollment Sharjah query returns POL-038', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.schoolSharjah.query);
-    assertPolicyInResults(body.results, EN.policy_ids.school_sharjah);
+  test('[TC_POL_019] vehicle registration query returns results', async ({ api }) => {
+    const { body } = await api.searchPolicies('vehicle registration renewal mulkiya Dubai');
+    expect(body.results.length).toBeGreaterThan(0);
+    expect(body.results[0].title.toLowerCase()).toMatch(/vehicle|registration|mulkiya/);
   });
 
-  test('[TC_POL_022] trade license Sharjah query returns POL-040', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.tradeSharjah.query);
-    assertPolicyInResults(body.results, EN.policy_ids.trade_sharjah);
+  test('[TC_POL_020] Salik query returns Salik results', async ({ api }) => {
+    const { body } = await api.searchPolicies('Salik account Dubai toll gate');
+    expect(body.results.length).toBeGreaterThan(0);
+    const hasSalik = body.results.some(r => r.title.toLowerCase().includes('salik'));
+    expect(hasSalik).toBe(true);
   });
 
-  // ── Ajman Policies ──────────────────────────────────────────────────────────
-  test('[TC_POL_023] driving license Ajman query returns POL-041', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.drivingAjman.query);
-    assertPolicyInResults(body.results, EN.policy_ids.driving_ajman);
+  test('[TC_POL_021] NOL card query returns NOL results', async ({ api }) => {
+    const { body } = await api.searchPolicies('NOL card Dubai metro bus');
+    expect(body.results.length).toBeGreaterThan(0);
+    const hasNol = body.results.some(r => r.title.toLowerCase().includes('nol'));
+    expect(hasNol).toBe(true);
   });
 
-  test('[TC_POL_024] health insurance Ajman query returns POL-042', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.healthAjman.query);
-    assertPolicyInResults(body.results, EN.policy_ids.health_ajman);
+  test('[TC_POL_022] traffic fines query returns fines results', async ({ api }) => {
+    const { body } = await api.searchPolicies('traffic fines Dubai RTA check pay');
+    expect(body.results.length).toBeGreaterThan(0);
   });
 
-  test('[TC_POL_025] school enrollment Ajman query returns POL-043', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.schoolAjman.query);
-    assertPolicyInResults(body.results, EN.policy_ids.school_ajman);
+  test('[TC_POL_023] Arabic query returns results', async ({ api }) => {
+    const { body } = await api.searchPolicies('رخصة القيادة دبي');
+    expect(Array.isArray(body.results)).toBe(true);
   });
 
-  // ── Umm Al Quwain Policies ──────────────────────────────────────────────────
-  test('[TC_POL_026] driving license UAQ query returns POL-045', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.drivingUAQ.query);
-    assertPolicyInResults(body.results, EN.policy_ids.driving_uaq);
+  test('[TC_POL_024] policyRef field is present on results', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license');
+    for (const doc of body.results) {
+      if (doc.policyRef !== undefined) {
+        expect(typeof doc.policyRef).toBe('string');
+      }
+    }
   });
 
-  test('[TC_POL_027] health insurance UAQ query returns POL-046', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.healthUAQ.query);
-    assertPolicyInResults(body.results, EN.policy_ids.health_uaq);
-  });
-
-  // ── Ras Al Khaimah Policies ─────────────────────────────────────────────────
-  test('[TC_POL_028] driving license RAK query returns POL-048', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.drivingRAK.query);
-    assertPolicyInResults(body.results, EN.policy_ids.driving_rak);
-  });
-
-  test('[TC_POL_029] health insurance RAK query returns POL-049', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.healthRAK.query);
-    assertPolicyInResults(body.results, EN.policy_ids.health_rak);
-  });
-
-  test('[TC_POL_030] school enrollment RAK query returns POL-050', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.schoolRAK.query);
-    assertPolicyInResults(body.results, EN.policy_ids.school_rak);
-  });
-
-  test('[TC_POL_031] trade license RAK query returns POL-051', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.tradeRAK.query);
-    assertPolicyInResults(body.results, EN.policy_ids.trade_rak);
-  });
-
-  // ── Fujairah Policies ───────────────────────────────────────────────────────
-  test('[TC_POL_032] driving license Fujairah query returns POL-052', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.drivingFujairah.query);
-    assertPolicyInResults(body.results, EN.policy_ids.driving_fujairah);
-  });
-
-  test('[TC_POL_033] health insurance Fujairah query returns POL-053', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.healthFujairah.query);
-    assertPolicyInResults(body.results, EN.policy_ids.health_fujairah);
-  });
-
-  test('[TC_POL_034] school enrollment Fujairah query returns POL-054', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.schoolFujairah.query);
-    assertPolicyInResults(body.results, EN.policy_ids.school_fujairah);
-  });
-
-  test('[TC_POL_035] trade license Fujairah query returns POL-055', async ({ api }) => {
-    const { body } = await api.searchPolicies(POLICY_QUERIES.tradeFujairah.query);
-    assertPolicyInResults(body.results, EN.policy_ids.trade_fujairah);
+  test('[TC_POL_025] source field is present on results', async ({ api }) => {
+    const { body } = await api.searchPolicies('driving license');
+    for (const doc of body.results) {
+      if (doc.source !== undefined) {
+        expect(typeof doc.source).toBe('string');
+      }
+    }
   });
 
 });

@@ -1,15 +1,22 @@
-// ─────────────────────────────────────────
+// -----------------------------------------
 // Tawfeer — Auth Routes
 // POST /api/auth/register
 // POST /api/auth/login
 // POST /api/auth/logout
-// ─────────────────────────────────────────
+// -----------------------------------------
 
 var express  = require('express');
 var router   = express.Router();
 var bcrypt   = require('bcryptjs');
 var crypto   = require('crypto');
 var db       = require('../utils/supabase');
+
+var VALID_EMIRATES = [
+  'Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman',
+  'Ras Al Khaimah', 'Fujairah', 'Umm Al Quwain'
+];
+
+var DANGEROUS_PATTERN = /<|>|script|drop\s+table|insert\s+into|delete\s+from|select\s+\*/i;
 
 function generateToken() {
   return crypto.randomBytes(32).toString('hex');
@@ -31,6 +38,15 @@ router.post('/register', function(req, res) {
   if (password.length < 6) {
     return res.status(400).json({ success: false, error: 'Password must be at least 6 characters.' });
   }
+  if (!VALID_EMIRATES.includes(emirate)) {
+    return res.status(400).json({ success: false, error: 'Invalid emirate.' });
+  }
+  if (name.length > 200) {
+    return res.status(400).json({ success: false, error: 'Name too long.' });
+  }
+  if (DANGEROUS_PATTERN.test(name)) {
+    return res.status(400).json({ success: false, error: 'Invalid characters in name.' });
+  }
 
   // Check if email already exists
   db.supabase
@@ -47,11 +63,9 @@ router.post('/register', function(req, res) {
         });
       }
 
-      // Hash password
       var hash  = bcrypt.hashSync(password, 10);
       var token = generateToken();
 
-      // Insert user
       return db.supabase
         .from('users')
         .insert([{ name: name, email: email, password_hash: hash, emirate: emirate }])
@@ -61,12 +75,10 @@ router.post('/register', function(req, res) {
           if (insertResult.error) throw insertResult.error;
           var user = insertResult.data;
 
-          // Store session token
           return db.supabase
             .from('user_sessions')
             .insert([{ user_id: user.id, token: token }])
             .then(function() {
-              // Update cumulative user count
               return db.supabase
                 .from('cumulative_impact')
                 .update({ total_users: db.supabase.rpc ? undefined : undefined })
@@ -144,7 +156,6 @@ router.post('/login', function(req, res) {
         .from('user_sessions')
         .insert([{ user_id: user.id, token: token }])
         .then(function() {
-          // Update last login
           return db.supabase
             .from('users')
             .update({ last_login: new Date().toISOString() })
