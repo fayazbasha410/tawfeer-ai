@@ -12,12 +12,6 @@ jobs:
     name: Playwright Tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-      ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
 
 
     steps:
@@ -28,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
 
@@ -40,7 +34,21 @@ jobs:
         run: npx playwright install --with-deps chromium
 
 
-      - name: Start Tawfeer server
+      - name: Install Ollama and pull model
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve &
+          echo "Waiting for Ollama..."
+          for i in {1..20}; do
+            curl -sf http://localhost:11434/api/tags && echo "Ollama ready!" && break
+            echo "Attempt $i, retrying in 3s..."
+            sleep 3
+          done
+          ollama pull llama3.2
+          echo "Model ready!"
+
+
+      - name: Start GovMurshid server
         run: |
           npm start &
           echo "Waiting for server..."
@@ -70,12 +78,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: playwright-tests
-    env:
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-      ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
 
 
     steps:
@@ -86,7 +88,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
 
@@ -94,7 +96,21 @@ jobs:
         run: npm ci
 
 
-      - name: Start Tawfeer server
+      - name: Install Ollama and pull model
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve &
+          echo "Waiting for Ollama..."
+          for i in {1..20}; do
+            curl -sf http://localhost:11434/api/tags && echo "Ollama ready!" && break
+            echo "Attempt $i, retrying in 3s..."
+            sleep 3
+          done
+          ollama pull llama3.2
+          echo "Model ready!"
+
+
+      - name: Start GovMurshid server
         run: |
           npm start &
           echo "Waiting for server..."
@@ -124,7 +140,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
 

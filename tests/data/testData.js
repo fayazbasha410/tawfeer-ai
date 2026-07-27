@@ -1,7 +1,9 @@
 const EN = require('./locale_en.json');
 const AR = require('./locale_ar.json');
 
+
 const UAE_EMIRATES = Object.values(EN.emirates);
+
 
 const PLATES = {
   withFines:        EN.plates.with_fines,
@@ -20,6 +22,7 @@ const PLATES = {
   noDash:           EN.plates.no_dash,
   withSpaces:       EN.plates.spaces
 };
+
 
 const AREAS = {
   dubaiMarina:      EN.areas.dubai_marina,
@@ -43,6 +46,7 @@ const AREAS = {
   mixedCase:        EN.areas.mixed_case
 };
 
+
 const TEST_USERS = {
   dubai:    EN.test_users.valid_dubai,
   abuDhabi: EN.test_users.valid_abudhabi,
@@ -52,6 +56,7 @@ const TEST_USERS = {
   fujairah: EN.test_users.valid_fujairah,
   uaq:      EN.test_users.valid_uaq
 };
+
 
 const GUARDRAIL_INPUTS = {
   promptInjection: [
@@ -101,6 +106,18 @@ const GUARDRAIL_INPUTS = {
     'Is health insurance mandatory in Sharjah?'
   ]
 };
+
+
+const APPOINTMENTS = {
+  drivingLicense:      'driving-license',
+  vehicleRegistration: 'vehicle-registration',
+  emiratesId:          'emirates-id',
+  residencyVisa:       'residency-visa',
+  healthCard:          'health-card',
+  invalidService:      'passport-renewal',
+  emptyService:        ''
+};
+
 
 const CHAT_MESSAGES = {
   drivingLicenseDubai:       'How do I renew my driving license in Dubai?',
@@ -203,6 +220,7 @@ const CHAT_MESSAGES = {
   arabicSchoolDubai:         AR.queries.school_dubai
 };
 
+
 const CARBON_CASES = {
   dubai:    { emirate: 'Dubai',          area: 'Dubai Marina', expectCenterContains: 'RTA' },
   abudhabi: { emirate: 'Abu Dhabi',      area: 'Khalifa City', expectCenterContains: 'TAMM' },
@@ -213,6 +231,7 @@ const CARBON_CASES = {
   uaq:      { emirate: 'Umm Al Quwain', area: 'UAQ City',     expectCenterContains: 'UAQ' }
 };
 
+
 const RESPONSE_TIMES = {
   healthCheck:    500,
   toolCall:       5000,
@@ -221,6 +240,7 @@ const RESPONSE_TIMES = {
   arabicResponse: 60000
 };
 
+
 module.exports = {
   EN,
   AR,
@@ -228,6 +248,7 @@ module.exports = {
   PLATES,
   AREAS,
   TEST_USERS,
+  APPOINTMENTS,
   GUARDRAIL_INPUTS,
   CHAT_MESSAGES,
   CARBON_CASES,
