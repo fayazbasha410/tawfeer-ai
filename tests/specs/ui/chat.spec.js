@@ -5,14 +5,22 @@ const { CHAT_MESSAGES, GUARDRAIL_INPUTS } = require('../../data/testData');
 const { containsArabic } = require('../../helpers/testHelpers');
 
 
+
+
 const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
 const LLM      = 90000;
+
+
 
 
 test.describe('Tawfeer Chat UI', () => {
 
 
+
+
   test.describe('When the register and login pages load', () => {
+
+
 
 
     test('[TC_UI_001] register page shows Tawfeer branding', async ({ page }) => {
@@ -23,12 +31,16 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_002] login page shows Tawfeer branding', async ({ page }) => {
       const auth = new AuthPage(page);
       await auth.goToLogin();
       const title = await page.title();
       expect(title).toContain('Tawfeer');
     });
+
+
 
 
     test('[TC_UI_003] hero counter bar is visible on register page', async ({ page }) => {
@@ -40,6 +52,8 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_004] hero counter bar is visible on login page', async ({ page }) => {
       const auth = new AuthPage(page);
       await auth.goToLogin();
@@ -47,6 +61,8 @@ test.describe('Tawfeer Chat UI', () => {
       const visible = await auth.heroCounterIsVisible();
       expect(visible).toBe(true);
     });
+
+
 
 
     test('[TC_UI_005] UAE flag stripe has 4 segments on login page', async ({ page }) => {
@@ -57,6 +73,8 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_006] language toggle switches to Arabic on login page', async ({ page }) => {
       const auth = new AuthPage(page);
       await auth.goToLogin();
@@ -64,6 +82,8 @@ test.describe('Tawfeer Chat UI', () => {
       const dir = await auth.getPageDirection();
       expect(dir).toBe('rtl');
     });
+
+
 
 
     test('[TC_UI_007] language toggle switches back to English', async ({ page }) => {
@@ -76,10 +96,16 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
   });
 
 
+
+
   test.describe('When the chat page loads authenticated', () => {
+
+
 
 
     test('[TC_UI_008] chat page shows welcome message', async ({ chatPage }) => {
@@ -88,10 +114,14 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_009] header is visible', async ({ chatPage }) => {
       const cp = new ChatPage(chatPage);
       expect(await cp.header.isVisible()).toBe(true);
     });
+
+
 
 
     test('[TC_UI_010] header contains Tawfeer branding', async ({ chatPage }) => {
@@ -100,10 +130,14 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_011] input bar is visible', async ({ chatPage }) => {
       const cp = new ChatPage(chatPage);
       expect(await cp.input.isInputVisible()).toBe(true);
     });
+
+
 
 
     test('[TC_UI_012] at least 7 suggestion buttons are present', async ({ chatPage }) => {
@@ -113,10 +147,14 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_013] impact pill is visible in header', async ({ chatPage }) => {
       const pill = chatPage.locator('[data-test-id="impact-pill"]');
       await expect(pill).toBeVisible();
     });
+
+
 
 
     test('[TC_UI_014] user badge is visible in header', async ({ chatPage }) => {
@@ -125,10 +163,14 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_015] footer contains developer name', async ({ chatPage }) => {
       const footer = chatPage.locator('footer');
       await expect(footer).toContainText('Fayaz Basha Shaik');
     });
+
+
 
 
     test('[TC_UI_016] footer contains DAST 2026', async ({ chatPage }) => {
@@ -137,16 +179,24 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_017] UAE stripe has 4 segments', async ({ chatPage }) => {
       const segments = chatPage.locator('.uae-stripe > div');
       await expect(segments).toHaveCount(4);
     });
 
 
+
+
   });
 
 
+
+
   test.describe('When user interacts with the chat', () => {
+
+
 
 
     test('[TC_UI_018] user message appears after sending', async ({ chatPage }) => {
@@ -159,6 +209,8 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_019] input clears after sending', async ({ chatPage }) => {
       const cp = new ChatPage(chatPage);
       await cp.input.typeAndSend(CHAT_MESSAGES.salikRates);
@@ -167,12 +219,16 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_020] Enter key sends message', async ({ chatPage }) => {
       const cp = new ChatPage(chatPage);
       await cp.input.sendWithEnter(CHAT_MESSAGES.salikRates);
       const userMsg = cp.messages.getUserMessages().first();
       await expect(userMsg).toBeVisible();
     });
+
+
 
 
     test('[TC_UI_021] Shift+Enter does not send message', async ({ chatPage }) => {
@@ -184,12 +240,16 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_022] suggestion button sends predefined message', async ({ chatPage }) => {
       const cp = new ChatPage(chatPage);
       await cp.input.clickSuggestion(0);
       const userMsg = cp.messages.getUserMessages().first();
       await expect(userMsg).toBeVisible();
     });
+
+
 
 
     test('[TC_UI_023] Arabic suggestion button sends Arabic message', async ({ chatPage }) => {
@@ -204,10 +264,16 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
   });
 
 
+
+
   test.describe('When guardrails trigger in the UI', () => {
+
+
 
 
     test('[TC_UI_024] prompt injection shows blocked tag', async ({ chatPage }) => {
@@ -218,12 +284,16 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_025] off-topic request shows blocked tag', async ({ chatPage }) => {
       const cp = new ChatPage(chatPage);
       await cp.input.typeAndSend(GUARDRAIL_INPUTS.offTopic[0]);
       const tag = await cp.messages.waitForBlockedTag(5000);
       await expect(tag).toBeVisible();
     });
+
+
 
 
     test('[TC_UI_026] blocked reply contains Tawfeer redirect text', async ({ chatPage }) => {
@@ -235,10 +305,16 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
   });
 
 
+
+
   test.describe('When new conversation is started', () => {
+
+
 
 
     test('[TC_UI_027] new conversation button clears messages', async ({ chatPage }) => {
@@ -252,6 +328,8 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
     test('[TC_UI_028] new conversation shows fresh welcome', async ({ chatPage }) => {
       const cp = new ChatPage(chatPage);
       await cp.input.typeAndSend(GUARDRAIL_INPUTS.offTopic[0]);
@@ -263,10 +341,16 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
   });
 
 
+
+
   test.describe('When language is toggled in chat', () => {
+
+
 
 
     test('[TC_UI_029] language toggle switches to Arabic RTL', async ({ chatPage }) => {
@@ -274,6 +358,8 @@ test.describe('Tawfeer Chat UI', () => {
       const dir = await chatPage.evaluate(() => document.documentElement.getAttribute('dir'));
       expect(dir).toBe('rtl');
     });
+
+
 
 
     test('[TC_UI_030] language toggle switches back to English LTR', async ({ chatPage }) => {
@@ -284,7 +370,114 @@ test.describe('Tawfeer Chat UI', () => {
     });
 
 
+
+
   });
+
+
+
+
+  // These render the sustainability card directly via buildSustainCard() with a
+  // mock impact object — no /api/chat call, no Groq quota used. Only covers
+  // markup/behavior of buildSustainCard/shareImpact; the real end-to-end trip
+  // journey (area prompt → confirm → card) is covered separately in
+  // tests/specs/trip/share.spec.js, which does hit the LLM.
+  test.describe('When the sustainability card is rendered directly (non-LLM)', () => {
+
+
+    const MOCK_IMPACT = {
+      distanceSavedKm: 12,
+      co2SavedKg:      2.3,
+      fuelSavedLiters: 1.1,
+      moneySavedAed:   9,
+      centerName:      'Dubai RTA Customer Happiness Centre'
+    };
+
+
+    async function renderMockSustainCard(chatPage, impact = MOCK_IMPACT) {
+      await chatPage.evaluate((imp) => {
+        appendMessage('assistant', buildSustainCard(imp));
+      }, impact);
+    }
+
+
+    test('[TC_UI_031] sustain card renders with share button markup', async ({ chatPage }) => {
+      await renderMockSustainCard(chatPage);
+
+
+      const card = chatPage.locator('[data-test-id="sustain-card"]');
+      await expect(card).toBeVisible();
+
+
+      const shareBtn = card.locator('[data-test-id="share-btn"]');
+      await expect(shareBtn).toBeVisible();
+      await expect(shareBtn).toContainText('Share');
+    });
+
+
+    test('[TC_UI_032] sustain card shows distance, CO2, and money figures', async ({ chatPage }) => {
+      await renderMockSustainCard(chatPage);
+
+
+      const card = chatPage.locator('[data-test-id="sustain-card"]');
+      const text = await card.innerText();
+
+
+      expect(text).toContain('12');
+      expect(text).toContain('CO');
+      expect(text).toContain('9');
+      expect(text).toContain(MOCK_IMPACT.centerName);
+    });
+
+
+    test('[TC_UI_033] share button click builds a wa.me link with the impact figures', async ({ chatPage }) => {
+      await chatPage.addInitScript(() => {
+        window.__lastOpenedUrl = null;
+        window.open = (url) => { window.__lastOpenedUrl = url; return null; };
+      });
+      // addInitScript only applies to future navigations, so reload chat.html
+      // once with the stub in place before rendering the mock card.
+      await chatPage.reload();
+      await chatPage.waitForSelector('.message.assistant');
+
+
+      await renderMockSustainCard(chatPage);
+      await chatPage.locator('[data-test-id="share-btn"]').click();
+      await chatPage.waitForTimeout(200);
+
+
+      const openedUrl = await chatPage.evaluate(() => window.__lastOpenedUrl);
+      expect(openedUrl).toBeTruthy();
+      expect(openedUrl).toContain('wa.me');
+
+
+      const decoded = decodeURIComponent(openedUrl.split('text=')[1]);
+      expect(decoded).toContain('Tawfeer');
+      expect(decoded).toContain('12');
+      expect(decoded).toContain('9');
+      expect(decoded).toContain(MOCK_IMPACT.centerName);
+    });
+
+
+    test('[TC_UI_034] each rendered card gets a unique impact id (no cross-talk between cards)', async ({ chatPage }) => {
+      await renderMockSustainCard(chatPage, { ...MOCK_IMPACT, distanceSavedKm: 5 });
+      await renderMockSustainCard(chatPage, { ...MOCK_IMPACT, distanceSavedKm: 40 });
+
+
+      const cards = chatPage.locator('[data-test-id="sustain-card"]');
+      await expect(cards).toHaveCount(2);
+
+
+      const firstText  = await cards.nth(0).innerText();
+      const secondText = await cards.nth(1).innerText();
+      expect(firstText).toContain('5 km');
+      expect(secondText).toContain('40 km');
+    });
+
+
+  });
+
+
 
 
 });
