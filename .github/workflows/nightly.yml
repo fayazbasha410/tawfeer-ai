@@ -1,38 +1,38 @@
 name: Nightly Quality Gate
 
+
 on:
   workflow_dispatch: # manual trigger only — runs only from GitHub Actions tab when needed
+
 
 jobs:
   nightly-full-eval:
     name: Full RAG Evaluation
     runs-on: ubuntu-latest
     timeout-minutes: 35
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
+
 
     steps:
       - uses: actions/checkout@v4
+
 
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
+
       - run: npm ci
+
 
       - run: npm install -g promptfoo
 
-      - name: Install Ollama and pull model
-        run: |
-          curl -fsSL https://ollama.com/install.sh | sh
-          ollama serve &
-          echo "Waiting for Ollama..."
-          for i in {1..20}; do
-            curl -sf http://localhost:11434/api/tags && echo "Ollama ready!" && break
-            echo "Attempt $i, retrying in 3s..."
-            sleep 3
-          done
-          ollama pull llama3.2
-          echo "Model ready!"
 
       - name: Start server
         run: |
@@ -44,11 +44,14 @@ jobs:
             sleep 3
           done
 
+
       - name: Run full eval
         run: npm run eval
 
+
       - name: Run regression gate
         run: npm run eval:regression
+
 
       - name: Upload eval results
         uses: actions/upload-artifact@v4
@@ -58,33 +61,31 @@ jobs:
           path: /tmp/govmurshid-eval.json
           retention-days: 30
 
+
   nightly-red-team:
     name: Nightly Red Team
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
+
 
     steps:
       - uses: actions/checkout@v4
+
 
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
+
       - run: npm ci
 
-      - name: Install Ollama and pull model
-        run: |
-          curl -fsSL https://ollama.com/install.sh | sh
-          ollama serve &
-          echo "Waiting for Ollama..."
-          for i in {1..20}; do
-            curl -sf http://localhost:11434/api/tags && echo "Ollama ready!" && break
-            echo "Attempt $i, retrying in 3s..."
-            sleep 3
-          done
-          ollama pull llama3.2
-          echo "Model ready!"
 
       - name: Start server
         run: |
@@ -96,38 +97,38 @@ jobs:
             sleep 3
           done
 
+
       - name: Run red team
         run: npm run eval:redteam
+
 
   nightly-accessibility:
     name: Nightly Accessibility Scan
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
+
 
     steps:
       - uses: actions/checkout@v4
+
 
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
+
       - run: npm ci
+
 
       - run: npx playwright install --with-deps chromium
 
-      - name: Install Ollama and pull model
-        run: |
-          curl -fsSL https://ollama.com/install.sh | sh
-          ollama serve &
-          echo "Waiting for Ollama..."
-          for i in {1..20}; do
-            curl -sf http://localhost:11434/api/tags && echo "Ollama ready!" && break
-            echo "Attempt $i, retrying in 3s..."
-            sleep 3
-          done
-          ollama pull llama3.2
-          echo "Model ready!"
 
       - name: Start server
         run: |
@@ -139,8 +140,10 @@ jobs:
             sleep 3
           done
 
+
       - name: Run accessibility tests
         run: npx playwright test tests/specs/ui/accessibility.spec.js
+
 
       - name: Upload report
         uses: actions/upload-artifact@v4
