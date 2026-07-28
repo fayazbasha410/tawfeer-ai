@@ -10,7 +10,7 @@
     "test:api": "playwright test tests/specs/api tests/specs/auth tests/specs/admin tests/specs/chat/guardrails.spec.js",
     "eval": "cd eval/configs && promptfoo eval --config promptfoo.yaml",
     "eval:regression": "node eval/regression-gate.js",
-    "eval:redteam": "node eval/adversarial/red-team.js",
+    "eval:redteam": "node eval/red-team.js",
     "eval:prod": "node eval/prod-simulator/prod-eval.js",
     "eval:dashboard": "node eval/observability/dashboard.js && open eval/observability/dashboard.html",
     "eval:view": "cd eval/configs && promptfoo view",
