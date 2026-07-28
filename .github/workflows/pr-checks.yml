@@ -11,7 +11,7 @@ jobs:
   playwright-tests:
     name: Playwright Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 12
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -51,8 +51,8 @@ jobs:
           done
 
 
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run Playwright smoke suite (non-LLM — full suite runs on develop push instead)
+        run: npx playwright test tests/specs/api/health.spec.js tests/specs/api/fines.spec.js tests/specs/api/appointments.spec.js tests/specs/trip/confirm.spec.js tests/specs/admin/dashboard.spec.js tests/specs/ui/ --reporter=list
 
 
       - name: Upload Playwright report
