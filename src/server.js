@@ -851,7 +851,16 @@ app.post('/api/chat', async (req, res) => {
     });
   } catch (err) {
     console.error('LLM error:', err.message);
-    res.status(500).json({ error: 'LLM unavailable', detail: err.message });
+    res.status(500).json({
+      error:         'LLM unavailable',
+      detail:        err.message,
+      reply:         'Sorry, the assistant is temporarily unavailable. Please try again shortly.',
+      guardrail:     { triggered: false },
+      retrievedDocs: [],
+      toolUsed:      null,
+      language:      isArabic ? 'ar' : 'en',
+      confidence:    null,
+    });
   }
 });
 
