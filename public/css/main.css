@@ -445,6 +445,44 @@ header {
   border-top: 1px solid #b2dce2; padding-top: 6px;
 }
 
+/* ── MOBILE QR TOGGLE (login/register pages) ── */
+.mobile-qr-toggle {
+  display: block;
+  width: 100%;
+  background: none; border: none;
+  color: var(--teal);
+  font-size: 0.76rem; font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px 0 0;
+  margin-top: 4px;
+}
+.mobile-qr-toggle:hover { text-decoration: underline; }
+
+.mobile-qr-panel {
+  display: none;
+  margin-top: 12px;
+  padding: 14px;
+  background: var(--teal-light);
+  border: 1px solid #b2dce2;
+  border-radius: 10px;
+  text-align: center;
+}
+.mobile-qr-panel.show { display: block; }
+.mobile-qr-panel img {
+  width: 128px; height: 128px;
+  border-radius: 6px;
+  background: white;
+  padding: 6px;
+  border: 1px solid var(--border);
+}
+.mobile-qr-panel .qr-caption {
+  margin-top: 8px;
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
 
 
 

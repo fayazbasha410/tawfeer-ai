@@ -30,6 +30,9 @@ var TAWFEER_I18N = {
     noAccount: "Don't have an account?",
     signUp: 'Sign up',
     forgotPassword: 'Forgot password?',
+    qrToggle:  '📱 Prefer your phone? Scan to continue →',
+    qrHide:    'Hide QR code',
+    qrCaption: "Scan with your phone's camera to open this page",
 
     // Chat page
     sectionLabel: 'Transport & Government Services — All 7 Emirates',
@@ -104,6 +107,9 @@ var TAWFEER_I18N = {
     noAccount: 'ليس لديك حساب؟',
     signUp: 'إنشاء حساب',
     forgotPassword: 'نسيت كلمة المرور؟',
+    qrToggle:  '📱 تفضل هاتفك؟ امسح للمتابعة ←',
+    qrHide:    'إخفاء رمز QR',
+    qrCaption: 'امسح بكاميرا هاتفك لفتح هذه الصفحة',
 
     // Chat page
     sectionLabel: 'خدمات النقل والحكومة — جميع الإمارات السبع',
