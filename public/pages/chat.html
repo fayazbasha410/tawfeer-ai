@@ -467,6 +467,23 @@ function openWhatsAppShare(message) {
  window.open(url, '_blank', 'noopener');
 }
 
+function buildTransitCard(fallback) {
+ if (!fallback) return '';
+ var transportLine = fallback.card
+   ? fallback.authority + ' — ' + fallback.card
+   : fallback.authority;
+ return '<div class="transit-card" data-test-id="transit-card" role="note" ' +
+   'aria-label="' + escapeHtml(t('transitTitle')) + '">' +
+   '<div class="tc-title">' + t('transitTitle') + '</div>' +
+   '<table>' +
+   '<tr><td>' + t('transitCentre') + '</td><td>' + escapeHtml(fallback.centerName) + '</td></tr>' +
+   '<tr><td>' + t('transitOption') + '</td><td>' + escapeHtml(transportLine) + '</td></tr>' +
+   '<tr><td>' + t('transitCo2')    + '</td><td>' + fallback.co2SavedKg + ' kg CO₂</td></tr>' +
+   '</table>' +
+   '<div class="tc-note">' + t('transitNote') + '</div>' +
+   '</div>';
+}
+
 
 
 
@@ -652,6 +669,7 @@ async function sendMessage() {
 
 
    if (meta) html += '<div class="meta">' + meta + '</div>';
+   if (data.physicalVisitFallback) html += buildTransitCard(data.physicalVisitFallback);
    appendMessage('assistant', html);
 
 

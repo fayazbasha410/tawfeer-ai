@@ -424,6 +424,27 @@ header {
 .sustain-card .btn-share:hover { background: #1ebe5b; }
 .sustain-card .btn-share:active { transform: scale(0.97); }
 
+/* ── PHYSICAL VISIT / TRANSIT FALLBACK CARD ── */
+.transit-card {
+  background: linear-gradient(135deg, #e6f7f9, #f0faf5);
+  border: 1px solid #b2dce2;
+  border-radius: 10px;
+  padding: 13px 15px;
+  margin-top: 10px;
+}
+.transit-card .tc-title {
+  font-size: 0.73rem; font-weight: 700;
+  color: var(--teal); text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 9px;
+}
+.transit-card table { width: 100%; border-collapse: collapse; }
+.transit-card td { padding: 4px 0; font-size: 0.78rem; color: var(--muted); vertical-align: top; }
+.transit-card td:last-child { color: var(--text); font-weight: 600; text-align: right; padding-left: 8px; }
+.transit-card .tc-note {
+  margin-top: 7px; font-size: 0.63rem; color: var(--muted);
+  border-top: 1px solid #b2dce2; padding-top: 6px;
+}
+
 
 
 
@@ -620,4 +641,5 @@ html[dir="rtl"] .header-right { flex-direction: row-reverse; }
  .message { max-width: 95%; font-size: 0.85rem; }
  footer { font-size: 0.62rem; padding: 10px 12px; }
  .sustain-card td { font-size: 0.73rem; }
+ .transit-card td { font-size: 0.73rem; }
 }
