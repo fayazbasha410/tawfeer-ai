@@ -403,6 +403,7 @@ function checkGuardrails(message) {
 // ─────────────────────────────────────────
 const Groq = require('groq-sdk');
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+const { getPhysicalVisitFallback } = require('./utils/publicTransportFallback');
 
 async function callGroq(systemPrompt, userMessage, retries = 3) {
   for (let attempt = 1; attempt <= retries; attempt++) {
@@ -836,6 +837,14 @@ app.post('/api/chat', async (req, res) => {
     addToHistory(session, 'user', message);
     addToHistory(session, 'assistant', llmReply);
 
+    // Physical visit fallback: some services genuinely require in-person
+    // attendance (e.g. eye/theory/road tests, new licence category training).
+    // When that's the case, suggest public transport instead of driving.
+    const requiresPhysicalAttendance = docs.some(d => /physical attendance/i.test(d.content || ''));
+    const physicalVisitFallback = (requiresPhysicalAttendance && emirateForCalc)
+      ? getPhysicalVisitFallback(emirateForCalc, session.userArea)
+      : null;
+
     res.json({
       reply:         llmReply,
       guardrail:     { triggered: false },
@@ -846,6 +855,7 @@ app.post('/api/chat', async (req, res) => {
       confidence,
       impact,
       needsArea,
+      physicalVisitFallback,
       // Only show trip confirm for topics that involve a govt office visit
       canResolveDigitally: confidence.level !== 'low' && isOfficeVisitTopic(incomingTopic) && !followUp,
     });
@@ -860,6 +870,7 @@ app.post('/api/chat', async (req, res) => {
       toolUsed:      null,
       language:      isArabic ? 'ar' : 'en',
       confidence:    null,
+      physicalVisitFallback: null,
     });
   }
 });
