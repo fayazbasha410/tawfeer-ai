@@ -478,6 +478,75 @@ test.describe('Tawfeer Chat UI', () => {
   });
 
 
+  // Renders the physical-visit transit fallback card directly via
+  // buildTransitCard() with a mock fallback object — no /api/chat call,
+  // no Groq quota used.
+  test.describe('When the transit fallback card is rendered directly (non-LLM)', () => {
+
+    const MOCK_FALLBACK = {
+      emirate:      'Dubai',
+      hasMetro:     true,
+      authority:    'RTA',
+      card:         'NOL card',
+      centerName:   'RTA Al Barsha Customer Happiness Centre',
+      distanceKm:   4.4,
+      co2SavedKg:   0.55,
+      moneySavedAed: 0.66
+    };
+
+    async function renderMockTransitCard(chatPage, fallback = MOCK_FALLBACK) {
+      await chatPage.evaluate((fb) => {
+        appendMessage('assistant', buildTransitCard(fb));
+      }, fallback);
+    }
+
+    test('[TC_UI_035] transit card renders with centre, transport option, and CO2 figures', async ({ chatPage }) => {
+      await renderMockTransitCard(chatPage);
+
+      const card = chatPage.locator('[data-test-id="transit-card"]');
+      await expect(card).toBeVisible();
+
+      const text = await card.innerText();
+      expect(text).toContain('RTA Al Barsha Customer Happiness Centre');
+      expect(text).toContain('RTA');
+      expect(text).toContain('NOL card');
+      expect(text).toContain('0.55');
+    });
+
+    test('[TC_UI_036] transit card has accessible role and label (not color-only)', async ({ chatPage }) => {
+      await renderMockTransitCard(chatPage);
+
+      const card = chatPage.locator('[data-test-id="transit-card"]');
+      await expect(card).toHaveAttribute('role', 'note');
+
+      const ariaLabel = await card.getAttribute('aria-label');
+      expect(ariaLabel).toBeTruthy();
+      expect(ariaLabel.length).toBeGreaterThan(0);
+
+      const titleText = await card.locator('.tc-title').innerText();
+      expect(titleText.length).toBeGreaterThan(0);
+    });
+
+    test('[TC_UI_037] transit card omits the card-name row gracefully when no card exists (e.g. UAQ)', async ({ chatPage }) => {
+      const fallbackNoCard = {
+        emirate:    'Umm Al Quwain',
+        hasMetro:   false,
+        authority:  'Local taxi / shared transport',
+        card:       null,
+        centerName: 'UAQ Police Traffic & Licensing Department',
+        distanceKm: 10,
+        co2SavedKg: 1.25,
+        moneySavedAed: 1.5
+      };
+      await renderMockTransitCard(chatPage, fallbackNoCard);
+
+      const card = chatPage.locator('[data-test-id="transit-card"]');
+      const text = await card.innerText();
+      expect(text).toContain('Local taxi / shared transport');
+      expect(text).not.toContain('null');
+    });
+
+  });
 
 
 });

@@ -55,6 +55,11 @@ var TAWFEER_I18N = {
     sustainNote: 'Methodology: UAE MoCCAE 192g CO₂/km · Special 95 AED 2.89/L · July 2026',
     sustainShare: '📤 Share',
     sustainShareText: 'I just saved {km} km and {co2} kg CO₂ (AED {money} saved via {center}) using Tawfeer! 🍃 tawfeer-ai.onrender.com',
+    transitTitle:    '🚌 This visit needs in-person attendance',
+    transitCentre:   'Nearest centre',
+    transitOption:   'Public transport option',
+    transitCo2:      'Est. CO₂ saved vs. driving',
+    transitNote:     'Estimate only — the visit still happens, this compares taking public transport instead of driving there.',
 
 
     // Errors
@@ -124,6 +129,11 @@ var TAWFEER_I18N = {
     sustainNote: 'المنهجية: وزارة تغير المناخ 192 جرام/كم · بنزين 95 خاص 2.89 درهم/لتر · يوليو 2026',
     sustainShare: '📤 مشاركة',
     sustainShareText: 'وفّرت للتو {km} كم و {co2} كجم CO₂ ({money} درهم عبر {center}) باستخدام توفير! 🍃 tawfeer-ai.onrender.com',
+    transitTitle:    '🚌 هذه الخدمة تتطلب الحضور شخصياً',
+    transitCentre:   'أقرب مركز',
+    transitOption:   'وسيلة النقل العام',
+    transitCo2:      'الانبعاثات المقدر توفيرها مقارنة بالقيادة',
+    transitNote:     'تقدير فقط — الزيارة ستحدث على أي حال، وهذا يقارن استخدام النقل العام بدلاً من القيادة إلى هناك.',
 
 
     // Errors
@@ -160,4 +170,4 @@ function toggleLang() {
 function initLang() {
   document.documentElement.lang = currentLang;
   document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-}  
+}
