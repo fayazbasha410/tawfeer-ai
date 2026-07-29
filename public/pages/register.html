@@ -107,6 +107,21 @@
         <span data-i18n="haveAccount">Already have an account?</span>
         <a href="/pages/login.html" data-test-id="login-link" data-i18n="signIn"> Sign in</a>
       </div>
+
+      <button
+        class="mobile-qr-toggle"
+        id="qr-toggle-btn"
+        data-test-id="qr-toggle-btn"
+        aria-expanded="false"
+        aria-controls="qr-panel"
+        data-i18n="qrToggle"
+        onclick="toggleMobileQr()"
+      >📱 Prefer your phone? Scan to continue →</button>
+
+      <div class="mobile-qr-panel" id="qr-panel" data-test-id="qr-panel" role="region" aria-label="Mobile QR code">
+        <img id="qr-image" data-test-id="qr-image" alt="QR code" width="128" height="128" />
+        <div class="qr-caption" data-i18n="qrCaption">Scan with your phone's camera to open this page</div>
+      </div>
     </div>
   </main>
 
@@ -135,6 +150,29 @@
     }
 
     applyLang();
+
+    function toggleMobileQr() {
+      var btn   = document.getElementById('qr-toggle-btn');
+      var panel = document.getElementById('qr-panel');
+      var img   = document.getElementById('qr-image');
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      if (!isOpen) {
+        if (!img.src) {
+          var url = window.location.origin + window.location.pathname;
+          img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(url);
+        }
+        panel.classList.add('show');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('data-i18n', 'qrHide');
+        btn.textContent = t('qrHide');
+      } else {
+        panel.classList.remove('show');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('data-i18n', 'qrToggle');
+        btn.textContent = t('qrToggle');
+      }
+    }
 
     function handleRegister() {
       var name     = document.getElementById('register-name').value.trim();
