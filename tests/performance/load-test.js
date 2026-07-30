@@ -1,146 +1,127 @@
+// ─────────────────────────────────────────
+// Tawfeer — k6 Load Test
+// Deliberately targets ONLY non-LLM endpoints. /api/chat is excluded on
+// purpose — its latency is dominated by Groq's response time, not by
+// this server, and hammering it in a load test would just burn API
+// quota without measuring anything meaningful about our own code.
+//
+// Run with:
+//   k6 run k6/load-test.js
+//   k6 run --env BASE_URL=https://tawfeer-ai.onrender.com k6/load-test.js
+// ─────────────────────────────────────────
+
 import http from 'k6/http';
-import { check, sleep } from 'k6';
+import { check, group, sleep } from 'k6';
 import { Rate, Trend } from 'k6/metrics';
-
-const errorRate    = new Rate('error_rate');
-const chatDuration = new Trend('chat_duration', true);
-
-export const options = {
-  stages: [
-    { duration: '10s', target: 3 },
-    { duration: '30s', target: 3 },
-    { duration: '10s', target: 0 },
-  ],
-  thresholds: {
-    'http_req_duration{endpoint:health}': ['p(95)<500'],
-    'http_req_duration{endpoint:search}': ['p(95)<500'],
-    'http_req_duration{endpoint:chat}':   ['p(95)<90000'],
-    'error_rate':                         ['rate<0.10'],
-  }
-};
 
 const BASE_URL = __ENV.BASE_URL || 'http://localhost:3000';
 
-const CHAT_MESSAGES = [
-  'How do I renew my driving license in Dubai?',
-  'How do I renew my driving license in Abu Dhabi?',
-  'How do I check my traffic fines in Dubai?',
-  'What is the Salik toll charge per gate?',
-  'What types of NOL cards are available in Dubai?',
-  'How do I renew my vehicle registration in Sharjah?',
-  'Is health insurance mandatory in Sharjah?',
-  'How do I register my Darb account in Abu Dhabi?',
-  'What are the Dubai Metro operating hours?',
-  'How do I get from Dubai to Abu Dhabi by public transport?',
-  'How do I renew my driving license in Ras Al Khaimah?',
-  'كيف أجدد رخصة القيادة في دبي؟',
-  'كيف أتحقق من مخالفاتي المرورية في دبي؟',
-  'كيف أفتح حساب سالك في دبي؟',
-  'ما أوقات عمل مترو دبي؟',
-  'How do I renew my vehicle registration in Ajman?',
-  'What documents are needed to renew a Dubai driving license?',
-  'How do I pay traffic fines in Dubai online?',
-  'How do I transfer vehicle ownership in Dubai?',
-  'How do I renew my driving license in Fujairah?'
+// Custom metrics so the summary breaks down failure/latency per endpoint,
+// not just one blended number across everything.
+const errorRate      = new Rate('errors');
+const healthTrend     = new Trend('health_duration');
+const policyTrend     = new Trend('policy_search_duration');
+const finesTrend      = new Trend('fines_check_duration');
+const appointmentTrend = new Trend('appointment_duration');
+const impactTrend     = new Trend('impact_duration');
+
+export const options = {
+  stages: [
+    { duration: '20s', target: 10 },  // ramp up to 10 virtual users
+    { duration: '40s', target: 25 },  // ramp up to 25 virtual users
+    { duration: '30s', target: 25 },  // hold steady at 25
+    { duration: '15s', target: 0 },   // ramp down
+  ],
+  thresholds: {
+    http_req_failed:   ['rate<0.02'],   // fewer than 2% of requests should fail
+    http_req_duration: ['p(95)<800'],   // 95% of requests under 800ms
+    errors:            ['rate<0.02'],
+  },
+};
+
+const FINE_PLATES = ['AD-1234', 'DXB-9999', 'SHJ-4521'];
+const POLICY_QUERIES = [
+  'driving license renewal',
+  'Salik toll charge',
+  'vehicle registration',
+  'NOL card recharge',
+  'traffic fines'
 ];
+const APPOINTMENT_SERVICES = ['driving-license', 'vehicle-registration', 'emirates-id'];
 
-export default function () {
-  const vuIndex = __VU % CHAT_MESSAGES.length;
-  const message  = CHAT_MESSAGES[vuIndex];
-
-  const healthRes = http.get(`${BASE_URL}/api/health`, {
-    tags: { endpoint: 'health' }
-  });
-
-  check(healthRes, {
-    'health: status 200': r => r.status === 200,
-    'health: returns ok': r => {
-      try { return JSON.parse(r.body).status === 'ok'; }
-      catch { return false; }
-    }
-  }) || errorRate.add(1);
-  errorRate.add(0);
-
-  sleep(0.5);
-
-  const searchRes = http.get(
-    `${BASE_URL}/api/policies/search?q=${encodeURIComponent(message)}`,
-    { tags: { endpoint: 'search' } }
-  );
-
-  check(searchRes, {
-    'search: status 200':  r => r.status === 200,
-    'search: has results': r => {
-      try { return JSON.parse(r.body).results?.length > 0; }
-      catch { return false; }
-    }
-  }) || errorRate.add(1);
-  errorRate.add(0);
-
-  sleep(0.5);
-
-  if (__ITER % 3 === 0) {
-    const chatStart = Date.now();
-    const chatRes = http.post(
-      `${BASE_URL}/api/chat`,
-      JSON.stringify({ message, userEmirate: 'Dubai', userArea: '' }),
-      {
-        headers: { 'Content-Type': 'application/json' },
-        tags:    { endpoint: 'chat' },
-        timeout: '90s'
-      }
-    );
-    chatDuration.add(Date.now() - chatStart);
-
-    check(chatRes, {
-      'chat: status 200':    r => r.status === 200,
-      'chat: has reply':     r => {
-        try { return JSON.parse(r.body).reply?.length > 0; }
-        catch { return false; }
-      },
-      'chat: has guardrail': r => {
-        try { return typeof JSON.parse(r.body).guardrail === 'object'; }
-        catch { return false; }
-      }
-    }) || errorRate.add(1);
-    errorRate.add(0);
-
-    sleep(1);
-  }
+function pick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
-export function handleSummary(data) {
-  const metrics = data.metrics;
+export default function () {
 
-  const healthP95 = metrics['http_req_duration{endpoint:health}']?.values?.['p(95)'] || 0;
-  const searchP95 = metrics['http_req_duration{endpoint:search}']?.values?.['p(95)'] || 0;
-  const chatP95   = metrics['http_req_duration{endpoint:chat}']?.values?.['p(95)']   || 0;
-  const errRate   = metrics['error_rate']?.values?.rate  || 0;
-  const totalReqs = metrics['http_reqs']?.values?.count  || 0;
-  const reqRate   = metrics['http_reqs']?.values?.rate   || 0;
+  group('Health check', function () {
+    const res = http.get(`${BASE_URL}/api/health`);
+    healthTrend.add(res.timings.duration);
+    const ok = check(res, {
+      'health status is 200': (r) => r.status === 200,
+      'health reports ok':    (r) => { try { return r.json('status') === 'ok'; } catch (e) { return false; } },
+    });
+    errorRate.add(!ok);
+  });
 
-  const summary = `
-════════════════════════════════════════════
-  Tawfeer توفير — Load Test Summary
-  DAST 2026 · UAE Trip Reduction Platform
-════════════════════════════════════════════
-Total requests : ${totalReqs}
-Throughput     : ${reqRate.toFixed(2)} req/s
-Error rate     : ${(errRate * 100).toFixed(2)}%
+  sleep(0.5);
 
-Latency p95
-  Health check : ${healthP95.toFixed(0)}ms
-  Policy search: ${searchP95.toFixed(0)}ms
-  Chat (LLM)   : ${chatP95.toFixed(0)}ms
+  group('Policy search', function () {
+    const q = pick(POLICY_QUERIES);
+    const res = http.get(`${BASE_URL}/api/policies/search?q=${encodeURIComponent(q)}`);
+    policyTrend.add(res.timings.duration);
+    const ok = check(res, {
+      'policy search status is 200': (r) => r.status === 200,
+      'policy search returns results array': (r) => {
+        try { return Array.isArray(r.json('results')); } catch (e) { return false; }
+      },
+    });
+    errorRate.add(!ok);
+  });
 
-Thresholds
-  Health  < 500ms  : ${healthP95 < 500   ? '✅ PASS' : '❌ FAIL'}
-  Search  < 500ms  : ${searchP95 < 500   ? '✅ PASS' : '❌ FAIL'}
-  Chat    < 90000ms: ${chatP95   < 90000 ? '✅ PASS' : '❌ FAIL'}
-  Errors  < 10%    : ${errRate   < 0.10  ? '✅ PASS' : '❌ FAIL'}
-════════════════════════════════════════════
-`;
+  sleep(0.5);
 
-  console.log(summary);
-  return { stdout: summary };
+  group('Fine status check', function () {
+    const plate = pick(FINE_PLATES);
+    const res = http.get(`${BASE_URL}/api/tools/fines/${encodeURIComponent(plate)}`);
+    finesTrend.add(res.timings.duration);
+    const ok = check(res, {
+      'fines check status is 200': (r) => r.status === 200,
+    });
+    errorRate.add(!ok);
+  });
+
+  sleep(0.5);
+
+  group('Appointment booking', function () {
+    const payload = JSON.stringify({
+      service: pick(APPOINTMENT_SERVICES),
+      date:    '2026-08-15',
+    });
+    const res = http.post(`${BASE_URL}/api/tools/appointment`, payload, {
+      headers: { 'Content-Type': 'application/json' },
+    });
+    appointmentTrend.add(res.timings.duration);
+    const ok = check(res, {
+      'appointment status is 200': (r) => r.status === 200,
+    });
+    errorRate.add(!ok);
+  });
+
+  sleep(0.5);
+
+  group('Impact stats', function () {
+    const res = http.get(`${BASE_URL}/api/impact`);
+    impactTrend.add(res.timings.duration);
+    const ok = check(res, {
+      'impact status is 200': (r) => r.status === 200,
+      'impact has totalUsers': (r) => {
+        try { return typeof r.json('totalUsers') !== 'undefined'; } catch (e) { return false; }
+      },
+    });
+    errorRate.add(!ok);
+  });
+
+  sleep(1);
 }
