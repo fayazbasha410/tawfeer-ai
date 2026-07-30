@@ -540,7 +540,11 @@ TOPIC RULES:
 - Answer ONLY using the policy information provided.
 - Stay strictly on the current topic. Do not drift to other topics.
 - Be concise, accurate, and helpful.
-- Never mention school enrollment, gratuity, pension, social services, trade licenses, or VAT.`;
+- Never mention school enrollment, gratuity, pension, social services, trade licenses, or VAT.
+
+RESPONSE CONSISTENCY (IMPORTANT):
+- Always explicitly name the responsible authority by name (e.g. "Ajman Police", "Sharjah Police", "TAMM") in your answer — do not refer to it only as "the traffic department" or "the relevant authority."
+- Only use the checkFineStatus or bookAppointment tools when the user is specifically asking to check a fine or book an appointment. For general information questions (e.g. "how do I renew my license"), answer directly from the policy context — do not invoke a tool.`;
 
 // ─────────────────────────────────────────
 // MISC ROUTES
