@@ -405,7 +405,7 @@ const Groq = require('groq-sdk');
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 const { getPhysicalVisitFallback } = require('./utils/publicTransportFallback');
 
-async function callGroq(systemPrompt, userMessage, retries = 3) {
+async function callGroq(systemPrompt, userMessage, retries = 2) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       const completion = await groq.chat.completions.create({
@@ -421,8 +421,12 @@ async function callGroq(systemPrompt, userMessage, retries = 3) {
     } catch (err) {
       const isRateLimit = err.status === 429 || err.message?.includes('429');
       if (isRateLimit && attempt < retries) {
-        const waitMs = attempt * 6000;
-        console.log(`⏳ Groq rate limit — waiting ${waitMs / 1000}s (retry ${attempt}/${retries})`);
+        // Jitter avoids parallel callers (multiple test workers, or multiple
+        // real users) all retrying at the exact same moment and re-triggering
+        // the same rate limit together.
+        const jitter = Math.random() * 2000;
+        const waitMs = attempt * 6000 + jitter;
+        console.log(`⏳ Groq rate limit — waiting ${Math.round(waitMs / 1000)}s (retry ${attempt}/${retries})`);
         await new Promise(r => setTimeout(r, waitMs));
         continue;
       }
@@ -871,6 +875,7 @@ app.post('/api/chat', async (req, res) => {
       language:      isArabic ? 'ar' : 'en',
       confidence:    null,
       physicalVisitFallback: null,
+      memory:        { turns: session.topicTurns || 0, topic: session.currentTopic || null, emirate: session.currentEmirate || null, topicChanged: false },
     });
   }
 });
